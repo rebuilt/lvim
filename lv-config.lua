@@ -169,6 +169,18 @@ O.user_plugins = {
 		cmd = { "LazyGit" },
 		requires = { "nvim-lua/plenary.nvim" },
 	},
+	{
+		"windwp/nvim-ts-autotag",
+		-- event = "InsertEnter",
+		ft = { "html", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" },
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				autotag = {
+					enable = true,
+				},
+			})
+		end,
+	},
 }
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- O.user_autocommands = {{ "BufWinEnter", "*", "echo \"hi again\""}}
@@ -191,7 +203,9 @@ O.plugin.autopairs.on_config_done = function(module)
 	module.add_rules({
 		endwise("def", "end", nil, nil),
 	})
-
+ -- Rule('def%s.+$', 'end', 'ruby')
+ --        :use_regex(true)
+ --        :end_wise(cond.not_after_regex_check('.'))
 	module.remove_rule("`")
 	local Rule = require("nvim-autopairs.rule")
 	module.add_rule(Rule("`", "`", { "lua", "ruby", "javascript" }))
