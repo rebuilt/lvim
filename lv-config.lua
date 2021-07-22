@@ -52,9 +52,9 @@ O.treesitter.highlight.enabled = true
 
 -- javascript
 -- O.lang.tsserver.linter = nil
-O.lang.javascript.formatter.exe = "prettier"
-O.lang.javascript.formatter.args = "--write"
-O.lang.javascript.formatter.stdin = false
+-- O.lang.javascript.formatter.exe = "prettier"
+-- O.lang.javascript.formatter.args = "--write"
+-- O.lang.javascript.formatter.stdin = false
 
 O.user_plugins = {
 
