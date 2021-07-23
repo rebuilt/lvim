@@ -2,8 +2,9 @@ LV.format_on_save = true
 LV.lint_on_save = true
 LV.completion.autocomplete = true
 LV.colorscheme = "spacegray"
-vim.cmd(":set timeoutlen=500")
-vim.cmd(":set relativenumber")
+-- LV.default_options.wrap = true
+-- LV.default_options.timeoutlen = 500
+-- LV.default_options.relativenumber = true
 LV.treesitter.indent = { enable = false }
 vim.cmd(":set hlsearch")
 
@@ -50,6 +51,17 @@ LV.treesitter.ensure_installed = "maintained"
 LV.treesitter.highlight.enabled = true
 
 -- javascript
+<<<<<<< HEAD
+-- LV.lang.tsserver.linter = nil
+-- LV.lang.javascript.formatter.exe = "prettier"
+-- LV.lang.javascript.formatter.args = "--write"
+-- LV.lang.javascript.formatter.stdin = false
+=======
+-- O.lang.tsserver.linter = nil
+-- O.lang.javascript.formatter.exe = "prettier"
+-- O.lang.javascript.formatter.args = "--write"
+-- O.lang.javascript.formatter.stdin = false
+>>>>>>> 64bb33422530da18d604534ab5e998d28c568b7d
 
 LV.plugins = {
 
