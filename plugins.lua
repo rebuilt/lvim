@@ -105,11 +105,11 @@ lvim.plugins = {
 		end,
 	},
 
-	{
-		"kdheepak/lazygit.nvim",
-		cmd = { "LazyGit" },
-		requires = { "nvim-lua/plenary.nvim" },
-	},
+	-- {
+	-- 	"kdheepak/lazygit.nvim",
+	-- 	cmd = { "LazyGit" },
+	-- 	requires = { "nvim-lua/plenary.nvim" },
+	-- },
 	{
 		"windwp/nvim-ts-autotag",
 		event = "InsertEnter",
@@ -128,9 +128,9 @@ lvim.plugins = {
 	-- 		require("onedark").setup()
 	-- 	end,
 	-- },
-	{
-		"arcticicestudio/nord-vim",
-	},
+	-- {
+	-- 	"arcticicestudio/nord-vim",
+	-- },
 	-- { "folke/tokyonight.nvim" },
 	{
 		"tweekmonster/startuptime.vim",
