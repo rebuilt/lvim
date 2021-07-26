@@ -7,8 +7,8 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("set hlsearch")
 vim.opt.wrap = false
-
-lvim.line_wrap_cursor_movement = false
+lvim.line_wrap_cursor_movement = true
+lvim.transparent_window = true
 -- plugins
 -- =========================================
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -59,3 +59,5 @@ lvim.lang.javascript.formatter.exe = "prettier"
 -- lvim.colorscheme = "onedark"
 
 -- lvim.colorscheme = "nord"
+
+-- lvim.builtin.which_key.mappings["gg"] = { "<cmd>lua require('core.terminal')._lazygit_toggle()<CR>", "remapped" }
