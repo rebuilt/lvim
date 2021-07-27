@@ -6,9 +6,11 @@ vim.cmd("set timeoutlen=1000")
 vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.cmd("set hlsearch")
-vim.opt.wrap = false
-lvim.line_wrap_cursor_movement = true
-lvim.transparent_window = true
+
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.list = false
+
 -- plugins
 -- =========================================
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -22,6 +24,7 @@ lvim.builtin.treesitter.textsubjects.keymaps[";"] = "textsubjects-big"
 lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart"
 lvim.lang.lua.formatter.exe = "stylua"
 lvim.builtin.terminal.active = true
+lvim.lsp.default_keybinds = false
 
 -- lvim.builtin.treesitter.indent = { enable = false }
 
@@ -61,3 +64,19 @@ lvim.lang.javascript.formatter.exe = "prettier"
 -- lvim.colorscheme = "nord"
 
 -- lvim.builtin.which_key.mappings["gg"] = { "<cmd>lua require('core.terminal')._lazygit_toggle()<CR>", "remapped" }
+require("lspconfig").tailwindcss.setup({})
+-- lvim.autocommands.custom_groups = {
+-- 	{ "FileType", "markdown", "imap <TAB> <TAB>" },
+-- }
+local file_type = vim.fn.expand("%:e")
+if file_type == "md" then
+	vim.cmd("imap <TAB> <TAB>")
+end
+
+-- local file_type = vim.fn.expand("%:e")
+-- print("Filetype is detected as " .. file_type)
+-- if file_type ~= "markdown" then
+-- 	print("filetype is not markdown ")
+-- else
+-- 	print("filetype is markdown ")
+-- end

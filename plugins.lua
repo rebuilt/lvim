@@ -16,6 +16,10 @@ lvim.plugins = {
 		"tpope/vim-surround",
 		keys = { "c", "d", "y" },
 	},
+	-- {
+	-- 	"machakann/vim-sandwich",
+	-- 	keys = { "sa", "sd", "sr", "sdb", "srb" },
+	-- },
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		event = "BufRead",
