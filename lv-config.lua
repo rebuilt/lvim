@@ -1,5 +1,6 @@
 -- General settings for neovim
 -- =========================================
+
 lvim.format_on_save = true
 lvim.lint_on_save = true
 vim.cmd("set timeoutlen=1000")
@@ -13,6 +14,7 @@ vim.opt.list = false
 
 -- plugins
 -- =========================================
+
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "kotlin" }
 lvim.builtin.treesitter.highlight.enabled = true
@@ -28,31 +30,25 @@ lvim.lsp.default_keybinds = false
 
 -- lvim.builtin.treesitter.indent = { enable = false }
 
-local status_ok, error = pcall(vim.cmd, "luafile ~/.config/lvim/plugins.lua")
+local load = function(path)
+	local status_ok, error = pcall(vim.cmd, path)
 
-if not status_ok then
-	print("something is wrong with your lv-config")
-	print(error)
+	if not status_ok then
+		print("something is wrong with your lv-config")
+		print(error)
+	end
 end
+
+load("luafile ~/.config/lvim/plugins.lua")
 
 -- general keybindings
 -- =========================================
 
-local status_ok, error = pcall(vim.cmd, "luafile ~/.config/lvim/keybindings.lua")
-
-if not status_ok then
-	print("something is wrong with your lv-config")
-	print(error)
-end
+load("luafile ~/.config/lvim/keybindings.lua")
 
 -- whichkey bindings
 -- =========================================
-local status_ok, error = pcall(vim.cmd, "luafile ~/.config/lvim/whichkey.lua")
-
-if not status_ok then
-	print("something is wrong with your lv-config")
-	print(error)
-end
+load("luafile ~/.config/lvim/whichkey.lua")
 
 -- language
 lvim.lang.javascript.formatter.exe = "prettier"

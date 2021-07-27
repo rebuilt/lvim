@@ -1,5 +1,6 @@
 -- ========================================
 -- keymappings
+
 lvim.keys.leader_key = "space"
 lvim.lsp.default_keybinds = nil
 
