@@ -48,14 +48,14 @@ load("luafile ~/.config/lvim/keybindings.lua")
 
 -- whichkey bindings
 -- =========================================
-load("luafile ~/.config/lvim/whichkey.lua")
+-- load("luafile ~/.config/lvim/whichkey.lua")
 
 -- language
 lvim.lang.javascript.formatter.exe = "prettier"
 
 -- colorscheme
--- vim.g.onedark_style = "darker"
--- lvim.colorscheme = "onedark"
+vim.g.onedark_style = "darker"
+lvim.colorscheme = "onedark"
 
 -- lvim.colorscheme = "nord"
 
@@ -68,11 +68,20 @@ local file_type = vim.fn.expand("%:e")
 if file_type == "md" then
 	vim.cmd("imap <TAB> <TAB>")
 end
+lvim.builtin.galaxyline.on_config_done = function(gl)
+	-- print(vim.inspect(gl))
 
--- local file_type = vim.fn.expand("%:e")
--- print("Filetype is detected as " .. file_type)
--- if file_type ~= "markdown" then
--- 	print("filetype is not markdown ")
--- else
--- 	print("filetype is markdown ")
--- end
+	local gls = gl.section
+
+	-- remove the sections you don't want.  The remove function takes an index.  Leaving off the index will remove the last item from the table.
+	table.remove(gls.right)
+	table.remove(gls.right, 1)
+	table.remove(gls.right, 2)
+end
+-- lvim.autocommands.custom_groups = {
+-- 	{ "BufWritePre", "*.py", ":!isort %" },
+-- }
+lvim.builtin.compe.exclude_filetypes = {}
+lvim.autocommands.custom_groups = {
+	{ "Filetype", "cpp", "lua dofile('/home/" .. USER .. "/.config/lvim/cpp.lua').bind_cpp_keys()" },
+}

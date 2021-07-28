@@ -27,5 +27,5 @@ vim.api.nvim_set_keymap("n", "gb", "<cmd>BufferPick<CR>", { noremap = true, sile
 vim.api.nvim_set_keymap("n", "<F6>", ":!yarn test<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<F7>", ":!prettier --stdin-filepath % | e!<cr>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<S-x>", "<cmd>BufferClose!<CR>", { noremap = true, silent = true })
--- end keymappings
--- =========================================
+
+-- lvim.keys.normal_mode[#lvim.keys.normal_mode + 1] = {}
