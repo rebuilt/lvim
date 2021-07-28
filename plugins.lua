@@ -108,7 +108,10 @@ lvim.plugins = {
 			vim.cmd("let g:minimap_auto_start_win_enter = 0")
 		end,
 	},
-
+	{
+		"sindrets/diffview.nvim",
+		event = "BufRead",
+	},
 	-- {
 	-- 	"kdheepak/lazygit.nvim",
 	-- 	cmd = { "LazyGit" },
@@ -126,12 +129,12 @@ lvim.plugins = {
 			})
 		end,
 	},
-	-- {
-	-- 	"navarasu/onedark.nvim",
-	-- 	config = function()
-	-- 		require("onedark").setup()
-	-- 	end,
-	-- },
+	{
+		"navarasu/onedark.nvim",
+		config = function()
+			require("onedark").setup()
+		end,
+	},
 	-- {
 	-- 	"arcticicestudio/nord-vim",
 	-- },
