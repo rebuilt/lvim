@@ -48,7 +48,7 @@ load("luafile ~/.config/lvim/keybindings.lua")
 
 -- whichkey bindings
 -- =========================================
--- load("luafile ~/.config/lvim/whichkey.lua")
+load("luafile ~/.config/lvim/whichkey.lua")
 
 -- language
 lvim.lang.javascript.formatter.exe = "prettier"
@@ -57,31 +57,13 @@ lvim.lang.javascript.formatter.exe = "prettier"
 vim.g.onedark_style = "darker"
 lvim.colorscheme = "onedark"
 
--- lvim.colorscheme = "nord"
-
--- lvim.builtin.which_key.mappings["gg"] = { "<cmd>lua require('core.terminal')._lazygit_toggle()<CR>", "remapped" }
-require("lspconfig").tailwindcss.setup({})
--- lvim.autocommands.custom_groups = {
--- 	{ "FileType", "markdown", "imap <TAB> <TAB>" },
--- }
-local file_type = vim.fn.expand("%:e")
-if file_type == "md" then
-	vim.cmd("imap <TAB> <TAB>")
-end
-lvim.builtin.galaxyline.on_config_done = function(gl)
-	-- print(vim.inspect(gl))
-
-	local gls = gl.section
-
-	-- remove the sections you don't want.  The remove function takes an index.  Leaving off the index will remove the last item from the table.
-	table.remove(gls.right)
-	table.remove(gls.right, 1)
-	table.remove(gls.right, 2)
-end
--- lvim.autocommands.custom_groups = {
--- 	{ "BufWritePre", "*.py", ":!isort %" },
--- }
-lvim.builtin.compe.exclude_filetypes = {}
-lvim.autocommands.custom_groups = {
-	{ "Filetype", "cpp", "lua dofile('/home/" .. USER .. "/.config/lvim/cpp.lua').bind_cpp_keys()" },
+lvim.builtin.telescope.extensions = {
+	fzy_native = {
+		override_generic_sorter = false,
+		override_file_sorter = true,
+	},
 }
+
+lvim.builtin.telescope.on_config_done = function()
+	require("telescope").load_extension("fzy_native")
+end
