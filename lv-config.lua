@@ -30,8 +30,9 @@ lvim.lsp.default_keybinds = false
 
 -- lvim.builtin.treesitter.indent = { enable = false }
 
-local load = function(path)
-	local status_ok, error = pcall(vim.cmd, path)
+local load = function(filename)
+	local status_ok, module = pcall(vim.cmd, "luafile ~/.config/lvim/lua/" .. filename)
+	-- local status_ok, module = pcall(require, module_name)
 
 	if not status_ok then
 		print("something is wrong with your lv-config")
@@ -39,16 +40,16 @@ local load = function(path)
 	end
 end
 
-load("luafile ~/.config/lvim/plugins.lua")
+load("plugins.lua")
 
 -- general keybindings
 -- =========================================
 
-load("luafile ~/.config/lvim/keybindings.lua")
+load("keybindings.lua")
 
 -- whichkey bindings
 -- =========================================
-load("luafile ~/.config/lvim/whichkey.lua")
+load("whichkey.lua")
 
 -- language
 lvim.lang.javascript.formatter.exe = "prettier"
@@ -63,7 +64,3 @@ lvim.builtin.telescope.extensions = {
 		override_file_sorter = true,
 	},
 }
-
-lvim.builtin.telescope.on_config_done = function()
-	require("telescope").load_extension("fzy_native")
-end
