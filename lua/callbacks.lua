@@ -3,6 +3,7 @@
 -- end
 
 lvim.builtin.autopairs.on_config_done = function(module)
+	print(vim.inspect(module))
 	local endwise = require("nvim-autopairs.ts-rule").endwise
 	-- local npairs = require("nvim-autopairs")
 	module.add_rules({
@@ -18,6 +19,6 @@ lvim.builtin.autopairs.on_config_done = function(module)
 	module.add_rule(Rule("```", "```", "markdown"))
 end
 
--- lvim.lsp.on_attach_callback = function(client, bufnr)
--- 	require("lsp_signature").on_attach()
--- end
+lvim.lsp.on_attach_callback = function(client, bufnr)
+	require("lsp_signature").on_attach()
+end

@@ -151,6 +151,8 @@ lvim.plugins = {
 	-- 		require("navigator").setup()
 	-- 	end,
 	-- },
+
+	{ "jbyuki/one-small-step-for-vimkind" },
 }
 
 -- Extended configurations
