@@ -1,11 +1,11 @@
 # We want our search to be case sensitive
-:set noignorecase
+`:set noignorecase`
 # Search for the O object and put the results in a quickfix list
-:vimgrep /O\./gj **/*
+`:vimgrep /O\./gj **/*`
 # Open the quickfix
-:copen
+`:copen`
 # Replace the O object with LV.  Confirm every change
-:cfdo %s/O\./LV./gc
+`:cfdo %s/O\./LV./gc`
 
     The % is a line range that specifies every line
     The g flag says to substitute all occurrences in each line

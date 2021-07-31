@@ -8,6 +8,7 @@ M.setup = function()
 			event = { "BufEnter", "BufNewFile" },
 			config = config.cursorword,
 		},
+		{ "tpope/vim-commentary", keys = "g" },
 		{
 			"tpope/vim-surround",
 			keys = { "c", "d", "y" },
