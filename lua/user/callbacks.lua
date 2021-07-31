@@ -2,7 +2,7 @@ local M = {}
 
 M.setup = function()
 	lvim.builtin.autopairs.on_config_done = function(module)
-		print(vim.inspect(module))
+		-- print(vim.inspect(module))
 		local endwise = require("nvim-autopairs.ts-rule").endwise
 		-- local npairs = require("nvim-autopairs")
 		module.add_rules({

@@ -24,6 +24,7 @@ M.setup = function()
 		{
 			"ray-x/lsp_signature.nvim",
 		},
+		{ "unblevable/quick-scope", event = { "BufEnter", "BufNewFile" } },
 		{
 			"tpope/vim-fugitive",
 			cmd = {
@@ -46,28 +47,7 @@ M.setup = function()
 		{
 			"kevinhwang91/nvim-bqf",
 			event = { "BufRead", "BufNew" },
-			config = function()
-				require("bqf").setup({
-					auto_enable = true,
-					preview = {
-						win_height = 12,
-						win_vheight = 12,
-						delay_syntax = 80,
-						border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
-					},
-					func_map = {
-						vsplit = "",
-						ptogglemode = "z,",
-						stoggleup = "",
-					},
-					filter = {
-						fzf = {
-							action_for = { ["ctrl-s"] = "split" },
-							extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
-						},
-					},
-				})
-			end,
+			config = config.bqf,
 		},
 		{
 			"tpope/vim-bundler",
@@ -105,11 +85,6 @@ M.setup = function()
 			"sindrets/diffview.nvim",
 			event = "BufRead",
 		},
-		-- {
-		-- 	"kdheepak/lazygit.nvim",
-		-- 	cmd = { "LazyGit" },
-		-- 	requires = { "nvim-lua/plenary.nvim" },
-		-- },
 		{
 			"windwp/nvim-ts-autotag",
 			event = "InsertEnter",
@@ -131,12 +106,12 @@ M.setup = function()
 		-- {
 		-- 	"arcticicestudio/nord-vim",
 		-- },
-		-- { "folke/tokyonight.nvim" },
 		{
 			"tweekmonster/startuptime.vim",
 			cmd = "StartupTime",
 		},
 		{ "mattn/emmet-vim", ft = { "html", "css", "eruby", "javascript" } },
+		{ "" },
 		-- {
 		-- 	"ray-x/navigator.lua",
 		-- 	requires = { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
@@ -145,7 +120,7 @@ M.setup = function()
 		-- 	end,
 		-- },
 
-		{ "jbyuki/one-small-step-for-vimkind" },
+		-- { "jbyuki/one-small-step-for-vimkind" },
 	}
 end
 

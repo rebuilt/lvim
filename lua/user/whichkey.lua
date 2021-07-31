@@ -3,14 +3,14 @@ M.setup = function()
 	lvim.builtin.which_key.mappings = {
 		["c"] = { "<cmd>BufferClose!<CR>", "Close Buffer" },
 		["e"] = { "<cmd>lua require'core.nvimtree'.toggle_tree()<CR>", "Explorer" },
-		["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
 
 		p = {
 			name = "Packer",
 			c = { "<cmd>PackerCompile<cr>", "Compile" },
 			i = { "<cmd>PackerInstall<cr>", "Install" },
-			r = { "<cmd>lua require('lv-utils').reload_lv_config()<cr>", "Reload" },
+			r = { "<cmd>lua require('utils').reload_lv_config()<cr>", "Reload" },
 			s = { "<cmd>PackerSync<cr>", "Sync" },
+			S = { "<cmd>PackerStatus<cr>", "Status" },
 			u = { "<cmd>PackerUpdate<cr>", "Update" },
 		},
 
@@ -24,11 +24,20 @@ M.setup = function()
 			k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 			l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 			m = { "<cmd>Telescope git_status<cr>", "Modified files" },
-			o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
 			p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 			r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 			s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
 			u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
+		},
+
+		t = {
+			name = "Fugitive",
+			d = { "<cmd>Git diff<cr>", "Diff" },
+			m = { "<cmd>Git mergetool<cr>", "Mergetool" },
+			t = { "<cmd>Gstatus<cr>", "Status" },
+			s = { "<cmd>Gdiffsplit<cr>", "Diffsplit" },
+			r = { "<cmd>Gread<cr>", "Read" },
+			b = { "<cmd>Gbrowse<cr>", "Browse" },
 		},
 
 		l = {
@@ -89,6 +98,12 @@ M.setup = function()
 			s = { "<cmd>Telescope gosource<cr>", "Go Source" },
 			t = { "<cmd>Telescope help_tags<cr>", "Tags" },
 			w = { "<cmd>Telescope live_grep<cr>", "Word" },
+		},
+		m = {
+			name = "Minimap",
+
+			m = { "<cmd>MinimapToggle<cr>", "Minimap" },
+			-- { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
 		},
 	}
 end

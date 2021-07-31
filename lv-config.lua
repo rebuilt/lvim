@@ -1,6 +1,7 @@
 -- General settings for neovim
 -- =========================================
 
+lvim.debug = true
 lvim.format_on_save = true
 lvim.lint_on_save = true
 vim.cmd("set timeoutlen=1000")
@@ -22,7 +23,6 @@ lvim.builtin.treesitter.playground.enable = true
 lvim.builtin.treesitter.textsubjects.enable = true
 lvim.builtin.treesitter.textsubjects.keymaps[";"] = "textsubjects-big"
 lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart"
--- lvim.lang.lua.formatter.exe = "stylua"
 lvim.builtin.terminal.active = true
 lvim.lsp.default_keybinds = false
 lvim.builtin.telescope.extensions = {
@@ -50,7 +50,6 @@ require("user.whichkey").setup()
 require("user.callbacks").setup()
 
 -- language
--- lvim.lang.javascript.formatter.exe = "prettier"
 
 -- colorscheme
 vim.g.onedark_style = "darker"

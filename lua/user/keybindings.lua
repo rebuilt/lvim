@@ -4,9 +4,9 @@ M.setup = function()
 	-- ========================================
 	-- keymappings
 
-	lvim.keys.leader_key = "space"
-	lvim.lsp.default_keybinds = nil
+	lvim.leader = "space"
 
+	-- lvim.lsp.default_keybinds = nil
 	vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
 	vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
 	vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
@@ -14,8 +14,8 @@ M.setup = function()
 	vim.cmd(
 		"nnoremap <silent> gl <cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>"
 	)
-
-	-- use gx and gy because it doesn't override any of the built in g<character> commands
+	--
+	-- 	-- use gx and gy because it doesn't override any of the built in g<character> commands
 	vim.cmd("nnoremap <silent> gx <cmd>lua require'lsp'.PeekDefinition()<CR>")
 	vim.cmd("map <silent> gy :lua vim.lsp.buf.hover()<CR>")
 	vim.cmd(
@@ -38,8 +38,9 @@ M.setup = function()
 	-- format with prettier
 	-- vim.api.nvim_set_keymap("n", "<F7>", ":!prettier --stdin-filepath % | e!<cr>", { noremap = true, silent = true })
 
-	-- save a file every time you exit insert mode
-	vim.api.nvim_set_keymap("i", "<Esc>", "<Esc>:w<CR>", { noremap = true, silent = true })
+	-- save a file every time you exit insert mode if updates were made
+	-- vim.api.nvim_set_keymap("i", "<Esc>", "<Esc>:up<CR>", { noremap = true, silent = true })
+
 	-- close a buffer
 	vim.api.nvim_set_keymap("n", "<S-x>", "<cmd>BufferClose!<CR>", { noremap = true, silent = true })
 
@@ -58,7 +59,6 @@ M.setup = function()
 	-- Keep the cursor in the same place when joining lines
 	vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true, silent = true })
 
-	--
 	vim.api.nvim_set_keymap(
 		"n",
 		"k",
@@ -71,7 +71,6 @@ M.setup = function()
 		[[(v:count > 5 ? "m'" . v:count : "") . 'j']],
 		{ noremap = true, silent = true, expr = true }
 	)
-	-- lvim.keys.normal_mode[#lvim.keys.normal_mode + 1] = {}
 end
 
 return M
