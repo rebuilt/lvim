@@ -1,4 +1,5 @@
 local M = {}
+lvim.leader = "space"
 M.setup = function()
 	lvim.builtin.which_key.mappings = {
 		["a"] = { "<cmd>:e ~/.config/lvim/config.lua<cr>", "Settings file" },

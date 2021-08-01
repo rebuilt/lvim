@@ -4,8 +4,6 @@ M.setup = function()
 	-- ========================================
 	-- keymappings
 
-	lvim.leader = "space"
-
 	-- lvim.lsp.default_keybinds = nil
 	vim.cmd('nnoremap <silent> <leader>y "+y')
 	vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")

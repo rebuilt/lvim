@@ -83,8 +83,8 @@ M.setup = function()
 		},
 		{
 			"sindrets/diffview.nvim",
-			cmd = {"DiffviewOpen","DiffViewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh"},
-      config = config.diffview,
+			cmd = { "DiffviewOpen", "DiffViewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh" },
+			config = config.diffview,
 		},
 		{
 			"windwp/nvim-ts-autotag",
