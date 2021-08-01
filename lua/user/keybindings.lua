@@ -7,6 +7,7 @@ M.setup = function()
 	lvim.leader = "space"
 
 	-- lvim.lsp.default_keybinds = nil
+	vim.cmd('nnoremap <silent> <leader>y "+y')
 	vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
 	vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
 	vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
@@ -58,6 +59,7 @@ M.setup = function()
 
 	-- Keep the cursor in the same place when joining lines
 	vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "<leader>y", '"+y', { noremap = true, silent = true })
 
 	vim.api.nvim_set_keymap(
 		"n",

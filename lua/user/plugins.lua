@@ -83,7 +83,8 @@ M.setup = function()
 		},
 		{
 			"sindrets/diffview.nvim",
-			event = "BufRead",
+			cmd = {"DiffviewOpen","DiffViewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh"},
+      config = config.diffview,
 		},
 		{
 			"windwp/nvim-ts-autotag",
@@ -111,7 +112,6 @@ M.setup = function()
 			cmd = "StartupTime",
 		},
 		{ "mattn/emmet-vim", ft = { "html", "css", "eruby", "javascript" } },
-		{ "" },
 		-- {
 		-- 	"ray-x/navigator.lua",
 		-- 	requires = { "ray-x/guihua.lua", run = "cd lua/fzy && make" },

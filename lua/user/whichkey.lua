@@ -1,7 +1,7 @@
 local M = {}
 M.setup = function()
 	lvim.builtin.which_key.mappings = {
-		["c"] = { "<cmd>BufferClose!<CR>", "Close Buffer" },
+		["a"] = { "<cmd>:e ~/.config/lvim/config.lua<cr>", "Settings file" },
 		["e"] = { "<cmd>lua require'core.nvimtree'.toggle_tree()<CR>", "Explorer" },
 
 		p = {

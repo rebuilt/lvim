@@ -2,7 +2,7 @@
 -- =========================================
 
 lvim.debug = true
-lvim.format_on_save = true
+lvim.format_on_save = false
 lvim.lint_on_save = true
 vim.cmd("set timeoutlen=1000")
 vim.cmd("set number")
@@ -14,6 +14,7 @@ vim.opt.linebreak = true
 vim.opt.list = false
 
 lvim.builtin.dap.active = true
+lvim.builtin.dashboard.active = true
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "kotlin" }
 lvim.builtin.treesitter.highlight.enabled = true
@@ -47,10 +48,14 @@ require("user.keybindings").setup()
 require("user.whichkey").setup()
 
 -- calbacks
-require("user.callbacks").setup()
+-- require("user.callbacks").setup()
 
 -- language
 
 -- colorscheme
 vim.g.onedark_style = "darker"
 lvim.colorscheme = "onedark"
+
+
+package.loaded['galaxyline'] = nil
+

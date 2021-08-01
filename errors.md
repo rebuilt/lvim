@@ -130,3 +130,25 @@ git clone https://github.com/jose-elias-alvarez/null-ls.nvim.git ~/.local/share/
 
 lvim.database.auto_execute = 1
 lvim.database.save_location = "~/.config/lunarvim_db"
+
+
+# Telescope does this to hot reload configuration 
+-- Hot reload stuff
+package.loaded['telescope'] = nil
+package.loaded['telescope.init'] = nil
+package.loaded['telescope.picker'] = nil
+package.loaded['telescope.finder'] = nil
+
+
+require("plenary.reload").reload_module("which-key")
+
+rg plenary.reload
+opt/which-key.nvim/lua/which-key/init.lua
+105:  require("plenary.reload").reload_module("which-key")
+
+start/popup.nvim/lua/tests/basic_popup_spec.lua
+1:require('plenary.reload').reload_module('popup')
+
+start/telescope.nvim/scratch/simplest_test.lua
+1:require('plenary.reload').reload_module('telescope')
+
