@@ -71,6 +71,11 @@ M.setup = function()
 		[[(v:count > 5 ? "m'" . v:count : "") . 'j']],
 		{ noremap = true, silent = true, expr = true }
 	)
+
+	vim.api.nvim_set_keymap("n", "y", '"+y', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "Y", '"+yy', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "p", '"+p', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "P", '"+P', { noremap = true, silent = true })
 end
 
 return M

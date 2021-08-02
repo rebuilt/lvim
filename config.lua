@@ -45,7 +45,7 @@ require("user.keybindings").setup()
 
 -- whichkey bindings
 -- =========================================
-require("user.whichkey").setup()
+-- require("user.whichkey").setup()
 
 -- calbacks
 -- require("user.callbacks").setup()
@@ -54,6 +54,15 @@ require("user.whichkey").setup()
 
 -- colorscheme
 vim.g.onedark_style = "darker"
-lvim.colorscheme = "onedark"
 
-package.loaded["galaxyline"] = nil
+-- package.loaded["galaxyline"] = nil
+lvim.lang.lua.formatters = {
+	{
+		exe = "stylua",
+		args = {},
+	},
+}
+
+-- lvim.autocommands.custom_groups = {
+-- 	{ "BufWinEnter", "*.lua", "lua require('user.execs').bind_lua()" },
+-- }
