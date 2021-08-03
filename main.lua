@@ -30,7 +30,6 @@ lvim.builtin.treesitter.textsubjects.enable = true
 lvim.builtin.treesitter.textsubjects.keymaps[";"] = "textsubjects-big"
 lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart"
 lvim.builtin.terminal.active = true
-lvim.lsp.default_keybinds = false
 lvim.builtin.telescope.extensions = {
 	fzy_native = {
 		override_generic_sorter = false,

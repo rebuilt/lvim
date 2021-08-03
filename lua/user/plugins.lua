@@ -22,7 +22,7 @@ M.setup = function()
 			keys = { "%." },
 		},
 		{
-			"ray-x/lsp_signature.nvim", event = "InsertEnter",
+			"ray-x/lsp_signature.nvim",
 		},
 		{ "unblevable/quick-scope", event = { "BufEnter", "BufNewFile" } },
 		{
@@ -76,7 +76,7 @@ M.setup = function()
 			run = "cargo install --locked code-minimap",
 			cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
 			config = config.minimap,
-      },
+		},
 		{
 			"sindrets/diffview.nvim",
 			cmd = { "DiffviewOpen", "DiffViewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh" },

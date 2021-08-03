@@ -4,16 +4,17 @@ M.setup = function()
 	-- ========================================
 	-- keymappings
 
-	-- vim.cmd('nnoremap <silent> <leader>y "+y')
-	lvim.keys.normal_mode = {
-		["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>" },
-		["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>" },
-		["gr"] = { "<cmd>lua vim.lsp.buf.references()<CR>" },
-		["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>" },
-		["gl"] = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>" },
-		["Q"] = { "@q" },
-	}
-	--
+	vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {noremap = true, silent = true})
+	vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {noremap = true, silent = true})
+	vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", {noremap = true, silent = true})
+	vim.api.nvim_set_keymap(
+		"n",
+		"gl",
+		"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>"
+	, {noremap = true, silent = true})
+	vim.api.nvim_set_keymap("n", "gQ", "@q", {noremap = true, silent = true})
+
+	lvim.lsp.default_keybinds = false
 	-- 	-- use gx and gy because it doesn't override any of the built in g<character> commands
 	vim.cmd("nnoremap <silent> gx <cmd>lua require'lsp'.PeekDefinition()<CR>")
 	vim.cmd("map <silent> gy :lua vim.lsp.buf.hover()<CR>")
