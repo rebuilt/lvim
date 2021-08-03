@@ -75,4 +75,18 @@ M.diffview = function()
 	})
 end
 
+M.minimap = function()
+				vim.cmd("let g:minimap_width = 10")
+				vim.cmd("let g:minimap_auto_start = 0")
+				vim.cmd("let g:minimap_auto_start_win_enter = 0")
+end
+
+M.autotag = function()
+				require("nvim-treesitter.configs").setup({
+					autotag = {
+						enable = true,
+					},
+				})
+end
+
 return M

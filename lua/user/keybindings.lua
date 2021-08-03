@@ -4,15 +4,15 @@ M.setup = function()
 	-- ========================================
 	-- keymappings
 
-	-- lvim.lsp.default_keybinds = nil
-	vim.cmd('nnoremap <silent> <leader>y "+y')
-	vim.cmd("nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>")
-	vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
-	vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
-	vim.cmd("nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>")
-	vim.cmd(
-		"nnoremap <silent> gl <cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>"
-	)
+	-- vim.cmd('nnoremap <silent> <leader>y "+y')
+	lvim.keys.normal_mode = {
+		["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>" },
+		["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<CR>" },
+		["gr"] = { "<cmd>lua vim.lsp.buf.references()<CR>" },
+		["gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>" },
+		["gl"] = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>" },
+		["Q"] = { "@q" },
+	}
 	--
 	-- 	-- use gx and gy because it doesn't override any of the built in g<character> commands
 	vim.cmd("nnoremap <silent> gx <cmd>lua require'lsp'.PeekDefinition()<CR>")
@@ -36,9 +36,6 @@ M.setup = function()
 
 	-- format with prettier
 	-- vim.api.nvim_set_keymap("n", "<F7>", ":!prettier --stdin-filepath % | e!<cr>", { noremap = true, silent = true })
-
-	-- save a file every time you exit insert mode if updates were made
-	-- vim.api.nvim_set_keymap("i", "<Esc>", "<Esc>:up<CR>", { noremap = true, silent = true })
 
 	-- close a buffer
 	vim.api.nvim_set_keymap("n", "<S-x>", "<cmd>BufferClose!<CR>", { noremap = true, silent = true })
@@ -72,6 +69,7 @@ M.setup = function()
 		{ noremap = true, silent = true, expr = true }
 	)
 
+	-- Yank and paste to clipboard
 	vim.api.nvim_set_keymap("n", "y", '"+y', { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "Y", '"+yy', { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "p", '"+p', { noremap = true, silent = true })

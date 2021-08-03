@@ -1,0 +1,3 @@
+#!/bin/sh
+ln -sfn $(ls -I config.lua -I README.md -I .git -I mode -I notes -I lua -I plugin | fzf ) config.lua
+lvim +PackerSync

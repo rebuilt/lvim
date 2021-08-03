@@ -22,7 +22,7 @@ M.setup = function()
 			keys = { "%." },
 		},
 		{
-			"ray-x/lsp_signature.nvim",
+			"ray-x/lsp_signature.nvim", event = "InsertEnter",
 		},
 		{ "unblevable/quick-scope", event = { "BufEnter", "BufNewFile" } },
 		{
@@ -75,12 +75,8 @@ M.setup = function()
 			"wfxr/minimap.vim",
 			run = "cargo install --locked code-minimap",
 			cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
-			config = function()
-				vim.cmd("let g:minimap_width = 10")
-				vim.cmd("let g:minimap_auto_start = 0")
-				vim.cmd("let g:minimap_auto_start_win_enter = 0")
-			end,
-		},
+			config = config.minimap,
+      },
 		{
 			"sindrets/diffview.nvim",
 			cmd = { "DiffviewOpen", "DiffViewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh" },
@@ -90,13 +86,7 @@ M.setup = function()
 			"windwp/nvim-ts-autotag",
 			event = "InsertEnter",
 			ft = { "html", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" },
-			config = function()
-				require("nvim-treesitter.configs").setup({
-					autotag = {
-						enable = true,
-					},
-				})
-			end,
+			config = config.autotag,
 		},
 		{
 			"navarasu/onedark.nvim",
@@ -104,23 +94,11 @@ M.setup = function()
 				require("onedark").setup()
 			end,
 		},
-		-- {
-		-- 	"arcticicestudio/nord-vim",
-		-- },
 		{
 			"tweekmonster/startuptime.vim",
 			cmd = "StartupTime",
 		},
 		{ "mattn/emmet-vim", ft = { "html", "css", "eruby", "javascript" } },
-		-- {
-		-- 	"ray-x/navigator.lua",
-		-- 	requires = { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
-		-- 	config = function()
-		-- 		require("navigator").setup()
-		-- 	end,
-		-- },
-
-		-- { "jbyuki/one-small-step-for-vimkind" },
 	}
 end
 
