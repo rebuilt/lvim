@@ -8,6 +8,7 @@ M.setup = function()
 			event = { "BufEnter", "BufNewFile" },
 			config = config.cursorword,
 		},
+		{ "nvim-lua/lsp-status.nvim" },
 		{ "tpope/vim-commentary", keys = "g" },
 		{
 			"tpope/vim-surround",

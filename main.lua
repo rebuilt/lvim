@@ -2,21 +2,16 @@
 -- =========================================
 
 lvim.debug = true
--- lvim.format_on_save = true
 lvim.format_on_save = true
 lvim.lint_on_save = true
-vim.cmd("set timeoutlen=1000")
-vim.cmd("set number")
-vim.cmd("set relativenumber")
-vim.cmd("set hlsearch")
 
+vim.opt.timeoutlen = 1000
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.hlsearch = true
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.list = false
-vim.g.LanguageClient_serverCommands = {
-	["text"] = { "unified-language-server", "--parser=retext-english", "--stdio" },
-	["markdown"] = { "unified-language-server", "--parser=remark-parse", "--stdio" },
-}
 
 lvim.builtin.dap.active = true
 lvim.builtin.dashboard.active = false
@@ -44,42 +39,27 @@ require("user.plugins").setup()
 
 -- general keybindings
 -- =========================================
-
 require("user.keybindings").setup()
 
 -- whichkey bindings
 -- =========================================
 require("user.whichkey").setup()
 
--- calbacks
+-- callbacks
 require("user.callbacks").setup()
-
--- language
 
 -- colorscheme
 vim.g.onedark_style = "darker"
 
--- package.loaded["galaxyline"] = nil
-lvim.lang.lua.formatters = {
+lvim.lang.javascript.formatters = {
 	{
-		exe = "stylua",
-		args = {},
-	},
-}
-lvim.lang.python.formatters = {
-	{
-		exe = "black",
+		exe = "prettier",
 		args = {},
 	},
 }
 lvim.lang.ruby.formatters = {
 	{
 		exe = "rufo",
-		args = { "" },
+		args = {},
 	},
 }
--- lvim.autocommands.custom_groups = {
--- 	{ "BufWinEnter", "*.lua", "lua require('user.execs').bind_lua()" },
--- }
--- require("lspconfig").sorbet.setup({})
--- if formatters[1].exe ~= "lsp" then
