@@ -75,6 +75,12 @@ M.setup = function()
 	vim.api.nvim_set_keymap("n", "Y", '"+yy', { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "p", '"+p', { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "P", '"+P', { noremap = true, silent = true })
+
+  -- Key vim defaults for navigating buffer.  H = High, M = Middle, L = Low
+  lvim.keys.normal_mode["H"] = "H"
+  lvim.keys.normal_mode["L"] = "L"
+	vim.api.nvim_set_keymap("n", "]b", ':BufferNext<CR>', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "[b", ':BufferPrevious<CR>', { noremap = true, silent = true })
 end
 
 return M

@@ -51,15 +51,29 @@ require("user.callbacks").setup()
 -- colorscheme
 vim.g.onedark_style = "darker"
 
-lvim.lang.javascript.formatters = {
-	{
-		exe = "prettier",
-		args = {},
-	},
-}
-lvim.lang.ruby.formatters = {
-	{
-		exe = "rufo",
-		args = {},
-	},
-}
+-- lvim.lang.javascript.formatters = {
+-- 	{
+-- 		exe = "prettier",
+-- 		args = {},
+-- 	},
+-- }
+-- lvim.lang.ruby.formatters = {
+-- 	{
+-- 		exe = "rufo",
+-- 		args = {},
+-- 	},
+-- }
+-- local util = require("lspconfig/util")
+-- lvim.lang.ruby.lsp.setup = {
+--     cmd = { "solargraph", "stdio" },
+--     filetypes = { "ruby" },
+--     init_options = {
+--       formatting = true
+--     },
+--     root_dir = util.root_pattern("Gemfile", ".git"),
+--     settings = {
+--       solargraph = {
+--         diagnostics = true
+--       }
+--     }
+-- }

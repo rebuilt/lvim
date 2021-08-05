@@ -20,7 +20,6 @@ M.setup = function()
 		},
 		{
 			"tpope/vim-repeat",
-			keys = { "%." },
 		},
 		{
 			"ray-x/lsp_signature.nvim",
@@ -55,11 +54,11 @@ M.setup = function()
 			cmd = { "Bundler", "Bopen", "Bsplit", "Btabedit" },
 		},
 		-- yay -S glow
-		{
-			"npxbr/glow.nvim",
-			ft = { "markdown" },
-			-- run = "yay -S glow"
-		},
+		-- {
+		-- 	"npxbr/glow.nvim",
+		-- 	ft = { "markdown" },
+		-- 	-- run = "yay -S glow"
+		-- },
 		{
 			"iamcco/markdown-preview.nvim",
 			ft = "markdown",
@@ -72,12 +71,12 @@ M.setup = function()
 			"nvim-telescope/telescope-fzy-native.nvim",
 			run = "make",
 		},
-		{
-			"wfxr/minimap.vim",
-			run = "cargo install --locked code-minimap",
-			cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
-			config = config.minimap,
-		},
+		-- {
+		-- 	"wfxr/minimap.vim",
+		-- 	run = "cargo install --locked code-minimap",
+		-- 	cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
+		-- 	config = config.minimap,
+		-- },
 		{
 			"sindrets/diffview.nvim",
 			cmd = { "DiffviewOpen", "DiffViewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh" },
