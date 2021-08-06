@@ -1,7 +1,7 @@
 -- General settings for neovim
 -- =========================================
 
-lvim.debug = true
+-- lvim.debug = true
 lvim.format_on_save = true
 lvim.lint_on_save = true
 
@@ -49,8 +49,3 @@ require("user.callbacks").setup()
 
 -- colorscheme
 vim.g.onedark_style = "darker"
-
-lvim.builtin.which_key.mappings["Li"] = {
-	"<cmd>lua package.loaded['core.info']=nil; require('core.info').toggle_display(vim.bo.filetype)<cr>",
-	"Toggle LunarVim Info",
-}
