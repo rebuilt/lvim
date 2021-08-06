@@ -76,17 +76,83 @@ M.diffview = function()
 end
 
 M.minimap = function()
-				vim.cmd("let g:minimap_width = 10")
-				vim.cmd("let g:minimap_auto_start = 0")
-				vim.cmd("let g:minimap_auto_start_win_enter = 0")
+	vim.cmd("let g:minimap_width = 10")
+	vim.cmd("let g:minimap_auto_start = 0")
+	vim.cmd("let g:minimap_auto_start_win_enter = 0")
 end
 
 M.autotag = function()
-				require("nvim-treesitter.configs").setup({
-					autotag = {
-						enable = true,
+	require("nvim-treesitter.configs").setup({
+		autotag = {
+			enable = true,
+		},
+	})
+end
+
+M.text_objects = function()
+	require("nvim-treesitter.configs").setup({
+		textobjects = {
+			move = {
+				enable = true,
+				set_jumps = true, -- whether to set jumps in the jumplist
+				goto_next_start = {
+					["]m"] = "@function.outer",
+					["]]"] = "@class.outer",
+				},
+				goto_next_end = {
+					["]M"] = "@function.outer",
+					["]["] = "@class.outer",
+				},
+				goto_previous_start = {
+					["[m"] = "@function.outer",
+					["[["] = "@class.outer",
+				},
+				goto_previous_end = {
+					["[M"] = "@function.outer",
+					["[]"] = "@class.outer",
+				},
+			},
+			select = {
+				enable = true,
+
+				-- Automatically jump forward to textobj, similar to targets.vim
+				lookahead = true,
+
+				keymaps = {
+					-- You can use the capture groups defined in textobjects.scm
+					["af"] = "@function.outer",
+					["if"] = "@function.inner",
+					["ac"] = "@class.outer",
+					["ic"] = "@class.inner",
+
+					-- Or you can define your own textobjects like this
+					["iF"] = {
+						python = "(function_definition) @function",
+						cpp = "(function_definition) @function",
+						c = "(function_definition) @function",
+						java = "(method_declaration) @function",
 					},
-				})
+				},
+			},
+			swap = {
+				enable = true,
+				swap_next = {
+					["<leader>x"] = "@parameter.inner",
+				},
+				swap_previous = {
+					["<leader>X"] = "@parameter.inner",
+				},
+			},
+			lsp_interop = {
+				enable = true,
+				border = "none",
+				peek_definition_code = {
+					["df"] = "@function.outer",
+					["dF"] = "@class.outer",
+				},
+			},
+		},
+	})
 end
 
 return M

@@ -4,19 +4,22 @@ M.setup = function()
 	-- ========================================
 	-- keymappings
 
-	vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {noremap = true, silent = true})
-	vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {noremap = true, silent = true})
-	vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", {noremap = true, silent = true})
+	lvim.lsp.default_keybinds = false
+	vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
 	vim.api.nvim_set_keymap(
 		"n",
 		"gl",
-		"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>"
-	, {noremap = true, silent = true})
-	vim.api.nvim_set_keymap("n", "gQ", "@q", {noremap = true, silent = true})
+		"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>",
+		{ noremap = true, silent = true }
+	)
 
-	lvim.lsp.default_keybinds = false
-	-- 	-- use gx and gy because it doesn't override any of the built in g<character> commands
-	vim.cmd("nnoremap <silent> gx <cmd>lua require'lsp'.PeekDefinition()<CR>")
+	-- Run macro bound to q with Q
+	vim.api.nvim_set_keymap("n", "Q", "@q", { noremap = true, silent = true })
+
+	-- use gx and gy because it doesn't override any of the built in g<character> commands
+	vim.cmd("nnoremap <silent> gx <cmd>lua require'lsp.peek'.Peek('definition')<CR>")
 	vim.cmd("map <silent> gy :lua vim.lsp.buf.hover()<CR>")
 	vim.cmd(
 		"nnoremap <silent> [d :lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<CR>"
@@ -57,16 +60,17 @@ M.setup = function()
 	vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "<leader>y", '"+y', { noremap = true, silent = true })
 
+	-- If a movement is greater than 15 lines, add it to the jump list
 	vim.api.nvim_set_keymap(
 		"n",
 		"k",
-		[[(v:count > 5 ? "m'" . v:count : "") . 'k']],
+		[[(v:count > 15 ? "m'" . v:count : "") . 'k']],
 		{ noremap = true, silent = true, expr = true }
 	)
 	vim.api.nvim_set_keymap(
 		"n",
 		"j",
-		[[(v:count > 5 ? "m'" . v:count : "") . 'j']],
+		[[(v:count > 15 ? "m'" . v:count : "") . 'j']],
 		{ noremap = true, silent = true, expr = true }
 	)
 
@@ -76,11 +80,13 @@ M.setup = function()
 	vim.api.nvim_set_keymap("n", "p", '"+p', { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "P", '"+P', { noremap = true, silent = true })
 
-  -- Key vim defaults for navigating buffer.  H = High, M = Middle, L = Low
-  lvim.keys.normal_mode["H"] = "H"
-  lvim.keys.normal_mode["L"] = "L"
-	vim.api.nvim_set_keymap("n", "]b", ':BufferNext<CR>', { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "[b", ':BufferPrevious<CR>', { noremap = true, silent = true })
+	-- Reset the 'L' and 'H' navigation keys to default
+	lvim.keys.normal_mode["<S-l>"] = "L"
+	lvim.keys.normal_mode["<S-h>"] = "H"
+
+	-- Navigate to next buffer
+	vim.api.nvim_set_keymap("n", "<A-l>", ":BufferNext<CR>", { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "<A-h>", ":BufferPrevious<CR>", { noremap = true, silent = true })
 end
 
 return M

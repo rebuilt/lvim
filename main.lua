@@ -13,8 +13,9 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.list = false
 
-lvim.builtin.dap.active = true
+lvim.builtin.dap.active = false
 lvim.builtin.dashboard.active = false
+lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "kotlin" }
 lvim.builtin.treesitter.highlight.enabled = true
@@ -24,7 +25,7 @@ lvim.builtin.treesitter.playground.enable = true
 lvim.builtin.treesitter.textsubjects.enable = true
 lvim.builtin.treesitter.textsubjects.keymaps[";"] = "textsubjects-big"
 lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart"
-lvim.builtin.terminal.active = true
+lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.telescope.extensions = {
 	fzy_native = {
 		override_generic_sorter = false,
@@ -49,3 +50,4 @@ require("user.callbacks").setup()
 
 -- colorscheme
 vim.g.onedark_style = "darker"
+lvim.colorscheme = "onedark"

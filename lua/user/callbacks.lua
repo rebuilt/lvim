@@ -13,6 +13,8 @@ M.setup = function()
 		--        :end_wise(cond.not_after_regex_check('.'))
 
 		module.remove_rule("`")
+		module.remove_rule("%")
+		module.remove_rule("$")
 		local Rule = require("nvim-autopairs.rule")
 		module.add_rule(Rule("`", "`", { "lua", "ruby", "javascript" }))
 		module.add_rule(Rule("```", "```", "markdown"))

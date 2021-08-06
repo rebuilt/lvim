@@ -8,6 +8,17 @@ M.setup = function()
 			event = { "BufEnter", "BufNewFile" },
 			config = config.cursorword,
 		},
+		{
+			"junegunn/vim-easy-align",
+			setup = function()
+				vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)", { noremap = false, silent = true })
+			end,
+			keys = "<Plug>(EasyAlign)",
+		},
+		{
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			config = config.text_objects,
+		},
 		{ "nvim-lua/lsp-status.nvim" },
 		{ "tpope/vim-commentary", keys = "g" },
 		{

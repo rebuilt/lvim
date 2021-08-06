@@ -1,13 +1,13 @@
 lvim.lang.python.formatters = {
-  {
-    exe = "yapf",
-    args = {},
-  },
+	{
+		exe = "yapf",
+		args = {},
+	},
 }
 
 lvim.lang.python.linters = {
-  {
-    exe = "flake8",
-    args = {},
-  },
+	{
+		exe = "flake8",
+		args = {},
+	},
 }

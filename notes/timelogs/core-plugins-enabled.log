@@ -1,0 +1,498 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.011  000.011: --- NVIM STARTING ---
+000.375  000.364: locale set
+000.771  000.396: inits 1
+000.791  000.019: window checked
+000.795  000.004: parsing arguments
+000.854  000.059: expanding arguments
+000.918  000.064: inits 2
+001.571  000.653: init highlight
+001.574  000.003: waiting for UI
+002.858  001.283: done waiting for UI
+002.869  000.012: initialized screen early for UI
+002.967  000.097: --cmd commands
+057.887  000.325  000.325: sourcing /usr/local/share/nvim/runtime/syntax/syncolor.vim
+060.949  004.417  004.092: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+068.546  065.557  061.141: sourcing /home/nelson/.local/share/lunarvim/lvim/init.lua
+068.554  000.030: sourcing vimrc file(s)
+073.553  000.011  000.011: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+073.575  000.008  000.008: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+073.601  000.016  000.016: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+073.764  000.022  000.022: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/fish.lua
+073.792  000.016  000.016: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/julia.lua
+073.822  000.020  000.020: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/zig.lua
+074.033  005.450  005.357: sourcing /usr/local/share/nvim/runtime/filetype.vim
+074.231  000.027  000.027: sourcing /usr/local/share/nvim/runtime/ftplugin.vim
+074.421  000.024  000.024: sourcing /usr/local/share/nvim/runtime/indent.vim
+074.686  000.010  000.010: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+075.319  000.698  000.688: sourcing /usr/local/share/nvim/runtime/syntax/synload.vim
+075.386  000.806  000.108: sourcing /usr/local/share/nvim/runtime/syntax/syntax.vim
+076.209  000.179  000.179: sourcing /usr/local/share/nvim/runtime/plugin/gzip.vim
+076.231  000.008  000.008: sourcing /usr/local/share/nvim/runtime/plugin/health.vim
+076.299  000.057  000.057: sourcing /usr/local/share/nvim/runtime/plugin/man.vim
+076.720  000.168  000.168: sourcing /usr/local/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+076.784  000.470  000.302: sourcing /usr/local/share/nvim/runtime/plugin/matchit.vim
+076.910  000.114  000.114: sourcing /usr/local/share/nvim/runtime/plugin/matchparen.vim
+077.243  000.320  000.320: sourcing /usr/local/share/nvim/runtime/plugin/netrwPlugin.vim
+077.387  000.008  000.008: sourcing /home/nelson/.local/share/nvim/rplugin.vim
+077.393  000.125  000.116: sourcing /usr/local/share/nvim/runtime/plugin/rplugin.vim
+077.494  000.089  000.089: sourcing /usr/local/share/nvim/runtime/plugin/shada.vim
+077.535  000.019  000.019: sourcing /usr/local/share/nvim/runtime/plugin/spellfile.vim
+077.667  000.114  000.114: sourcing /usr/local/share/nvim/runtime/plugin/tarPlugin.vim
+077.753  000.065  000.065: sourcing /usr/local/share/nvim/runtime/plugin/tohtml.vim
+077.787  000.015  000.015: sourcing /usr/local/share/nvim/runtime/plugin/tutor.vim
+077.944  000.142  000.142: sourcing /usr/local/share/nvim/runtime/plugin/zipPlugin.vim
+080.484  002.310  002.310: sourcing /home/nelson/.config/lvim/plugin/packer_compiled.lua
+080.488  001.602: loading plugins
+080.723  000.063  000.063: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/DAPInstall.nvim/plugin/dicmds.vim
+081.512  000.687  000.687: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/astronauta.nvim/plugin/astronauta.vim
+081.643  000.038  000.038: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nlsp-settings.nvim/plugin/nlspsetting.vim
+081.857  000.061  000.061: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+082.047  000.095  000.095: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-tree.lua/plugin/tree.vim
+082.646  000.502  000.502: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.vim
+082.771  000.011  000.011: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+082.796  000.009  000.009: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+082.824  000.014  000.014: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+082.922  000.030  000.030: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+083.069  000.026  000.026: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+083.503  000.320  000.320: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/telescope.nvim/plugin/telescope.vim
+083.777  000.168  000.168: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/vim-rooter/plugin/rooter.vim
+083.891  001.379: loading packages
+084.028  000.137: loading after plugins
+084.039  000.011: inits 3
+086.351  002.313: reading ShaDa
+087.486  000.567  000.567: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/galaxyline.nvim/plugin/galaxyline.vim
+088.067  000.014  000.014: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/which-key.nvim/plugin/which-key.vim
+090.001  000.045  000.045: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/autoload/bufferline/highlight.vim
+092.250  002.894  002.849: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/plugin/bufferline.vim
+092.480  000.032  000.032: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-toggleterm.lua/plugin/toggleterm.vim
+094.326  004.467: opening buffers
+104.772  010.446: BufEnter autocommands
+104.777  000.005: editing files in windows
+105.027  000.043  000.043: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-lspinstall/plugin/lspinstall.vim
+122.248  017.428: VimEnter autocommands
+122.257  000.009: UIEnter autocommands
+122.579  000.188  000.188: sourcing /usr/local/share/nvim/runtime/autoload/provider/clipboard.vim
+122.587  000.142: before starting main loop
+123.277  000.690: first screen update
+123.279  000.003: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.011  000.011: --- NVIM STARTING ---
+000.380  000.369: locale set
+000.777  000.397: inits 1
+000.795  000.018: window checked
+000.800  000.005: parsing arguments
+000.876  000.075: expanding arguments
+000.931  000.056: inits 2
+001.609  000.678: init highlight
+001.612  000.003: waiting for UI
+002.548  000.935: done waiting for UI
+002.565  000.017: initialized screen early for UI
+002.663  000.099: --cmd commands
+059.002  000.247  000.247: sourcing /usr/local/share/nvim/runtime/syntax/syncolor.vim
+062.273  004.645  004.398: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+070.129  067.443  062.798: sourcing /home/nelson/.local/share/lunarvim/lvim/init.lua
+070.138  000.031: sourcing vimrc file(s)
+075.356  000.011  000.011: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+075.380  000.009  000.009: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+075.410  000.018  000.018: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+075.577  000.022  000.022: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/fish.lua
+075.603  000.016  000.016: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/julia.lua
+075.638  000.022  000.022: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/zig.lua
+075.858  005.692  005.593: sourcing /usr/local/share/nvim/runtime/filetype.vim
+076.058  000.029  000.029: sourcing /usr/local/share/nvim/runtime/ftplugin.vim
+076.255  000.025  000.025: sourcing /usr/local/share/nvim/runtime/indent.vim
+076.525  000.011  000.011: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+077.144  000.684  000.673: sourcing /usr/local/share/nvim/runtime/syntax/synload.vim
+077.211  000.792  000.108: sourcing /usr/local/share/nvim/runtime/syntax/syntax.vim
+078.034  000.180  000.180: sourcing /usr/local/share/nvim/runtime/plugin/gzip.vim
+078.059  000.011  000.011: sourcing /usr/local/share/nvim/runtime/plugin/health.vim
+078.131  000.062  000.062: sourcing /usr/local/share/nvim/runtime/plugin/man.vim
+078.554  000.173  000.173: sourcing /usr/local/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+078.621  000.477  000.304: sourcing /usr/local/share/nvim/runtime/plugin/matchit.vim
+078.753  000.119  000.119: sourcing /usr/local/share/nvim/runtime/plugin/matchparen.vim
+079.100  000.334  000.334: sourcing /usr/local/share/nvim/runtime/plugin/netrwPlugin.vim
+079.258  000.009  000.009: sourcing /home/nelson/.local/share/nvim/rplugin.vim
+079.265  000.140  000.131: sourcing /usr/local/share/nvim/runtime/plugin/rplugin.vim
+079.361  000.081  000.081: sourcing /usr/local/share/nvim/runtime/plugin/shada.vim
+079.405  000.021  000.021: sourcing /usr/local/share/nvim/runtime/plugin/spellfile.vim
+079.544  000.120  000.120: sourcing /usr/local/share/nvim/runtime/plugin/tarPlugin.vim
+079.636  000.070  000.070: sourcing /usr/local/share/nvim/runtime/plugin/tohtml.vim
+079.672  000.016  000.016: sourcing /usr/local/share/nvim/runtime/plugin/tutor.vim
+079.837  000.149  000.149: sourcing /usr/local/share/nvim/runtime/plugin/zipPlugin.vim
+082.418  002.348  002.348: sourcing /home/nelson/.config/lvim/plugin/packer_compiled.lua
+082.422  001.621: loading plugins
+082.664  000.065  000.065: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/DAPInstall.nvim/plugin/dicmds.vim
+083.488  000.723  000.723: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/astronauta.nvim/plugin/astronauta.vim
+083.624  000.040  000.040: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nlsp-settings.nvim/plugin/nlspsetting.vim
+083.840  000.063  000.063: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+084.038  000.100  000.100: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-tree.lua/plugin/tree.vim
+084.722  000.586  000.586: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.vim
+084.848  000.010  000.010: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+084.873  000.009  000.009: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+084.904  000.015  000.015: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+085.003  000.031  000.031: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+085.166  000.026  000.026: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+085.600  000.278  000.278: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/telescope.nvim/plugin/telescope.vim
+085.887  000.175  000.175: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/vim-rooter/plugin/rooter.vim
+086.003  001.462: loading packages
+086.142  000.139: loading after plugins
+086.153  000.011: inits 3
+088.484  002.330: reading ShaDa
+089.495  000.477  000.477: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/galaxyline.nvim/plugin/galaxyline.vim
+090.088  000.014  000.014: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/which-key.nvim/plugin/which-key.vim
+092.101  000.047  000.047: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/autoload/bufferline/highlight.vim
+094.444  003.012  002.965: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/plugin/bufferline.vim
+094.686  000.035  000.035: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-toggleterm.lua/plugin/toggleterm.vim
+096.484  004.462: opening buffers
+107.115  010.631: BufEnter autocommands
+107.120  000.006: editing files in windows
+107.367  000.045  000.045: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-lspinstall/plugin/lspinstall.vim
+124.709  017.544: VimEnter autocommands
+124.717  000.008: UIEnter autocommands
+125.033  000.190  000.190: sourcing /usr/local/share/nvim/runtime/autoload/provider/clipboard.vim
+125.040  000.133: before starting main loop
+125.786  000.745: first screen update
+125.788  000.003: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.012  000.012: --- NVIM STARTING ---
+000.391  000.380: locale set
+000.775  000.384: inits 1
+000.793  000.018: window checked
+000.798  000.005: parsing arguments
+000.856  000.058: expanding arguments
+000.917  000.061: inits 2
+001.490  000.572: init highlight
+001.491  000.002: waiting for UI
+002.708  001.217: done waiting for UI
+002.722  000.014: initialized screen early for UI
+002.826  000.104: --cmd commands
+061.391  000.265  000.265: sourcing /usr/local/share/nvim/runtime/syntax/syncolor.vim
+064.461  004.430  004.166: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+072.384  069.537  065.106: sourcing /home/nelson/.local/share/lunarvim/lvim/init.lua
+072.393  000.031: sourcing vimrc file(s)
+077.919  000.016  000.016: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+077.951  000.009  000.009: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+077.989  000.027  000.027: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+078.201  000.045  000.045: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/fish.lua
+078.237  000.024  000.024: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/julia.lua
+078.269  000.021  000.021: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/zig.lua
+078.524  006.104  005.962: sourcing /usr/local/share/nvim/runtime/filetype.vim
+078.728  000.031  000.031: sourcing /usr/local/share/nvim/runtime/ftplugin.vim
+079.038  000.034  000.034: sourcing /usr/local/share/nvim/runtime/indent.vim
+079.455  000.017  000.017: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+080.485  001.135  001.117: sourcing /usr/local/share/nvim/runtime/syntax/synload.vim
+080.575  001.287  000.153: sourcing /usr/local/share/nvim/runtime/syntax/syntax.vim
+082.061  000.501  000.501: sourcing /usr/local/share/nvim/runtime/plugin/gzip.vim
+082.095  000.013  000.013: sourcing /usr/local/share/nvim/runtime/plugin/health.vim
+082.193  000.082  000.082: sourcing /usr/local/share/nvim/runtime/plugin/man.vim
+082.804  000.244  000.244: sourcing /usr/local/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+082.900  000.689  000.445: sourcing /usr/local/share/nvim/runtime/plugin/matchit.vim
+083.074  000.157  000.157: sourcing /usr/local/share/nvim/runtime/plugin/matchparen.vim
+083.533  000.441  000.441: sourcing /usr/local/share/nvim/runtime/plugin/netrwPlugin.vim
+083.730  000.011  000.011: sourcing /home/nelson/.local/share/nvim/rplugin.vim
+083.738  000.170  000.159: sourcing /usr/local/share/nvim/runtime/plugin/rplugin.vim
+083.858  000.101  000.101: sourcing /usr/local/share/nvim/runtime/plugin/shada.vim
+083.922  000.025  000.025: sourcing /usr/local/share/nvim/runtime/plugin/spellfile.vim
+084.098  000.151  000.151: sourcing /usr/local/share/nvim/runtime/plugin/tarPlugin.vim
+084.227  000.099  000.099: sourcing /usr/local/share/nvim/runtime/plugin/tohtml.vim
+084.272  000.020  000.020: sourcing /usr/local/share/nvim/runtime/plugin/tutor.vim
+084.483  000.189  000.189: sourcing /usr/local/share/nvim/runtime/plugin/zipPlugin.vim
+088.206  003.398  003.398: sourcing /home/nelson/.config/lvim/plugin/packer_compiled.lua
+088.212  002.327: loading plugins
+088.571  000.098  000.098: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/DAPInstall.nvim/plugin/dicmds.vim
+089.743  001.033  001.033: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/astronauta.nvim/plugin/astronauta.vim
+089.940  000.059  000.059: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nlsp-settings.nvim/plugin/nlspsetting.vim
+090.252  000.084  000.084: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+090.529  000.138  000.138: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-tree.lua/plugin/tree.vim
+091.548  000.884  000.884: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.vim
+091.719  000.015  000.015: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+091.755  000.012  000.012: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+091.799  000.020  000.020: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+091.935  000.042  000.042: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+092.191  000.083  000.083: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+092.861  000.494  000.494: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/telescope.nvim/plugin/telescope.vim
+093.309  000.289  000.289: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/vim-rooter/plugin/rooter.vim
+093.478  002.015: loading packages
+093.700  000.222: loading after plugins
+093.716  000.017: inits 3
+096.292  002.576: reading ShaDa
+097.433  000.576  000.576: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/galaxyline.nvim/plugin/galaxyline.vim
+098.033  000.013  000.013: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/which-key.nvim/plugin/which-key.vim
+100.034  000.045  000.045: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/autoload/bufferline/highlight.vim
+102.302  002.902  002.857: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/plugin/bufferline.vim
+102.532  000.034  000.034: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-toggleterm.lua/plugin/toggleterm.vim
+104.323  004.506: opening buffers
+114.981  010.658: BufEnter autocommands
+114.987  000.006: editing files in windows
+115.224  000.045  000.045: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-lspinstall/plugin/lspinstall.vim
+131.648  016.617: VimEnter autocommands
+131.656  000.008: UIEnter autocommands
+131.980  000.187  000.187: sourcing /usr/local/share/nvim/runtime/autoload/provider/clipboard.vim
+131.987  000.144: before starting main loop
+132.721  000.734: first screen update
+132.724  000.003: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.009  000.009: --- NVIM STARTING ---
+000.266  000.257: locale set
+000.536  000.270: inits 1
+000.548  000.012: window checked
+000.551  000.003: parsing arguments
+000.598  000.046: expanding arguments
+000.636  000.039: inits 2
+000.984  000.347: init highlight
+000.985  000.001: waiting for UI
+002.136  001.152: done waiting for UI
+002.145  000.009: initialized screen early for UI
+002.217  000.072: --cmd commands
+039.334  000.307  000.307: sourcing /usr/local/share/nvim/runtime/syntax/syncolor.vim
+042.571  004.587  004.280: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+050.441  048.209  043.622: sourcing /home/nelson/.local/share/lunarvim/lvim/init.lua
+050.448  000.022: sourcing vimrc file(s)
+055.279  000.010  000.010: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+055.298  000.007  000.007: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+055.325  000.017  000.017: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+055.478  000.020  000.020: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/fish.lua
+055.502  000.014  000.014: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/julia.lua
+055.530  000.019  000.019: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/zig.lua
+055.720  005.244  005.155: sourcing /usr/local/share/nvim/runtime/filetype.vim
+055.895  000.024  000.024: sourcing /usr/local/share/nvim/runtime/ftplugin.vim
+056.068  000.022  000.022: sourcing /usr/local/share/nvim/runtime/indent.vim
+056.328  000.010  000.010: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+056.925  000.662  000.652: sourcing /usr/local/share/nvim/runtime/syntax/synload.vim
+056.991  000.771  000.109: sourcing /usr/local/share/nvim/runtime/syntax/syntax.vim
+057.762  000.163  000.163: sourcing /usr/local/share/nvim/runtime/plugin/gzip.vim
+057.782  000.007  000.007: sourcing /usr/local/share/nvim/runtime/plugin/health.vim
+057.844  000.052  000.052: sourcing /usr/local/share/nvim/runtime/plugin/man.vim
+058.218  000.152  000.152: sourcing /usr/local/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+058.276  000.420  000.268: sourcing /usr/local/share/nvim/runtime/plugin/matchit.vim
+058.391  000.105  000.105: sourcing /usr/local/share/nvim/runtime/plugin/matchparen.vim
+058.696  000.293  000.293: sourcing /usr/local/share/nvim/runtime/plugin/netrwPlugin.vim
+058.826  000.008  000.008: sourcing /home/nelson/.local/share/nvim/rplugin.vim
+058.832  000.114  000.106: sourcing /usr/local/share/nvim/runtime/plugin/rplugin.vim
+058.914  000.070  000.070: sourcing /usr/local/share/nvim/runtime/plugin/shada.vim
+058.951  000.018  000.018: sourcing /usr/local/share/nvim/runtime/plugin/spellfile.vim
+059.072  000.105  000.105: sourcing /usr/local/share/nvim/runtime/plugin/tarPlugin.vim
+059.156  000.064  000.064: sourcing /usr/local/share/nvim/runtime/plugin/tohtml.vim
+059.186  000.013  000.013: sourcing /usr/local/share/nvim/runtime/plugin/tutor.vim
+059.330  000.130  000.130: sourcing /usr/local/share/nvim/runtime/plugin/zipPlugin.vim
+061.785  002.218  002.218: sourcing /home/nelson/.config/lvim/plugin/packer_compiled.lua
+061.789  001.507: loading plugins
+062.008  000.057  000.057: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/DAPInstall.nvim/plugin/dicmds.vim
+062.711  000.616  000.616: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/astronauta.nvim/plugin/astronauta.vim
+062.910  000.041  000.041: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nlsp-settings.nvim/plugin/nlspsetting.vim
+063.120  000.057  000.057: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+063.309  000.093  000.093: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-tree.lua/plugin/tree.vim
+063.942  000.536  000.536: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.vim
+064.066  000.011  000.011: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+064.092  000.009  000.009: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+064.121  000.014  000.014: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+064.214  000.029  000.029: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+064.357  000.026  000.026: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+064.767  000.295  000.295: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/telescope.nvim/plugin/telescope.vim
+065.041  000.168  000.168: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/vim-rooter/plugin/rooter.vim
+065.153  001.412: loading packages
+065.291  000.138: loading after plugins
+065.302  000.011: inits 3
+067.564  002.262: reading ShaDa
+068.523  000.476  000.476: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/galaxyline.nvim/plugin/galaxyline.vim
+069.198  000.013  000.013: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/which-key.nvim/plugin/which-key.vim
+071.123  000.042  000.042: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/autoload/bufferline/highlight.vim
+073.191  002.659  002.617: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/plugin/bufferline.vim
+073.405  000.030  000.030: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-toggleterm.lua/plugin/toggleterm.vim
+075.160  004.418: opening buffers
+085.772  010.612: BufEnter autocommands
+085.778  000.006: editing files in windows
+086.035  000.044  000.044: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-lspinstall/plugin/lspinstall.vim
+102.440  016.618: VimEnter autocommands
+102.448  000.008: UIEnter autocommands
+102.747  000.173  000.173: sourcing /usr/local/share/nvim/runtime/autoload/provider/clipboard.vim
+102.754  000.133: before starting main loop
+103.501  000.748: first screen update
+103.503  000.002: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.011  000.011: --- NVIM STARTING ---
+000.383  000.371: locale set
+000.799  000.416: inits 1
+000.828  000.030: window checked
+000.833  000.004: parsing arguments
+000.894  000.061: expanding arguments
+000.945  000.052: inits 2
+001.580  000.635: init highlight
+001.582  000.002: waiting for UI
+002.791  001.209: done waiting for UI
+002.804  000.013: initialized screen early for UI
+002.907  000.103: --cmd commands
+059.125  000.252  000.252: sourcing /usr/local/share/nvim/runtime/syntax/syncolor.vim
+062.176  004.392  004.140: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+069.987  067.056  062.663: sourcing /home/nelson/.local/share/lunarvim/lvim/init.lua
+069.994  000.031: sourcing vimrc file(s)
+075.177  000.011  000.011: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+075.198  000.008  000.008: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+075.225  000.016  000.016: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+075.387  000.021  000.021: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/fish.lua
+075.414  000.015  000.015: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/julia.lua
+075.451  000.022  000.022: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/zig.lua
+075.688  005.667  005.573: sourcing /usr/local/share/nvim/runtime/filetype.vim
+075.885  000.028  000.028: sourcing /usr/local/share/nvim/runtime/ftplugin.vim
+076.078  000.026  000.026: sourcing /usr/local/share/nvim/runtime/indent.vim
+076.349  000.010  000.010: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+076.910  000.630  000.619: sourcing /usr/local/share/nvim/runtime/syntax/synload.vim
+076.981  000.743  000.113: sourcing /usr/local/share/nvim/runtime/syntax/syntax.vim
+077.781  000.172  000.172: sourcing /usr/local/share/nvim/runtime/plugin/gzip.vim
+077.804  000.008  000.008: sourcing /usr/local/share/nvim/runtime/plugin/health.vim
+077.875  000.059  000.059: sourcing /usr/local/share/nvim/runtime/plugin/man.vim
+078.290  000.169  000.169: sourcing /usr/local/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+078.355  000.467  000.298: sourcing /usr/local/share/nvim/runtime/plugin/matchit.vim
+078.483  000.116  000.116: sourcing /usr/local/share/nvim/runtime/plugin/matchparen.vim
+078.821  000.325  000.325: sourcing /usr/local/share/nvim/runtime/plugin/netrwPlugin.vim
+078.986  000.009  000.009: sourcing /home/nelson/.local/share/nvim/rplugin.vim
+078.992  000.135  000.127: sourcing /usr/local/share/nvim/runtime/plugin/rplugin.vim
+079.082  000.076  000.076: sourcing /usr/local/share/nvim/runtime/plugin/shada.vim
+079.126  000.018  000.018: sourcing /usr/local/share/nvim/runtime/plugin/spellfile.vim
+079.261  000.116  000.116: sourcing /usr/local/share/nvim/runtime/plugin/tarPlugin.vim
+079.357  000.069  000.069: sourcing /usr/local/share/nvim/runtime/plugin/tohtml.vim
+079.391  000.015  000.015: sourcing /usr/local/share/nvim/runtime/plugin/tutor.vim
+079.552  000.146  000.146: sourcing /usr/local/share/nvim/runtime/plugin/zipPlugin.vim
+082.038  002.252  002.252: sourcing /home/nelson/.config/lvim/plugin/packer_compiled.lua
+082.043  001.612: loading plugins
+082.273  000.061  000.061: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/DAPInstall.nvim/plugin/dicmds.vim
+083.064  000.685  000.685: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/astronauta.nvim/plugin/astronauta.vim
+083.196  000.037  000.037: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nlsp-settings.nvim/plugin/nlspsetting.vim
+083.407  000.060  000.060: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+083.596  000.093  000.093: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-tree.lua/plugin/tree.vim
+084.299  000.606  000.606: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.vim
+084.426  000.011  000.011: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+084.451  000.009  000.009: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+084.481  000.015  000.015: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+084.576  000.028  000.028: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+084.720  000.025  000.025: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+085.127  000.294  000.294: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/telescope.nvim/plugin/telescope.vim
+085.404  000.171  000.171: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/vim-rooter/plugin/rooter.vim
+085.514  001.377: loading packages
+085.733  000.219: loading after plugins
+085.745  000.011: inits 3
+087.998  002.253: reading ShaDa
+089.021  000.499  000.499: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/galaxyline.nvim/plugin/galaxyline.vim
+089.608  000.013  000.013: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/which-key.nvim/plugin/which-key.vim
+091.553  000.045  000.045: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/autoload/bufferline/highlight.vim
+093.789  002.889  002.844: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/plugin/bufferline.vim
+094.024  000.033  000.033: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-toggleterm.lua/plugin/toggleterm.vim
+095.890  004.459: opening buffers
+106.499  010.609: BufEnter autocommands
+106.505  000.005: editing files in windows
+106.752  000.047  000.047: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-lspinstall/plugin/lspinstall.vim
+123.694  017.143: VimEnter autocommands
+123.704  000.009: UIEnter autocommands
+124.031  000.191  000.191: sourcing /usr/local/share/nvim/runtime/autoload/provider/clipboard.vim
+124.039  000.144: before starting main loop
+124.691  000.652: first screen update
+124.693  000.002: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.012  000.012: --- NVIM STARTING ---
+000.386  000.374: locale set
+000.771  000.385: inits 1
+000.790  000.019: window checked
+000.794  000.004: parsing arguments
+000.857  000.063: expanding arguments
+000.912  000.055: inits 2
+001.515  000.603: init highlight
+001.517  000.002: waiting for UI
+002.544  001.027: done waiting for UI
+002.558  000.014: initialized screen early for UI
+002.656  000.098: --cmd commands
+053.490  000.236  000.236: sourcing /usr/local/share/nvim/runtime/syntax/syncolor.vim
+056.471  004.274  004.039: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+064.204  061.527  057.253: sourcing /home/nelson/.local/share/lunarvim/lvim/init.lua
+064.212  000.030: sourcing vimrc file(s)
+069.212  000.011  000.011: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+069.234  000.008  000.008: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+069.262  000.017  000.017: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+069.428  000.023  000.023: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/fish.lua
+069.456  000.016  000.016: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/julia.lua
+069.485  000.019  000.019: sourcing /home/nelson/.local/share/lunarvim/lvim/ftdetect/zig.lua
+069.700  005.459  005.364: sourcing /usr/local/share/nvim/runtime/filetype.vim
+069.896  000.028  000.028: sourcing /usr/local/share/nvim/runtime/ftplugin.vim
+070.095  000.031  000.031: sourcing /usr/local/share/nvim/runtime/indent.vim
+070.361  000.010  000.010: sourcing /home/nelson/.local/share/lunarvim/lvim/colors/spacegray.vim
+070.947  000.650  000.641: sourcing /usr/local/share/nvim/runtime/syntax/synload.vim
+071.011  000.755  000.105: sourcing /usr/local/share/nvim/runtime/syntax/syntax.vim
+071.793  000.165  000.165: sourcing /usr/local/share/nvim/runtime/plugin/gzip.vim
+071.815  000.007  000.007: sourcing /usr/local/share/nvim/runtime/plugin/health.vim
+071.883  000.058  000.058: sourcing /usr/local/share/nvim/runtime/plugin/man.vim
+072.297  000.167  000.167: sourcing /usr/local/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+072.361  000.465  000.299: sourcing /usr/local/share/nvim/runtime/plugin/matchit.vim
+072.486  000.114  000.114: sourcing /usr/local/share/nvim/runtime/plugin/matchparen.vim
+072.818  000.319  000.319: sourcing /usr/local/share/nvim/runtime/plugin/netrwPlugin.vim
+072.962  000.008  000.008: sourcing /home/nelson/.local/share/nvim/rplugin.vim
+072.968  000.124  000.116: sourcing /usr/local/share/nvim/runtime/plugin/rplugin.vim
+073.059  000.078  000.078: sourcing /usr/local/share/nvim/runtime/plugin/shada.vim
+073.099  000.018  000.018: sourcing /usr/local/share/nvim/runtime/plugin/spellfile.vim
+073.231  000.114  000.114: sourcing /usr/local/share/nvim/runtime/plugin/tarPlugin.vim
+073.318  000.066  000.066: sourcing /usr/local/share/nvim/runtime/plugin/tohtml.vim
+073.352  000.016  000.016: sourcing /usr/local/share/nvim/runtime/plugin/tutor.vim
+073.535  000.168  000.168: sourcing /usr/local/share/nvim/runtime/plugin/zipPlugin.vim
+075.984  002.217  002.217: sourcing /home/nelson/.config/lvim/plugin/packer_compiled.lua
+075.988  001.575: loading plugins
+076.216  000.060  000.060: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/DAPInstall.nvim/plugin/dicmds.vim
+077.007  000.694  000.694: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/astronauta.nvim/plugin/astronauta.vim
+077.138  000.037  000.037: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nlsp-settings.nvim/plugin/nlspsetting.vim
+077.349  000.058  000.058: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+077.534  000.091  000.091: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-tree.lua/plugin/tree.vim
+078.174  000.543  000.543: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.vim
+078.296  000.011  000.011: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gdscript.vim
+078.321  000.009  000.009: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/gomod.vim
+078.349  000.014  000.014: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-treesitter/ftdetect/query.vim
+078.445  000.029  000.029: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+078.588  000.026  000.026: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+079.027  000.321  000.321: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/telescope.nvim/plugin/telescope.vim
+079.299  000.168  000.168: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/start/vim-rooter/plugin/rooter.vim
+079.412  001.364: loading packages
+079.551  000.139: loading after plugins
+079.563  000.012: inits 3
+081.710  002.147: reading ShaDa
+082.687  000.464  000.464: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/galaxyline.nvim/plugin/galaxyline.vim
+083.259  000.013  000.013: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/which-key.nvim/plugin/which-key.vim
+085.172  000.045  000.045: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/autoload/bufferline/highlight.vim
+087.457  002.919  002.874: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/barbar.nvim/plugin/bufferline.vim
+087.686  000.032  000.032: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-toggleterm.lua/plugin/toggleterm.vim
+089.398  004.260: opening buffers
+100.379  010.981: BufEnter autocommands
+100.385  000.006: editing files in windows
+100.621  000.044  000.044: sourcing /home/nelson/.local/share/lunarvim/site/pack/packer/opt/nvim-lspinstall/plugin/lspinstall.vim
+116.439  016.009: VimEnter autocommands
+116.447  000.008: UIEnter autocommands
+116.764  000.191  000.191: sourcing /usr/local/share/nvim/runtime/autoload/provider/clipboard.vim
+116.772  000.134: before starting main loop
+117.468  000.697: first screen update
+117.471  000.003: --- NVIM STARTED ---
