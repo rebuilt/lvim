@@ -3,6 +3,10 @@ lvim.lang.python.formatters = {
 		exe = "yapf",
 		args = {},
 	},
+	{
+		exe = "isort",
+		args = {},
+	},
 }
 
 lvim.lang.python.linters = {

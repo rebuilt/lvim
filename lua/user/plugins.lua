@@ -20,7 +20,7 @@ M.setup = function()
 			config = config.text_objects,
 		},
 		{ "nvim-lua/lsp-status.nvim" },
-		{ "tpope/vim-commentary", keys = "g" },
+		-- { "tpope/vim-commentary", keys = "g" },
 		{
 			"tpope/vim-surround",
 			keys = { "c", "d", "y" },
