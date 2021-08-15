@@ -9,6 +9,18 @@ M.setup = function()
 			config = config.cursorword,
 		},
 		{
+			"rcarriga/vim-ultest",
+			requires = { "vim-test/vim-test" },
+			run = ":UpdateRemotePlugins",
+			config = function()
+				vim.cmd("let g:ultest_use_pty = 1")
+			end,
+		},
+		{
+			"aca/emmet-ls",
+			ft = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" },
+		},
+		{
 			"simrat39/symbols-outline.nvim",
 			cmd = "SymbolsOutline",
 		},
