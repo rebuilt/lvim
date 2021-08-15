@@ -18,6 +18,10 @@ M.setup = function()
 		local Rule = require("nvim-autopairs.rule")
 		module.add_rule(Rule("`", "`", { "lua", "ruby", "javascript" }))
 		module.add_rule(Rule("```", "```", "markdown"))
+
+		-- Javascript rules
+		module.add_rule(Rule("<label ", "htmlFor=''></label>", "javascript"))
+		module.add_rule(Rule("<input ", "type='text' />", "javascript"))
 	end
 
 	lvim.lsp.on_attach_callback = function(client, bufnr)
