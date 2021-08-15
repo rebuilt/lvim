@@ -30,7 +30,7 @@ lvim.builtin.telescope.extensions = {
 		override_file_sorter = true,
 	},
 }
-
+vim.cmd([[command! Gpush term git push]])
 -- plugins
 -- =========================================
 require("user.plugins").setup()

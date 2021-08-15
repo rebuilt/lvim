@@ -9,6 +9,10 @@ M.setup = function()
 			config = config.cursorword,
 		},
 		{
+			"simrat39/symbols-outline.nvim",
+			cmd = "SymbolsOutline",
+		},
+		{
 			"junegunn/vim-easy-align",
 			setup = function()
 				vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)", { noremap = false, silent = true })

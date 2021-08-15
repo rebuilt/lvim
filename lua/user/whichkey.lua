@@ -2,6 +2,7 @@ local M = {}
 lvim.leader = "space"
 M.setup = function()
 	lvim.builtin.which_key.mappings["a"] = { "<cmd>:e ~/.config/lvim/config.lua<cr>", "Settings file" }
+	lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", "Outline" }
 	lvim.builtin.which_key.mappings["f"] = {
 		name = "Find",
 		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
