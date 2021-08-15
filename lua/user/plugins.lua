@@ -19,6 +19,7 @@ M.setup = function()
 		{
 			"aca/emmet-ls",
 			ft = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" },
+			config = config.emmet,
 		},
 		{
 			"simrat39/symbols-outline.nvim",
