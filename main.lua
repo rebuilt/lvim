@@ -1,6 +1,6 @@
 -- General settings for neovim
 -- =========================================
--- lvim.log.level = "warn"
+-- lvim.log.level = "debug"
 lvim.format_on_save = true
 
 vim.opt.timeoutlen = 1000
@@ -10,6 +10,7 @@ vim.opt.hlsearch = true
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.list = false
+vim.opt.inccommand = "split"
 
 lvim.builtin.dap.active = false
 lvim.builtin.dashboard.active = false
