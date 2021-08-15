@@ -31,3 +31,14 @@ if not lspconfig.emmet_ls then
 end    
 lspconfig.emmet_ls.setup{ capabilities = capabilities; }
 ```
+
+* set up test plugin
+https://github.com/rcarriga/vim-ultest
+
+``` lua
+use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
+```
+
+```
+let g:ultest_use_pty = 1
+```
