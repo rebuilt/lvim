@@ -47,6 +47,9 @@ require("user.whichkey").setup()
 -- callbacks
 require("user.callbacks").setup()
 
+-- additional lsp configs
+require("user.lsp").config()
+
 -- colorscheme
 vim.g.onedark_style = "darker"
 lvim.colorscheme = "onedark"

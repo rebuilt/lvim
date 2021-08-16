@@ -4,11 +4,6 @@ M.setup = function()
 	local config = require("user.plugin-configs")
 	lvim.plugins = {
 		{
-			"itchyny/vim-cursorword",
-			event = { "BufEnter", "BufNewFile" },
-			config = config.cursorword,
-		},
-		{
 			"rcarriga/vim-ultest",
 			requires = { "vim-test/vim-test" },
 			run = ":UpdateRemotePlugins",
@@ -18,8 +13,6 @@ M.setup = function()
 		},
 		{
 			"aca/emmet-ls",
-			ft = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" },
-			config = config.emmet,
 		},
 		{
 			"simrat39/symbols-outline.nvim",
