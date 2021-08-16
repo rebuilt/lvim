@@ -1,6 +1,6 @@
 lvim.lang.html.formatters = {
-  {
-    exe = "prettier",
-    args = {},
-  },
+	{
+		exe = "prettier",
+		args = {},
+	},
 }

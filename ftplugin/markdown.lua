@@ -2,12 +2,13 @@
 -- npm install --save-dev --save-exact prettier
 -- echo {}> .prettierrc.json
 
--- lvim.lang.markdown.formatters = {
--- 	{
--- 		exe = "prettier",
--- 		args = {},
--- 	},
--- }
+lvim.lang["markdown"] = {
+	formatters = {
+		{
+			exe = "prettier",
+		},
+	},
+}
 
 -- https://github.com/DavidAnson/markdownlint
 -- npm install markdownlint --save-dev

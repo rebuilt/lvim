@@ -1,18 +1,15 @@
 lvim.lang.dockerfile = {
-  formatters = {
-    exe = "",
-    args = {},
-  },
-  linters = {
-    {
-      exe = "hadolint",
-      args = {},
-    },
-  },
+	formatters = {
+		exe = "",
+	},
+	linters = {
+		{
+			exe = "hadolint",
+		},
+	},
 }
 lvim.lang.docker.linters = {
-  {
-    exe = "hadolint",
-    args = {},
-  },
+	{
+		exe = "hadolint",
+	},
 }
