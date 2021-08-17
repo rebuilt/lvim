@@ -31,7 +31,12 @@ lvim.builtin.telescope.extensions = {
 		override_file_sorter = true,
 	},
 }
+
+vim.g["vsnip_filetypes"] = {}
+vim.g.vsnip_filetypes["javascriptreact"] = { "html" }
+vim.g.vsnip_filetypes["javascriptreact"] = { "javascript" }
 vim.cmd([[command! Gpush term git push]])
+
 -- plugins
 -- =========================================
 require("user.plugins").setup()
