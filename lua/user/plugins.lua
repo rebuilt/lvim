@@ -8,11 +8,33 @@ M.setup = function()
 			requires = { "vim-test/vim-test" },
 			run = ":UpdateRemotePlugins",
 			config = function()
-				vim.cmd("let g:ultest_use_pty = 1")
+				vim.cmd([[
+          let test#javascript#reactscripts#options = "--watchAll=false"
+          let test#javascriptreact#reactscripts#options = "--watchAll=false"
+          let test#typescript#reactscripts#options = "--watchAll=false"
+          let test#typescriptreact#reactscripts#options = "--watchAll=false"
+          let g:ultest_use_pty = 1
+          let test#javascript#jest#options ='--color=always' 
+        ]])
 			end,
 		},
+		-- { "vim-test/vim-test", cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" } },
 		{
 			"aca/emmet-ls",
+		},
+		{
+			"norcalli/nvim-colorizer.lua",
+			config = function()
+				require("colorizer").setup({ "*" }, {
+					RGB = true, -- #RGB hex codes
+					RRGGBB = true, -- #RRGGBB hex codes
+					RRGGBBAA = true, -- #RRGGBBAA hex codes
+					rgb_fn = true, -- CSS rgb() and rgba() functions
+					hsl_fn = true, -- CSS hsl() and hsla() functions
+					css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+					css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+				})
+			end,
 		},
 		{
 			"simrat39/symbols-outline.nvim",
@@ -34,6 +56,10 @@ M.setup = function()
 		{
 			"tpope/vim-surround",
 			keys = { "c", "d", "y" },
+		},
+		{
+			"tpope/vim-dispatch",
+			cmd = { "Dispatch" },
 		},
 		{
 			"JoosepAlviste/nvim-ts-context-commentstring",
