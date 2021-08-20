@@ -28,35 +28,9 @@ M.setup = function()
 		require("lsp_signature").on_attach()
 	end
 
-	lvim.builtin.telescope.on_config_done = function(module)
-		module.load_extension("fzy_native")
-	end
-
-	lvim.builtin.galaxyline.on_config_done = function(module)
-		local section = module.section
-		local lsp_status = require("lsp-status")
-		lsp_status.config({
-			indicator_errors = "E",
-			indicator_warnings = "W",
-			indicator_info = "i",
-			indicator_hint = "?",
-			indicator_ok = "Ok",
-			diagnostics = false,
-			status_symbol = "",
-		})
-		lsp_status.register_progress()
-		table.insert(section.left, {
-			LspStatus = {
-				provider = function()
-					return lsp_status.status()
-				end,
-				-- event = "BufEnter",
-				separator = "",
-				separator_highlight = { "NONE", "#262626" },
-				highlight = { "#c8c9c1", "#262626" },
-			},
-		})
-	end
+	-- lvim.builtin.telescope.on_config_done = function(module)
+	-- 	module.load_extension("fzy_native")
+	-- end
 end
 
 return M

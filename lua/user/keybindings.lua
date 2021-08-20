@@ -81,7 +81,7 @@ M.setup = function()
 	vim.api.nvim_set_keymap("n", "P", '"+P', { noremap = true, silent = true })
 
 	-- Reset the 'L' and 'H' navigation keys to default
-	lvim.keys.normal_mode["<S-l>"] = "L"
+	lvim.keys.normal_mode["<S-l>"] = nil
 	lvim.keys.normal_mode["<S-h>"] = "H"
 
 	-- Navigate to next buffer

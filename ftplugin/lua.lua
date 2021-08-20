@@ -6,8 +6,8 @@ lvim.lang.lua.formatters = {
 }
 
 -- cargo install selene
-lvim.lang.lua.linters = {
-	{
-		exe = "selene",
-	},
-}
+-- lvim.lang.lua.linters = {
+-- 	{
+-- 		exe = "selene",
+-- 	},
+-- }

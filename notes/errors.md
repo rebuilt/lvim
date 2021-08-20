@@ -196,3 +196,39 @@ Lazy-loading autopairs saves 5-6ms
     end
   end
 
+
+## Root patterns
+"*.cabal",
+"*.hxml"
+".ccls", 
+".flowconfig"
+".fortls",
+"BUILD.bazel",
+"Dockerfile", 
+"angular.json",
+"build",
+"cabal.config",
+"cabal.project",
+"compile_commands.json",
+"compile_flags.txt",
+"deps.edn",
+"dockerfile",
+"elm.json", 
+"ember-cli-build.js",
+"go.mod",
+"hie-bios",
+"hie.yaml"
+"mix.exs",
+"package.json" ,
+"package.yaml",
+"project.clj",
+"project.godot",
+"pubspec.yaml" ,
+"stack.yaml",
+"tsconfig.json",
+'.graphql.config.*'
+'.graphqlrc*',
+'erlang.mk',
+'rebar.config', 
+'shard.yml',
+
