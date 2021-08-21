@@ -8,7 +8,6 @@ M.setup = function()
 		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
 		c = { "<cmd>Telescope git_commits<cr>", "Commits" },
 		d = { "<cmd>Telescope dotfiles path=" .. os.getenv("HOME") .. "/.dotfiles<cr>", "Neovim config" },
-		-- f = { "<cmd>Telescope find_files find_command=rg,--hidden,--files prompt_prefix=🔍<cr>", "File" },
 		f = { "<cmd>Telescope find_files<cr>", "File" },
 		g = { "<cmd>Telescope git_files<cr>", "Git files" },
 		j = { "<cmd>Telescope jumplist<cr>", "Jumplist" },

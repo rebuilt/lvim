@@ -58,6 +58,7 @@ M.setup = function()
 
 	-- Keep the cursor in the same place when joining lines
 	vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true, silent = true })
+
 	vim.api.nvim_set_keymap("n", "<leader>y", '"+y', { noremap = true, silent = true })
 
 	-- If a movement is greater than 15 lines, add it to the jump list
