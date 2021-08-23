@@ -83,11 +83,14 @@ M.setup = function()
 
 	-- Reset the 'L' and 'H' navigation keys to default
 	lvim.keys.normal_mode["<S-l>"] = nil
-	lvim.keys.normal_mode["<S-h>"] = "H"
+	lvim.keys.normal_mode["<S-h>"] = nil
+	-- lvim.keys.normal_mode["<S-h>"] = "H"
 
 	-- Navigate to next buffer
 	vim.api.nvim_set_keymap("n", "<A-l>", ":BufferNext<CR>", { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "<A-h>", ":BufferPrevious<CR>", { noremap = true, silent = true })
+
+	lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazydocker", "tl", "Lazydocker" }
 end
 
 return M

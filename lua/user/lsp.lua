@@ -27,7 +27,6 @@ M.config = function()
 					"javascriptreact",
 					"svelte",
 					"vue",
-					"markdown",
 				},
 				root_dir = function(fname)
 					return vim.loop.cwd()
