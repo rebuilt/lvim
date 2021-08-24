@@ -21,7 +21,7 @@ lvim.builtin.dap.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.telescope.defaults.find_command = { "rg" }
 lvim.builtin.project.active = true
-lvim.builtin.project.silent_chdir = false
+-- lvim.builtin.project.silent_chdir = false
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "kotlin" }
 lvim.builtin.treesitter.highlight.enabled = true
@@ -61,7 +61,6 @@ require("user.callbacks").setup()
 
 -- additional lsp configs
 require("user.lsp").config()
-
 -- colorscheme
 vim.g.onedark_style = "darker"
 lvim.colorscheme = "onedark"

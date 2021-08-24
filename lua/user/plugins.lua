@@ -3,24 +3,24 @@ local M = {}
 M.setup = function()
 	local config = require("user.plugin-configs")
 	lvim.plugins = {
-		{
-			"rcarriga/vim-ultest",
-			requires = { "vim-test/vim-test" },
-			run = ":UpdateRemotePlugins",
-			config = function()
-				vim.cmd([[
-          let test#javascript#reactscripts#options = "--watchAll=false"
-          let test#javascriptreact#reactscripts#options = "--watchAll=false"
-          let test#typescript#reactscripts#options = "--watchAll=false"
-          let test#typescriptreact#reactscripts#options = "--watchAll=false"
-          let g:ultest_use_pty = 1
-          let test#javascript#jest#options ='--color=always' 
-        ]])
-			end,
-		},
-		-- { "vim-test/vim-test", cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" } },
+		-- {
+		-- 	"lervag/vimtex",
+		-- 	config = function()
+		-- 		vim.cmd("call vimtex#init()")
+		-- 	end,
+		-- },
 		{
 			"aca/emmet-ls",
+			ft = {
+				"html",
+				"css",
+				"javascript",
+				"eruby",
+				"typescriptreact",
+				"javascriptreact",
+				"svelte",
+				"vue",
+			},
 		},
 		{
 			"norcalli/nvim-colorizer.lua",
@@ -51,7 +51,7 @@ M.setup = function()
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			config = config.text_objects,
 		},
-		{ "nvim-lua/lsp-status.nvim" },
+		-- { "nvim-lua/lsp-status.nvim" },
 		-- { "tpope/vim-commentary", keys = "g" },
 		{
 			"tpope/vim-surround",
@@ -145,7 +145,10 @@ M.setup = function()
 			"tweekmonster/startuptime.vim",
 			cmd = "StartupTime",
 		},
-		{ "mattn/emmet-vim", ft = { "html", "css", "eruby", "javascript" } },
+		{
+			"mattn/emmet-vim",
+			ft = { "html", "css", "eruby", "javascript" },
+		},
 	}
 end
 
