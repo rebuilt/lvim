@@ -8,12 +8,12 @@ M.setup = function()
 	vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap(
-		"n",
-		"gl",
-		"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>",
-		{ noremap = true, silent = true }
-	)
+	-- vim.api.nvim_set_keymap(
+	-- 	"n",
+	-- 	"gl",
+	-- 	"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>",
+	-- 	{ noremap = true, silent = true }
+	-- )
 
 	-- Run macro bound to q with Q
 	vim.api.nvim_set_keymap("n", "Q", "@q", { noremap = true, silent = true })

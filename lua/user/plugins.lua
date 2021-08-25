@@ -10,6 +10,15 @@ M.setup = function()
 		-- 	end,
 		-- },
 		{
+			"phaazon/hop.nvim",
+			as = "hop",
+			config = function()
+				-- you can configure Hop the way you like here; see :h hop-config
+				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+				vim.api.nvim_set_keymap("n", "gl", "<cmd>lua require'hop'.hint_words()<cr>", {})
+			end,
+		},
+		{
 			"aca/emmet-ls",
 			ft = {
 				"html",
@@ -47,10 +56,10 @@ M.setup = function()
 			end,
 			keys = "<Plug>(EasyAlign)",
 		},
-		{
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			config = config.text_objects,
-		},
+		-- {
+		-- 	"nvim-treesitter/nvim-treesitter-textobjects",
+		-- 	config = config.text_objects,
+		-- },
 		-- { "nvim-lua/lsp-status.nvim" },
 		-- { "tpope/vim-commentary", keys = "g" },
 		{
@@ -61,9 +70,12 @@ M.setup = function()
 			"tpope/vim-dispatch",
 			cmd = { "Dispatch" },
 		},
+		-- {
+		-- 	"JoosepAlviste/nvim-ts-context-commentstring",
+		-- 	event = "BufRead",
+		-- },
 		{
-			"JoosepAlviste/nvim-ts-context-commentstring",
-			event = "BufRead",
+			"tpope/vim-commentary",
 		},
 		{
 			"tpope/vim-repeat",

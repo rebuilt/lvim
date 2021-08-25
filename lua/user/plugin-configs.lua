@@ -120,18 +120,18 @@ M.text_objects = function()
 
 				keymaps = {
 					-- You can use the capture groups defined in textobjects.scm
-					["af"] = "@function.outer",
-					["if"] = "@function.inner",
+					-- ["af"] = "@function.outer",
+					-- ["if"] = "@function.inner",
 					["ac"] = "@class.outer",
 					["ic"] = "@class.inner",
 
 					-- Or you can define your own textobjects like this
-					["iF"] = {
-						python = "(function_definition) @function",
-						cpp = "(function_definition) @function",
-						c = "(function_definition) @function",
-						java = "(method_declaration) @function",
-					},
+					-- ["iF"] = {
+					-- 	python = "(function_definition) @function",
+					-- 	cpp = "(function_definition) @function",
+					-- 	c = "(function_definition) @function",
+					-- 	java = "(method_declaration) @function",
+					-- },
 				},
 			},
 			swap = {
@@ -146,10 +146,10 @@ M.text_objects = function()
 			lsp_interop = {
 				enable = true,
 				border = "none",
-				peek_definition_code = {
-					["df"] = "@function.outer",
-					["dF"] = "@class.outer",
-				},
+				-- peek_definition_code = {
+				-- 	["df"] = "@function.outer",
+				-- 	["dF"] = "@class.outer",
+				-- },
 			},
 		},
 	})
