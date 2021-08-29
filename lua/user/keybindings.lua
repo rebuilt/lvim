@@ -4,13 +4,13 @@ M.setup = function()
 	-- ========================================
 	-- keymappings
 
-	lvim.lsp.default_keybinds = false
-	vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
+	-- change default lsp keybindings
+	-- vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+	-- vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
+	-- vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
 	-- vim.api.nvim_set_keymap(
 	-- 	"n",
-	-- 	"gl",
+	-- 	"gz",
 	-- 	"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>",
 	-- 	{ noremap = true, silent = true }
 	-- )
@@ -89,6 +89,8 @@ M.setup = function()
 	-- Navigate to next buffer
 	vim.api.nvim_set_keymap("n", "<A-l>", ":BufferNext<CR>", { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "<A-h>", ":BufferPrevious<CR>", { noremap = true, silent = true })
+
+	vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", {})
 
 	lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazydocker", "tl", "Lazydocker" }
 end

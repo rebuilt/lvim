@@ -15,7 +15,6 @@ M.setup = function()
 			config = function()
 				-- you can configure Hop the way you like here; see :h hop-config
 				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-				vim.api.nvim_set_keymap("n", "gl", "<cmd>lua require'hop'.hint_words()<cr>", {})
 			end,
 		},
 		{
