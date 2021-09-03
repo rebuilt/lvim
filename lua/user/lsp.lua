@@ -21,12 +21,6 @@ M.config = function()
 				filetypes = {
 					"html",
 					"css",
-					"javascript",
-					"eruby",
-					"typescriptreact",
-					"javascriptreact",
-					"svelte",
-					"vue",
 				},
 				root_dir = function(fname)
 					return vim.loop.cwd()
