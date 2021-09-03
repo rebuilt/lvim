@@ -19,7 +19,7 @@ M.setup = function()
 	}
 
 	lvim.builtin.which_key.mappings["/"] = nil
-	lvim.builtin.which_key.mappings["w"] = nil
+	-- lvim.builtin.which_key.mappings["w"] = nil
 	lvim.builtin.which_key.mappings["q"] = nil
 	lvim.builtin.which_key.mappings["h"] = nil
 end
