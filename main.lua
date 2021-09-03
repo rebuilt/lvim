@@ -65,3 +65,7 @@ require("user.lsp").config()
 -- colorscheme
 vim.g.onedark_style = "darker"
 lvim.colorscheme = "onedark"
+
+lvim.autocommands.custom_groups = {
+	{ "CursorHold", "*", "lua vim.lsp.diagnostic.show_line_diagnostics()" },
+}
