@@ -22,12 +22,6 @@ M.setup = function()
 			ft = {
 				"html",
 				"css",
-				"javascript",
-				"eruby",
-				"typescriptreact",
-				"javascriptreact",
-				"svelte",
-				"vue",
 			},
 		},
 		{
@@ -125,10 +119,10 @@ M.setup = function()
 				vim.g.mkdp_auto_start = 1
 			end,
 		},
-		-- {
-		-- 	"nvim-telescope/telescope-fzy-native.nvim",
-		-- 	run = "make",
-		-- },
+		{
+			"nvim-telescope/telescope-fzy-native.nvim",
+			run = "make",
+		},
 		-- {
 		-- 	"wfxr/minimap.vim",
 		-- 	run = "cargo install --locked code-minimap",
