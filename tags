@@ -1,0 +1,69 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/nelson/.config/lvim/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210110.0/
+Changing values in lv-config.lua now requires that neovim be restarted.  Is this expected behavior?	notes/errors.md	/^#  Changing values in lv-config.lua now requires that neovim be restarted.  Is this expected beh/;"	c
+I have no idea what changed but Autopairs can now be lazy loaded.	notes/errors.md	/^# I have no idea what changed but Autopairs can now be lazy loaded.  $/;"	c
+I'm having trouble getting the core plugin callbacks to work	notes/errors.md	/^# I'm having trouble getting the core plugin callbacks to work$/;"	c
+Logic from start to window load	notes/lunar-cycle.md	/^# Logic from start to window load $/;"	c
+M.add_bindings	lua/user/execs.lua	/^M.add_bindings = function(bindings)$/;"	f
+M.autotag	lua/user/plugin-configs.lua	/^M.autotag = function()$/;"	f
+M.bfq	lua/user/plugin-configs.lua	/^M.bfq = function()$/;"	f
+M.bind_lua	lua/user/execs.lua	/^M.bind_lua = function()$/;"	f
+M.config	lua/user/lsp.lua	/^M.config = function()$/;"	f
+M.cursorword	lua/user/plugin-configs.lua	/^M.cursorword = function()$/;"	f
+M.diffview	lua/user/plugin-configs.lua	/^M.diffview = function()$/;"	f
+M.minimap	lua/user/plugin-configs.lua	/^M.minimap = function()$/;"	f
+M.setup	lua/user/callbacks.lua	/^M.setup = function()$/;"	f
+M.setup	lua/user/keybindings.lua	/^M.setup = function()$/;"	f
+M.setup	lua/user/plugins.lua	/^M.setup = function()$/;"	f
+M.setup	lua/user/whichkey.lua	/^M.setup = function()$/;"	f
+M.text_objects	lua/user/plugin-configs.lua	/^M.text_objects = function()$/;"	f
+Open the quickfix	notes/errors.md	/^# Open the quickfix$/;"	c
+Orphaned configuration options	notes/errors.md	/^# Orphaned configuration options$/;"	c
+Plugins	notes/todo.md	/^## Plugins$/;"	s	chapter:Todo
+Replace the O object with LV.  Confirm every change	notes/errors.md	/^# Replace the O object with LV.  Confirm every change$/;"	c
+Root patterns	notes/errors.md	/^## Root patterns$/;"	s	chapter:compe completion
+Search for the O object and put the results in a quickfix list	notes/errors.md	/^# Search for the O object and put the results in a quickfix list$/;"	c
+So I manually cloned the plugin	notes/errors.md	/^# So I manually cloned the plugin$/;"	c
+Telescope does this to hot reload configuration	notes/errors.md	/^# Telescope does this to hot reload configuration $/;"	c
+The colorscheme is being sourced twice.	notes/errors.md	/^# The colorscheme is being sourced twice.$/;"	c
+There is a problem right now with the new_contract branch.  On first launch I got these errors	notes/errors.md	/^#  There is a problem right now with the new_contract branch.  On first launch I got these error/;"	c
+These plugins will need to be installed by the installer script	notes/errors.md	/^# These plugins will need to be installed by the installer script$/;"	c
+This file had a lot of occurrences of 'O.'.  Made sure not to change it	notes/errors.md	/^# This file had a lot of occurrences of 'O.'.  Made sure not to change it$/;"	c
+Todo	notes/todo.md	/^# Todo$/;"	c
+Under the Hood	notes/lunar-cycle.md	/^# Under the Hood$/;"	c
+We want our search to be case sensitive	notes/errors.md	/^# We want our search to be case sensitive$/;"	c
+We will probably have to manually clone the plugin in the installer since this plugin gets used before packer has a chance to install it	notes/errors.md	/^# We will probably have to manually clone the plugin in the installer since this plugin gets use/;"	c
+Write all the changes	notes/errors.md	/^# Write all the changes$/;"	c
+["[M"]	lua/user/plugin-configs.lua	/^					["[M"] = "@function.outer",$/;"	f
+["[m"]	lua/user/plugin-configs.lua	/^					["[m"] = "@function.outer",$/;"	f
+["]M"]	lua/user/plugin-configs.lua	/^					["]M"] = "@function.outer",$/;"	f
+["]m"]	lua/user/plugin-configs.lua	/^					["]m"] = "@function.outer",$/;"	f
+`lua/lsp/null-ls.lua` is throwing errors when a formatter is not defined and needs a nil check	notes/errors.md	/^# `lua\/lsp\/null-ls.lua` is throwing errors when a formatter is not defined and needs a nil che/;"	c
+compe completion	notes/errors.md	/^# compe completion$/;"	c
+config	lua/user/plugins.lua	/^			config = function()$/;"	f
+config	testing.lua	/^		config = function()$/;"	f
+css_fn	lua/user/plugins.lua	/^					css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn$/;"	f
+error_msg	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
+hsl_fn	lua/user/plugins.lua	/^					hsl_fn = true, -- CSS hsl() and hsla() functions$/;"	f
+lvim.builtin.autopairs.on_config_done	lua/user/callbacks.lua	/^	lvim.builtin.autopairs.on_config_done = function(module)$/;"	f
+lvim.builtin.nvimtree.on_config_done	config.lua	/^lvim.builtin.nvimtree.on_config_done = function()$/;"	f
+lvim.builtin.nvimtree.on_config_done	main.lua	/^lvim.builtin.nvimtree.on_config_done = function()$/;"	f
+lvim.builtin.telescope.on_config_done	lua/user/callbacks.lua	/^	lvim.builtin.telescope.on_config_done = function(module)$/;"	f
+lvim.lsp.on_attach_callback	lua/user/callbacks.lua	/^	lvim.lsp.on_attach_callback = function(client, bufnr)$/;"	f
+rgb_fn	lua/user/plugins.lua	/^					rgb_fn = true, -- CSS rgb() and rgba() functions$/;"	f
+root_dir	lua/user/lsp.lua	/^				root_dir = function(fname)$/;"	f
+root_dir	testing.lua	/^						root_dir = function(fname)$/;"	f
+save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
+setup	lua/user/plugins.lua	/^			setup = function()$/;"	f
+time	plugin/packer_compiled.lua	/^    time = function(chunk, start) end$/;"	f
+time	plugin/packer_compiled.lua	/^    time = function(chunk, start)$/;"	f
+try_loadstring	plugin/packer_compiled.lua	/^local function try_loadstring(s, component, name)$/;"	f

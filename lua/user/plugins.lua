@@ -10,6 +10,17 @@ M.setup = function()
 		-- 	end,
 		-- },
 		{
+			"ibhagwan/fzf-lua",
+			requires = {
+				"vijaymarupudi/nvim-fzf",
+				"kyazdani42/nvim-web-devicons",
+			},
+			config = function()
+				vim.cmd([[ nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR> ]])
+			end,
+		},
+		{ "junegunn/fzf", run = "./install --bin" },
+		{
 			"phaazon/hop.nvim",
 			as = "hop",
 			config = function()
@@ -154,6 +165,15 @@ M.setup = function()
 			"mattn/emmet-vim",
 			ft = { "html", "css", "eruby", "javascript" },
 		},
+		-- {
+		-- 	"dense-analysis/ale",
+		-- 	config = function()
+		-- 		vim.cmd([[
+		-- let g:ale_disable_lsp = 1
+		-- let g:ale_lint_on_insert_leave=1
+		-- ]])
+		-- 	end,
+		-- },
 	}
 end
 
