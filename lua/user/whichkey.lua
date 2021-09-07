@@ -17,6 +17,17 @@ M.setup = function()
 		t = { "<cmd>Telescope help_tags<cr>", "Tags" },
 		w = { "<cmd>Telescope live_grep<cr>", "Word" },
 	}
+	lvim.builtin.which_key.mappings["s"] = {
+		s = { "<cmd>lua require('fzf-lua').files()<cr>", "Find files" },
+		a = { "<cmd>lua require('fzf-lua').grep_last()<cr>", "Search again" },
+		c = { "<cmd>lua require('fzf-lua').grep_cword()<cr>", "Current word" },
+		C = { "<cmd>lua require('fzf-lua').grepcWORD()<cr>", "Current WORD" },
+		v = { "<cmd>lua require('fzf-lua').grep_visual()<cr>", "Visual selection" },
+		b = { "<cmd>lua require('fzf-lua').grep_curbuf()<cr>", "Current buffer" },
+		B = { "<cmd>lua require('fzf-lua').builtin()<cr>", "Builtin" },
+		w = { "<cmd>lua require('fzf-lua').live_grep()<cr>", "Search for word" },
+		r = { "<cmd>lua require('fzf-lua').registers()<cr>", "Registers" },
+	}
 
 	lvim.builtin.which_key.mappings["/"] = nil
 	-- lvim.builtin.which_key.mappings["w"] = nil

@@ -16,7 +16,15 @@ M.setup = function()
 				"kyazdani42/nvim-web-devicons",
 			},
 			config = function()
+				require("fzf-lua").setup({
+					default_previewer = "bat",
+					fzf_bin = "sk",
+					grep = {
+						cmd = "rg --vimgrep",
+					},
+				})
 				vim.cmd([[ nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR> ]])
+				-- vim.cmd([[ nnoremap <leader>st <cmd>lua require('fzf-lua').live_grep()<CR> ]])
 			end,
 		},
 		{ "junegunn/fzf", run = "./install --bin" },
@@ -60,10 +68,10 @@ M.setup = function()
 			end,
 			keys = "<Plug>(EasyAlign)",
 		},
-		-- {
-		-- 	"nvim-treesitter/nvim-treesitter-textobjects",
-		-- 	config = config.text_objects,
-		-- },
+		{
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			config = config.text_objects,
+		},
 		-- { "nvim-lua/lsp-status.nvim" },
 		-- { "tpope/vim-commentary", keys = "g" },
 		{
