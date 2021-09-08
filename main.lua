@@ -17,7 +17,7 @@ vim.opt.smartindent = false
 lvim.line_wrap_cursor_movement = false
 
 lvim.builtin.dap.active = false
-lvim.builtin.dashboard.active = true
+lvim.builtin.dashboard.active = false
 lvim.builtin.comment.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.telescope.defaults.find_command = { "rg" }
@@ -69,18 +69,5 @@ require("user.lsp").config()
 vim.g.onedark_style = "darker"
 lvim.colorscheme = "onedark"
 
-lvim.autocommands.custom_groups = {
-	{ "CursorHold", "*", "lua vim.lsp.diagnostic.show_line_diagnostics()" },
-}
-
-require("user.execs").setup()
-vim.cmd([[
-  " If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
-    let g:vsnip_filetypes = {}
-    let g:vsnip_filetypes.javascriptreact = ['javascript']
-    let g:vsnip_filetypes.typescriptreact = ['typescript']
-]])
-
--- lvim.builtin.which_key.on_config_done = function()
--- 	require("which-key").register(lspbindings, { mode = "n" })
--- end
+-- autocommands
+require("user.autocommands").setup()
