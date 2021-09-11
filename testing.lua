@@ -2,12 +2,13 @@
 
 -- general
 lvim.format_on_save = true
-lvim.colorscheme = "spacegray"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+
+vim.opt.smartindent = false
+vim.opt.number = true
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = ""
 -- edit a default keymapping
@@ -33,7 +34,7 @@ lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = {}
+lvim.builtin.treesitter.ensure_installed = { "python" }
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
@@ -76,46 +77,46 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
 
-lvim.plugins = {
-	{
-		"aca/emmet-ls",
-		config = function()
-			local lspconfig = require("lspconfig")
-			local configs = require("lspconfig/configs")
+-- lvim.plugins = {
+-- 	{
+-- 		"aca/emmet-ls",
+-- 		config = function()
+-- 			local lspconfig = require("lspconfig")
+-- 			local configs = require("lspconfig/configs")
 
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities.textDocument.completion.completionItem.snippetSupport = true
-			capabilities.textDocument.completion.completionItem.resolveSupport = {
-				properties = {
-					"documentation",
-					"detail",
-					"additionalTextEdits",
-				},
-			}
+-- 			local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- 			capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- 			capabilities.textDocument.completion.completionItem.resolveSupport = {
+-- 				properties = {
+-- 					"documentation",
+-- 					"detail",
+-- 					"additionalTextEdits",
+-- 				},
+-- 			}
 
-			if not lspconfig.emmet_ls then
-				configs.emmet_ls = {
-					default_config = {
-						cmd = { "emmet-ls", "--stdio" },
-						filetypes = {
-							"html",
-							"css",
-							"javascript",
-							"typescript",
-							"eruby",
-							"typescriptreact",
-							"javascriptreact",
-							"svelte",
-							"vue",
-						},
-						root_dir = function(fname)
-							return vim.loop.cwd()
-						end,
-						settings = {},
-					},
-				}
-			end
-			lspconfig.emmet_ls.setup({ capabilities = capabilities })
-		end,
-	},
-}
+-- 			if not lspconfig.emmet_ls then
+-- 				configs.emmet_ls = {
+-- 					default_config = {
+-- 						cmd = { "emmet-ls", "--stdio" },
+-- 						filetypes = {
+-- 							"html",
+-- 							"css",
+-- 							"javascript",
+-- 							"typescript",
+-- 							"eruby",
+-- 							"typescriptreact",
+-- 							"javascriptreact",
+-- 							"svelte",
+-- 							"vue",
+-- 						},
+-- 						root_dir = function(fname)
+-- 							return vim.loop.cwd()
+-- 						end,
+-- 						settings = {},
+-- 					},
+-- 				}
+-- 			end
+-- 			lspconfig.emmet_ls.setup({ capabilities = capabilities })
+-- 		end,
+-- 	},
+-- }

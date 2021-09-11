@@ -93,6 +93,19 @@ M.setup = function()
 	vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", {})
 
 	lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazydocker", "tl", "Lazydocker" }
+
+	M.bind_typescript_keybinds()
+end
+
+M.bind_typescript_keybinds = function()
+	-- better keybindings for ts and tsx files
+	local langs = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
+	local ftype = vim.bo.filetype
+	if vim.tbl_contains(langs, ftype) then
+		vim.api.nvim_set_keymap("n", "gA", "<cmd>TSLspImportAll<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "gr", "<cmd>TSLspRenameFile<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "gS", "<cmd>TSLspOrganize<CR>", { noremap = true, silent = true })
+	end
 end
 
 return M

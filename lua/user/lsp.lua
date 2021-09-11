@@ -21,6 +21,7 @@ M.config = function()
 				filetypes = {
 					"html",
 					"css",
+					"javascript",
 				},
 				root_dir = function(fname)
 					return vim.loop.cwd()

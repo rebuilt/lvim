@@ -71,3 +71,33 @@ lvim.colorscheme = "onedark"
 
 -- autocommands
 require("user.autocommands").setup()
+
+lvim.lang.typescript.on_attach = function(client, _bufnr)
+	require("nvim-lsp-ts-utils").setup_client(client)
+end
+lvim.lang.typescriptreact.on_attach = lvim.lang.typescript.on_attach
+lvim.lang.javascript.on_attach = lvim.lang.typescript.on_attach
+lvim.lang.javascriptreact.on_attach = lvim.lang.typescript.on_attach
+
+-- local null_ls = require("null-ls")
+
+-- lvim.format_on_save = true
+
+-- local sources = {
+
+-- 	-- Formatters
+-- 	-- null_ls.builtins.formatting.eslint_d,
+-- 	-- null_ls.builtins.formatting.fixjson,
+-- 	-- null_ls.builtins.formatting.mix,
+-- 	-- null_ls.builtins.formatting.stylua,
+
+-- 	-- Linters
+-- 	-- null_ls.builtins.diagnostics.eslint_d,
+-- 	null_ls.builtins.diagnostics.rubocop,
+-- 	-- null_ls.builtins.diagnostics.shellcheck,
+-- 	-- null_ls.builtins.diagnostics.markdownlint,
+-- 	-- null_ls.builtins.diagnostics.write_good,
+-- }
+
+-- -- Enable the formatters and linters.
+-- null_ls.register({ sources = sources })

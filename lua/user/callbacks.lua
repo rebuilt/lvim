@@ -6,7 +6,7 @@ M.setup = function()
 		local endwise = require("nvim-autopairs.ts-rule").endwise
 		-- local npairs = require("nvim-autopairs")
 		module.add_rules({
-			endwise("def", "end", nil, nil),
+			endwise("def", "end", "ruby", nil),
 		})
 		-- Rule('def%s.+$', 'end', 'ruby')
 		--        :use_regex(true)
@@ -16,7 +16,9 @@ M.setup = function()
 		module.remove_rule("%")
 		module.remove_rule("$")
 		local Rule = require("nvim-autopairs.rule")
-		module.add_rule(Rule("`", "`", { "lua", "ruby", "javascript" }))
+		module.add_rule(
+			Rule("`", "`", { "lua", "ruby", "javascript", "javascriptreact", "typescript", "typescriptreact" })
+		)
 		module.add_rule(Rule("```", "```", "markdown"))
 
 		-- Javascript rules

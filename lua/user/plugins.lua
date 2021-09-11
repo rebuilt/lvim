@@ -10,6 +10,32 @@ M.setup = function()
 		-- 	end,
 		-- },
 		{
+			"wlemuel/vim-tldr",
+			cmd = { "Tldr", "TldrUpdateDocs" },
+		},
+		{
+			"rhysd/devdocs.vim",
+			cmd = { "DevDocs", "DevDocsAll" },
+		},
+		{
+			"jose-elias-alvarez/nvim-lsp-ts-utils",
+			config = function()
+				require("user.ts_utils").config()
+			end,
+			ft = {
+				"javascript",
+				"javascriptreact",
+				"javascript.jsx",
+				"typescript",
+				"typescriptreact",
+				"typescript.tsx",
+			},
+		},
+		{
+			"szw/vim-g",
+			cmd = { "Google" },
+		},
+		{
 			"ibhagwan/fzf-lua",
 			requires = {
 				"vijaymarupudi/nvim-fzf",
@@ -41,6 +67,7 @@ M.setup = function()
 			ft = {
 				"html",
 				"css",
+				"javascript",
 			},
 		},
 		{
@@ -182,6 +209,7 @@ M.setup = function()
 		-- ]])
 		-- 	end,
 		-- },
+		-- { "moll/vim-node" },
 	}
 end
 
