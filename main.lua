@@ -2,7 +2,6 @@
 -- =========================================
 -- lvim.log.level = "debug"
 lvim.format_on_save = true
-
 vim.opt.timeoutlen = 1000
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -20,7 +19,7 @@ lvim.builtin.dap.active = false
 lvim.builtin.dashboard.active = false
 lvim.builtin.comment.active = false
 lvim.builtin.terminal.active = true
-lvim.builtin.telescope.defaults.find_command = { "rg" }
+--lvim.builtin.telescope.defaults.find_command = { "rg" }
 lvim.builtin.project.active = true
 -- lvim.builtin.project.silent_chdir = false
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -67,7 +66,6 @@ require("user.callbacks").setup()
 require("user.lsp").config()
 -- colorscheme
 vim.g.onedark_style = "darker"
-lvim.colorscheme = "onedark"
 
 -- autocommands
 require("user.autocommands").setup()
@@ -101,3 +99,5 @@ lvim.lang.javascriptreact.on_attach = lvim.lang.typescript.on_attach
 
 -- -- Enable the formatters and linters.
 -- null_ls.register({ sources = sources })
+
+vim.g["devdocs_open_cmd"] = "chromium"

@@ -200,6 +200,11 @@ M.setup = function()
 			"mattn/emmet-vim",
 			ft = { "html", "css", "eruby", "javascript" },
 		},
+		{
+			"RishabhRD/nvim-cheat.sh",
+			cmd = { "Cheat", "CheatWithoutComments" },
+			requires = { "RishabhRD/popfix", opt = true },
+		},
 		-- {
 		-- 	"dense-analysis/ale",
 		-- 	config = function()
