@@ -10,6 +10,13 @@ M.setup = function()
 		-- 	end,
 		-- },
 		{
+			"vim-test/vim-test",
+			cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
+		},
+		{
+			"tpope/vim-endwise",
+		},
+		{
 			"wlemuel/vim-tldr",
 			cmd = { "Tldr", "TldrUpdateDocs" },
 		},
@@ -140,7 +147,29 @@ M.setup = function()
 				"Glgrep",
 				"Gedit",
 			},
+
 			-- ft = { "fugitive" },
+		},
+		{
+			"tpope/vim-rails",
+			cmd = {
+				"Eview",
+				"Econtroller",
+				"Emodel",
+				"Smodel",
+				"Sview",
+				"Scontroller",
+				"Vmodel",
+				"Vview",
+				"Vcontroller",
+				"Tmodel",
+				"Tview",
+				"Tcontroller",
+				"Rails",
+				"Generate",
+				"Runner",
+				"Extract",
+			},
 		},
 		{
 			"kevinhwang91/nvim-bqf",

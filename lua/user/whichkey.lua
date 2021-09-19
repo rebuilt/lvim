@@ -17,6 +17,15 @@ M.setup = function()
 		t = { "<cmd>Telescope help_tags<cr>", "Tags" },
 		w = { "<cmd>Telescope live_grep<cr>", "Word" },
 	}
+	lvim.builtin.which_key.mappings["t"] = {
+		name = "Test",
+		f = { "<cmd>TestFile<cr>", "Test File" },
+		l = { "<cmd>TestLast<cr>", "Test Last" },
+		n = { "<cmd>TestNearest<cr>", "Test Nearest" },
+		s = { "<cmd>TestSuite<cr>", "Test Suite" },
+		v = { "<cmd>TestVisit<cr>", "Test Visit" },
+	}
+
 	lvim.builtin.which_key.mappings["s"] = {
 		s = { "<cmd>lua require('fzf-lua').files()<cr>", "Find files" },
 		a = { "<cmd>lua require('fzf-lua').grep_last()<cr>", "Search again" },

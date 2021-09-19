@@ -70,13 +70,6 @@ vim.g.onedark_style = "darker"
 -- autocommands
 require("user.autocommands").setup()
 
-lvim.lang.typescript.on_attach = function(client, _bufnr)
-	require("nvim-lsp-ts-utils").setup_client(client)
-end
-lvim.lang.typescriptreact.on_attach = lvim.lang.typescript.on_attach
-lvim.lang.javascript.on_attach = lvim.lang.typescript.on_attach
-lvim.lang.javascriptreact.on_attach = lvim.lang.typescript.on_attach
-
 -- local null_ls = require("null-ls")
 
 -- lvim.format_on_save = true
@@ -99,5 +92,3 @@ lvim.lang.javascriptreact.on_attach = lvim.lang.typescript.on_attach
 
 -- -- Enable the formatters and linters.
 -- null_ls.register({ sources = sources })
-
-vim.g["devdocs_open_cmd"] = "chromium"

@@ -45,7 +45,7 @@ M.setup = function()
 	vim.api.nvim_set_keymap("n", "<S-x>", "<cmd>BufferClose!<CR>", { noremap = true, silent = true })
 
 	-- Hitting escape also clears spelling and search highlights
-	vim.api.nvim_set_keymap("n", "<ESC>", ":nohls | :setlocal nospell<ESC>", { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "<ESC>", ":nohls |:set norelativenumber | :setlocal nospell<ESC>", { noremap = true, silent = true })
 
 	-- Yank from the current position to the end of the line
 	vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
@@ -92,7 +92,7 @@ M.setup = function()
 
 	vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", {})
 
-	lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazydocker", "tl", "Lazydocker" }
+	-- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazydocker", "tl", "Lazydocker" }
 
 	M.bind_typescript_keybinds()
 end

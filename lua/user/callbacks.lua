@@ -3,10 +3,13 @@ local M = {}
 M.setup = function()
 	lvim.builtin.autopairs.on_config_done = function(module)
 		-- print(vim.inspect(module))
+		-- local module = require("nvim-autopairs")
 		local endwise = require("nvim-autopairs.ts-rule").endwise
 		-- local npairs = require("nvim-autopairs")
 		module.add_rules({
-			endwise("def", "end", "ruby", nil),
+			endwise("def", "end", nil, nil),
+			endwise("module", "end", nil, nil),
+			endwise("do", "end", nil, nil),
 		})
 		-- Rule('def%s.+$', 'end', 'ruby')
 		--        :use_regex(true)
@@ -20,6 +23,7 @@ M.setup = function()
 			Rule("`", "`", { "lua", "ruby", "javascript", "javascriptreact", "typescript", "typescriptreact" })
 		)
 		module.add_rule(Rule("```", "```", "markdown"))
+    module.add_rule(Rule("<%= ", "%>"))
 
 		-- Javascript rules
 		module.add_rule(Rule("<label ", "htmlFor=''></label>", "javascript"))
