@@ -1,7 +1,7 @@
 -- General settings for neovim
 -- =========================================
 -- lvim.log.level = "debug"
-lvim.format_on_save = true
+lvim.format_on_save = false
 vim.opt.timeoutlen = 1000
 vim.opt.number = true
 vim.opt.relativenumber = true

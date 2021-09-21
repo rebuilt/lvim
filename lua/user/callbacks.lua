@@ -2,28 +2,31 @@ local M = {}
 
 M.setup = function()
 	lvim.builtin.autopairs.on_config_done = function(module)
-		-- print(vim.inspect(module))
-		-- local module = require("nvim-autopairs")
+		local Rule = require("nvim-autopairs.rule")
+
+    -- ruby rules
 		local endwise = require("nvim-autopairs.ts-rule").endwise
-		-- local npairs = require("nvim-autopairs")
 		module.add_rules({
-			endwise("def", "end", nil, nil),
-			endwise("module", "end", nil, nil),
-			endwise("do", "end", nil, nil),
+			endwise("def", "end", "ruby","method"),
+			endwise("module", "end", "ruby", "module"),
+			endwise("do", "end", "ruby", "do_block"),
+			endwise("if", "end", "ruby", "if"),
+			endwise("unless", "end", "ruby", "unless"),
+			endwise("case", "end", "ruby", "case"),
+			endwise("while", "end", "ruby", "while"),
+			endwise("until", "end", "ruby", "until"),
+			endwise("begin", "end", "ruby", "begin"),
 		})
-		-- Rule('def%s.+$', 'end', 'ruby')
-		--        :use_regex(true)
-		--        :end_wise(cond.not_after_regex_check('.'))
+
+		module.add_rule(Rule("```", "```", "markdown"))
+    module.add_rule(Rule("<%= ", "%>"))
 
 		module.remove_rule("`")
 		module.remove_rule("%")
 		module.remove_rule("$")
-		local Rule = require("nvim-autopairs.rule")
 		module.add_rule(
 			Rule("`", "`", { "lua", "ruby", "javascript", "javascriptreact", "typescript", "typescriptreact" })
 		)
-		module.add_rule(Rule("```", "```", "markdown"))
-    module.add_rule(Rule("<%= ", "%>"))
 
 		-- Javascript rules
 		module.add_rule(Rule("<label ", "htmlFor=''></label>", "javascript"))

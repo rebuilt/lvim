@@ -13,9 +13,9 @@ M.setup = function()
 			"vim-test/vim-test",
 			cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
 		},
-		{
-			"tpope/vim-endwise",
-		},
+		-- {
+		-- 	"tpope/vim-endwise",
+		-- },
 		{
 			"wlemuel/vim-tldr",
 			cmd = { "Tldr", "TldrUpdateDocs" },
@@ -24,43 +24,43 @@ M.setup = function()
 			"rhysd/devdocs.vim",
 			cmd = { "DevDocs", "DevDocsAll" },
 		},
-		{
-			"jose-elias-alvarez/nvim-lsp-ts-utils",
-			config = function()
-				require("user.ts_utils").config()
-			end,
-			ft = {
-				"javascript",
-				"javascriptreact",
-				"javascript.jsx",
-				"typescript",
-				"typescriptreact",
-				"typescript.tsx",
-			},
-		},
-		{
-			"szw/vim-g",
-			cmd = { "Google" },
-		},
-		{
-			"ibhagwan/fzf-lua",
-			requires = {
-				"vijaymarupudi/nvim-fzf",
-				"kyazdani42/nvim-web-devicons",
-			},
-			config = function()
-				require("fzf-lua").setup({
-					default_previewer = "bat",
-					fzf_bin = "sk",
-					grep = {
-						cmd = "rg --vimgrep",
-					},
-				})
-				vim.cmd([[ nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR> ]])
-				-- vim.cmd([[ nnoremap <leader>st <cmd>lua require('fzf-lua').live_grep()<CR> ]])
-			end,
-		},
-		{ "junegunn/fzf", run = "./install --bin" },
+		-- {
+		-- 	"jose-elias-alvarez/nvim-lsp-ts-utils",
+		-- 	config = function()
+		-- 		require("user.ts_utils").config()
+		-- 	end,
+		-- 	ft = {
+		-- 		"javascript",
+		-- 		"javascriptreact",
+		-- 		"javascript.jsx",
+		-- 		"typescript",
+		-- 		"typescriptreact",
+		-- 		"typescript.tsx",
+		-- 	},
+		-- },
+		-- {
+		-- 	"szw/vim-g",
+		-- 	cmd = { "Google" },
+		-- },
+		-- {
+		-- 	"ibhagwan/fzf-lua",
+		-- 	requires = {
+		-- 		"vijaymarupudi/nvim-fzf",
+		-- 		"kyazdani42/nvim-web-devicons",
+		-- 	},
+		-- 	config = function()
+		-- 		require("fzf-lua").setup({
+		-- 			default_previewer = "bat",
+		-- 			fzf_bin = "sk",
+		-- 			grep = {
+		-- 				cmd = "rg --vimgrep",
+		-- 			},
+		-- 		})
+		-- 		vim.cmd([[ nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR> ]])
+		-- 		-- vim.cmd([[ nnoremap <leader>st <cmd>lua require('fzf-lua').live_grep()<CR> ]])
+		-- 	end,
+		-- },
+		-- { "junegunn/fzf", run = "./install --bin" },
 		{
 			"phaazon/hop.nvim",
 			as = "hop",
