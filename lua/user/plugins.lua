@@ -3,6 +3,10 @@ local M = {}
 M.setup = function()
 	local config = require("user.plugin-configs")
 	lvim.plugins = {
+		{
+			"Pocco81/Catppuccino.nvim",
+			config = config.catppuccino,
+		},
 		-- {
 		-- 	"lervag/vimtex",
 		-- 	config = function()
@@ -42,31 +46,32 @@ M.setup = function()
 		-- 	"szw/vim-g",
 		-- 	cmd = { "Google" },
 		-- },
-		-- {
-		-- 	"ibhagwan/fzf-lua",
-		-- 	requires = {
-		-- 		"vijaymarupudi/nvim-fzf",
-		-- 		"kyazdani42/nvim-web-devicons",
-		-- 	},
-		-- 	config = function()
-		-- 		require("fzf-lua").setup({
-		-- 			default_previewer = "bat",
-		-- 			fzf_bin = "sk",
-		-- 			grep = {
-		-- 				cmd = "rg --vimgrep",
-		-- 			},
-		-- 		})
-		-- 		vim.cmd([[ nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR> ]])
-		-- 		-- vim.cmd([[ nnoremap <leader>st <cmd>lua require('fzf-lua').live_grep()<CR> ]])
-		-- 	end,
-		-- },
-		-- { "junegunn/fzf", run = "./install --bin" },
+		{
+			"ibhagwan/fzf-lua",
+			requires = {
+				"vijaymarupudi/nvim-fzf",
+				"kyazdani42/nvim-web-devicons",
+			},
+			config = function()
+				require("fzf-lua").setup({
+					default_previewer = "bat",
+					fzf_bin = "sk",
+					grep = {
+						cmd = "rg --vimgrep",
+					},
+				})
+				vim.cmd([[ nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR> ]])
+				-- vim.cmd([[ nnoremap <leader>st <cmd>lua require('fzf-lua').live_grep()<CR> ]])
+			end,
+		},
+		{ "junegunn/fzf", run = "./install --bin" },
 		{
 			"phaazon/hop.nvim",
 			as = "hop",
 			config = function()
 				-- you can configure Hop the way you like here; see :h hop-config
 				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+				vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", {})
 			end,
 		},
 		{
@@ -100,7 +105,6 @@ M.setup = function()
 			setup = function()
 				vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)", { noremap = false, silent = true })
 			end,
-			keys = "<Plug>(EasyAlign)",
 		},
 		{
 			"nvim-treesitter/nvim-treesitter-textobjects",
@@ -215,12 +219,12 @@ M.setup = function()
 			ft = { "html", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" },
 			config = config.autotag,
 		},
-		{
-			"navarasu/onedark.nvim",
-			config = function()
-				require("onedark").setup()
-			end,
-		},
+		-- {
+		-- 	"navarasu/onedark.nvim",
+		-- 	config = function()
+		-- 		require("onedark").setup()
+		-- 	end,
+		-- },
 		{
 			"tweekmonster/startuptime.vim",
 			cmd = "StartupTime",

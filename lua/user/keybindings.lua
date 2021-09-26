@@ -90,7 +90,6 @@ M.setup = function()
 	vim.api.nvim_set_keymap("n", "<A-l>", ":BufferNext<CR>", { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "<A-h>", ":BufferPrevious<CR>", { noremap = true, silent = true })
 
-	vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", {})
 
 	-- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazydocker", "tl", "Lazydocker" }
 
