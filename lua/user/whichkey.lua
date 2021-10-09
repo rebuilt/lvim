@@ -15,7 +15,7 @@ M.setup = function()
 		q = { "<cmd>Telescope quickfix<cr>", "quickfix" },
 		s = { "<cmd>Telescope gosource<cr>", "Go Source" },
 		t = { "<cmd>Telescope help_tags<cr>", "Tags" },
-		w = { "<cmd>Telescope live_grep<cr>", "Word" },
+		w = { "<cmd>lua require('fzf-lua').live_grep()<cr>", "Search for word" },
 	}
 	lvim.builtin.which_key.mappings["t"] = {
 		name = "Test",
@@ -34,8 +34,8 @@ M.setup = function()
 		v = { "<cmd>lua require('fzf-lua').grep_visual()<cr>", "Visual selection" },
 		b = { "<cmd>lua require('fzf-lua').grep_curbuf()<cr>", "Current buffer" },
 		B = { "<cmd>lua require('fzf-lua').builtin()<cr>", "Builtin" },
-		w = { "<cmd>lua require('fzf-lua').live_grep()<cr>", "Search for word" },
 		r = { "<cmd>lua require('fzf-lua').registers()<cr>", "Registers" },
+		w = { "<cmd>Telescope live_grep<cr>", "Search word" },
 	}
 
 	lvim.builtin.which_key.mappings["/"] = nil

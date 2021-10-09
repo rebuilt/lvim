@@ -47,8 +47,6 @@ M.setup = function()
 	-- Hitting escape also clears spelling and search highlights
 	vim.api.nvim_set_keymap("n", "<ESC>", ":nohls |:set norelativenumber | :setlocal nospell<ESC>", { noremap = true, silent = true })
 
-	-- Yank from the current position to the end of the line
-	vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
 
 	-- When you search, center the result and open any folds
 	vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true, silent = true })
@@ -75,9 +73,12 @@ M.setup = function()
 		{ noremap = true, silent = true, expr = true }
 	)
 
+	-- Yank from the current position to the end of the line
+	vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
+
 	-- Yank and paste to clipboard
 	vim.api.nvim_set_keymap("n", "y", '"+y', { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "Y", '"+yy', { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "Y", '"+y$', { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "p", '"+p', { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "P", '"+P', { noremap = true, silent = true })
 

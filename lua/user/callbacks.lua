@@ -33,9 +33,9 @@ M.setup = function()
 		module.add_rule(Rule("<input ", "type='text' />", "javascript"))
 	end
 
-	lvim.lsp.on_attach_callback = function(client, bufnr)
-		require("lsp_signature").on_attach()
-	end
+	-- lvim.lsp.on_attach_callback = function(client, bufnr)
+	-- 	require("lsp_signature").on_attach()
+	-- end
 
 	lvim.builtin.telescope.on_config_done = function(module)
 		module.load_extension("fzy_native")

@@ -74,14 +74,14 @@ M.setup = function()
 				vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", {})
 			end,
 		},
-		{
-			"aca/emmet-ls",
-			ft = {
-				"html",
-				"css",
-				"javascript",
-			},
-		},
+		-- {
+		-- 	"aca/emmet-ls",
+		-- 	ft = {
+		-- 		"html",
+		-- 		"css",
+		-- 		"javascript",
+		-- 	},
+		-- },
 		{
 			"norcalli/nvim-colorizer.lua",
 			config = function()
@@ -130,9 +130,13 @@ M.setup = function()
 		{
 			"tpope/vim-repeat",
 		},
-		{
-			"ray-x/lsp_signature.nvim",
-		},
+		-- {
+		-- 	"ray-x/lsp_signature.nvim",
+      -- event = "BufRead",
+      -- config = function()
+        -- config.lsp_signature()
+      -- end,
+		-- },
 		{ "unblevable/quick-scope", event = { "BufEnter", "BufNewFile" } },
 		{
 			"tpope/vim-fugitive",
