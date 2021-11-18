@@ -82,10 +82,8 @@ M.minimap = function()
 end
 
 M.autotag = function()
-	require("nvim-treesitter.configs").setup({
-		autotag = {
-			enable = true,
-		},
+	require("nvim-ts-autotag").setup({
+			filetypes = { "html", "eruby", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" },
 	})
 end
 

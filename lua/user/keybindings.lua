@@ -39,7 +39,7 @@ M.setup = function()
 	vim.api.nvim_set_keymap("n", "<F6>", ":!yarn test<CR>", { noremap = true, silent = true })
 
 	-- format with prettier
-	-- vim.api.nvim_set_keymap("n", "<F7>", ":!prettier --stdin-filepath % | e!<cr>", { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "<F7>", ":!prettier -w %", { noremap = true, silent = true })
 
 	-- close a buffer
 	vim.api.nvim_set_keymap("n", "<S-x>", "<cmd>BufferClose!<CR>", { noremap = true, silent = true })

@@ -4,6 +4,7 @@ M.setup = function()
 	lvim.autocommands.custom_groups = {
 		-- { "CursorHold", "*", "lua vim.lsp.diagnostic.show_line_diagnostics()" },
 		-- { "Filetype", "python", "lua require('cmp').setup.buffer({completion = {autocomplete = false}})" },
+		-- { "BufWritePre", "*", "lua require('user.tidy').tidy_up()" },
 	}
 end
 

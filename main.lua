@@ -1,7 +1,8 @@
 -- General settings for neovim
 -- =========================================
 -- lvim.log.level = "debug"
-lvim.format_on_save = true
+lvim.format_on_save = false
+lvim.lsp.automatic_servers_installation = true
 
 vim.opt.timeoutlen = 1000
 vim.opt.number = true
@@ -33,6 +34,7 @@ lvim.builtin.treesitter.playground.enable = true
 lvim.builtin.treesitter.textsubjects.enable = true
 lvim.builtin.treesitter.textsubjects.keymaps[";"] = "textsubjects-big"
 lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart"
+lvim.builtin.telescope.active = false
 
 lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.telescope.extensions = {
@@ -66,32 +68,23 @@ require("user.callbacks").setup()
 require("user.lsp").config()
 -- colorscheme
 -- vim.g.onedark_style = "darker"
-lvim.colorscheme = "catppuccino"
+-- lvim.colorscheme = "catppuccino"
 
 -- autocommands
 require("user.autocommands").setup()
 
--- require("user.formatters").setup()
--- cargo install selene
--- lvim.lang.lua.linters = { { exe = "selene", }, }
-
-lvim.lang.lua.formatters = { { exe = "stylua" } }
-lvim.lang.css.formatters = { { exe = "prettier" } }
-lvim.lang.html.formatters = { { exe = "prettier" } }
-lvim.lang.javascript.formatters = { { exe = "prettier" } }
-lvim.lang.json.formatters = { { exe = "prettier" } }
-lvim.lang.lua.formatters = { { exe = "stylua" } }
-
--- linters = { { exe = "write_good" }, { exe = "markdownlint" }, { exe = "codespell" } },
-lvim.lang.markdown = {
-	linters = { { exe = "codespell" } },
-	formatters = { { exe = "markdownlint" } },
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { exe = "black" },
+  { exe = "stylua"},
+  { 
+    exe = "prettier",
+    -- args = { "--print-with", "100" },
+    -- filetypes = { "typescript", "typescriptreact" },
+  },
+  { exe = "markdownlint"},
+  { exe = "codespell"},
+  { exe = "shfmt"},
+  { exe = "rustfmt"},
+  { exe = "rubocop"},
 }
-
-lvim.lang.python.formatters = { { exe = "yapf" }, { exe = "isort" } }
-lvim.lang.python.linters = { { exe = "flake8" } }
-lvim.lang.rust.formatters = { { exe = "rustfmt" } }
-lvim.lang.sh.formatters = { { exe = "shfmt" } }
-lvim.lang.vim.linters = { { exe = "vint" } }
-lvim.lang.vue.formatters = { { exe = "prettier" } }
-lvim.lang.yaml.formatters = { { exe = "prettier" } }

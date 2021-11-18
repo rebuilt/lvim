@@ -4,22 +4,20 @@ M.setup = function()
 	local config = require("user.plugin-configs")
 	lvim.plugins = {
 		{
-			"Pocco81/Catppuccino.nvim",
-			config = config.catppuccino,
+			"editorconfig/editorconfig-vim",
+			config = function()
+				vim.cmd([[ let g:EditorConfig_exclude_patterns = ['fugitive://.*'] ]])
+				vim.cmd([[ let g:EditorConfig_exec_path = '/usr/bin/editorconfig' ]])
+				vim.cmd([[ let g:EditorConfig_core_mode = 'external_command' ]])
+			end,
 		},
-		-- {
-		-- 	"lervag/vimtex",
-		-- 	config = function()
-		-- 		vim.cmd("call vimtex#init()")
-		-- 	end,
-		-- },
+		{
+			"mg979/vim-visual-multi",
+		},
 		{
 			"vim-test/vim-test",
 			cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
 		},
-		-- {
-		-- 	"tpope/vim-endwise",
-		-- },
 		{
 			"wlemuel/vim-tldr",
 			cmd = { "Tldr", "TldrUpdateDocs" },
@@ -28,24 +26,6 @@ M.setup = function()
 			"rhysd/devdocs.vim",
 			cmd = { "DevDocs", "DevDocsAll" },
 		},
-		-- {
-		-- 	"jose-elias-alvarez/nvim-lsp-ts-utils",
-		-- 	config = function()
-		-- 		require("user.ts_utils").config()
-		-- 	end,
-		-- 	ft = {
-		-- 		"javascript",
-		-- 		"javascriptreact",
-		-- 		"javascript.jsx",
-		-- 		"typescript",
-		-- 		"typescriptreact",
-		-- 		"typescript.tsx",
-		-- 	},
-		-- },
-		-- {
-		-- 	"szw/vim-g",
-		-- 	cmd = { "Google" },
-		-- },
 		{
 			"ibhagwan/fzf-lua",
 			requires = {
@@ -60,28 +40,18 @@ M.setup = function()
 						cmd = "rg --vimgrep",
 					},
 				})
-				vim.cmd([[ nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR> ]])
-				-- vim.cmd([[ nnoremap <leader>st <cmd>lua require('fzf-lua').live_grep()<CR> ]])
 			end,
 		},
-		{ "junegunn/fzf", run = "./install --bin" },
 		{
 			"phaazon/hop.nvim",
 			as = "hop",
+      keys = {"s"},
 			config = function()
 				-- you can configure Hop the way you like here; see :h hop-config
 				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
 				vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", {})
 			end,
 		},
-		-- {
-		-- 	"aca/emmet-ls",
-		-- 	ft = {
-		-- 		"html",
-		-- 		"css",
-		-- 		"javascript",
-		-- 	},
-		-- },
 		{
 			"norcalli/nvim-colorizer.lua",
 			config = function()
@@ -103,40 +73,33 @@ M.setup = function()
 		{
 			"junegunn/vim-easy-align",
 			setup = function()
-				vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)", { noremap = false, silent = true })
+				vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)",
+          {
+          noremap = false,
+          silent  = true
+          })
 			end,
 		},
 		{
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			config = config.text_objects,
 		},
-		-- { "nvim-lua/lsp-status.nvim" },
-		-- { "tpope/vim-commentary", keys = "g" },
 		{
-			"tpope/vim-surround",
-			keys = { "c", "d", "y" },
+			"machakann/vim-sandwich",
+			config = function()
+				vim.cmd("runtime macros/sandwich/keymap/surround.vim")
+			end,
 		},
 		{
 			"tpope/vim-dispatch",
 			cmd = { "Dispatch" },
 		},
-		-- {
-		-- 	"JoosepAlviste/nvim-ts-context-commentstring",
-		-- 	event = "BufRead",
-		-- },
 		{
 			"tpope/vim-commentary",
 		},
 		{
 			"tpope/vim-repeat",
 		},
-		-- {
-		-- 	"ray-x/lsp_signature.nvim",
-      -- event = "BufRead",
-      -- config = function()
-        -- config.lsp_signature()
-      -- end,
-		-- },
 		{ "unblevable/quick-scope", event = { "BufEnter", "BufNewFile" } },
 		{
 			"tpope/vim-fugitive",
@@ -188,12 +151,6 @@ M.setup = function()
 			"tpope/vim-bundler",
 			cmd = { "Bundler", "Bopen", "Bsplit", "Btabedit" },
 		},
-		-- yay -S glow
-		-- {
-		-- 	"npxbr/glow.nvim",
-		-- 	ft = { "markdown" },
-		-- 	-- run = "yay -S glow"
-		-- },
 		{
 			"iamcco/markdown-preview.nvim",
 			ft = "markdown",
@@ -206,12 +163,6 @@ M.setup = function()
 			"nvim-telescope/telescope-fzy-native.nvim",
 			run = "make",
 		},
-		-- {
-		-- 	"wfxr/minimap.vim",
-		-- 	run = "cargo install --locked code-minimap",
-		-- 	cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
-		-- 	config = config.minimap,
-		-- },
 		{
 			"sindrets/diffview.nvim",
 			cmd = { "DiffviewOpen", "DiffViewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh" },
@@ -219,16 +170,12 @@ M.setup = function()
 		},
 		{
 			"windwp/nvim-ts-autotag",
-			event = "InsertEnter",
-			ft = { "html", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" },
+			-- ft = { "html", "eruby", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" },
 			config = config.autotag,
 		},
-		-- {
-		-- 	"navarasu/onedark.nvim",
-		-- 	config = function()
-		-- 		require("onedark").setup()
-		-- 	end,
-		-- },
+    {
+      "AndrewRadev/tagalong.vim"
+    },
 		{
 			"tweekmonster/startuptime.vim",
 			cmd = "StartupTime",
@@ -242,16 +189,6 @@ M.setup = function()
 			cmd = { "Cheat", "CheatWithoutComments" },
 			requires = { "RishabhRD/popfix", opt = true },
 		},
-		-- {
-		-- 	"dense-analysis/ale",
-		-- 	config = function()
-		-- 		vim.cmd([[
-		-- let g:ale_disable_lsp = 1
-		-- let g:ale_lint_on_insert_leave=1
-		-- ]])
-		-- 	end,
-		-- },
-		-- { "moll/vim-node" },
 	}
 end
 
