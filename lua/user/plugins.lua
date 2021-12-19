@@ -118,8 +118,6 @@ M.setup = function()
 				"Glgrep",
 				"Gedit",
 			},
-
-			-- ft = { "fugitive" },
 		},
 		{
 			"tpope/vim-rails",
@@ -142,6 +140,15 @@ M.setup = function()
 				"Extract",
 			},
 		},
+    {
+      "christoomey/vim-rfactory",
+      cmd = {
+        "Rfactory",
+        "RSfactory",
+        "RVfactory",
+        "RTfactory",
+      }
+    },
 		{
 			"kevinhwang91/nvim-bqf",
 			event = { "BufRead", "BufNew" },

@@ -40,6 +40,42 @@ M.setup = function()
 		w = { "<cmd>Telescope live_grep<cr>", "Search word" },
 	}
 
+	lvim.builtin.which_key.mappings["r"] = {
+		name = "rails",
+		e = {
+			name = "edit",
+			v = { "<cmd>Eview<cr>", "view" },
+			c = { "<cmd>Econtroller<cr>", "controller" },
+			m = { "<cmd>Emodel<cr>", "model" },
+			f = { "<cmd>Rfactory<cr>", "Edit factory" },
+		},
+		s = {
+			name = "split",
+			v = { "<cmd>Sview<cr>", "view" },
+			c = { "<cmd>Scontroller<cr>", "controller" },
+			m = { "<cmd>Smodel<cr>", "model" },
+			f = { "<cmd>RSfactory<cr>", "Edit factory" },
+		},
+		v = {
+			name = "vsplit",
+			v = { "<cmd>Vview<cr>", "view" },
+			c = { "<cmd>Vcontroller<cr>", "controller" },
+			m = { "<cmd>Vmodel<cr>", "model" },
+			f = { "<cmd>RVfactory<cr>", "Edit factory" },
+		},
+		t = {
+			name = "tabedit",
+			v = { "<cmd>Tview<cr>", "view" },
+			c = { "<cmd>Tcontroller<cr>", "controller" },
+			m = { "<cmd>Tmodel<cr>", "model" },
+			f = { "<cmd>RTfactory<cr>", "Edit factory" },
+		},
+		r = { "<cmd>Rails<cr>", "Rails" },
+		G = { "<cmd>Generate<cr>", "Generate" },
+		R = { "<cmd>Runner<cr>", "Runner" },
+		E = { "<cmd>Extract<cr>", "Extract" },
+	}
+
 	lvim.builtin.which_key.mappings["/"] = nil
 	-- lvim.builtin.which_key.mappings["w"] = nil
 	lvim.builtin.which_key.mappings["q"] = nil
