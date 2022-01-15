@@ -2,20 +2,22 @@ local M = {}
 
 M.setup = function()
 	lvim.builtin.autopairs.on_config_done = function(module)
+    module.add_rules(require("nvim-autopairs.rules.endwise-ruby"))
 		local Rule = require("nvim-autopairs.rule")
 
     -- ruby rules
 		local endwise = require("nvim-autopairs.ts-rule").endwise
 		module.add_rules({
-			endwise("def", "end", "ruby","method"),
-			endwise("module", "end", "ruby", "module"),
-			endwise("do", "end", "ruby", "do_block"),
-			endwise("if", "end", "ruby", "if"),
-			endwise("unless", "end", "ruby", "unless"),
-			endwise("case", "end", "ruby", "case"),
-			endwise("while", "end", "ruby", "while"),
-			endwise("until", "end", "ruby", "until"),
-			endwise("begin", "end", "ruby", "begin"),
+			-- endwise("def", "end", "ruby","method"),
+			-- endwise("module", "end", "ruby", "module"),
+			-- endwise("do", "end", "ruby", "do_block"),
+			-- endwise("if", "end", "ruby", "if"),
+			-- endwise("unless", "end", "ruby", "unless"),
+			-- endwise("case", "end", "ruby", "case"),
+			-- endwise("while", "end", "ruby", "while"),
+			-- endwise("until", "end", "ruby", "until"),
+			-- endwise("begin", "end", "ruby", "begin"),
+			-- endwise("class", "end", "ruby", nil),
 		})
 
 		module.add_rule(Rule("```", "```", "markdown"))
