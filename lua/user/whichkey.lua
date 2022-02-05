@@ -76,10 +76,17 @@ M.setup = function()
 		E = { "<cmd>Extract<cr>", "Extract" },
 	}
 
+	lvim.builtin.which_key.mappings["h"] = {
+    name = "harpoon",
+    m = {"<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark"},
+    g = {"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Go"},
+    c = {"<cmd>lua require('harpoon.mark').clear_all()<cr>", "Clear all"},
+  }
+
 	lvim.builtin.which_key.mappings["/"] = nil
 	-- lvim.builtin.which_key.mappings["w"] = nil
 	lvim.builtin.which_key.mappings["q"] = nil
-	lvim.builtin.which_key.mappings["h"] = nil
+	-- lvim.builtin.which_key.mappings["h"] = nil
 end
 
 return M

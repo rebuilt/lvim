@@ -175,6 +175,7 @@ M.setup = function()
 			"mattn/emmet-vim",
 			ft = { "html", "css", "eruby", "javascript" },
 		},
+    {'ThePrimeagen/harpoon'},
 		-- {
 		-- 	"RishabhRD/nvim-cheat.sh",
 		-- 	cmd = { "Cheat", "CheatWithoutComments" },
