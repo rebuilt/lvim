@@ -37,17 +37,6 @@ lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart"
 lvim.builtin.telescope.active = false
 
 lvim.lsp.diagnostics.virtual_text = false
-lvim.builtin.telescope.extensions = {
-	fzy_native = {
-		override_generic_sorter = false,
-		override_file_sorter = true,
-	},
-}
-
-vim.g["vsnip_filetypes"] = {}
-vim.g.vsnip_filetypes["javascriptreact"] = { "html" }
-vim.g.vsnip_filetypes["javascriptreact"] = { "javascript" }
--- vim.cmd([[ command! Gpush term git push ]])
 
 -- plugins
 -- =========================================
@@ -73,18 +62,14 @@ require("user.lsp").config()
 -- autocommands
 require("user.autocommands").setup()
 
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  { exe = "black" },
-  { exe = "stylua"},
-  { 
-    exe = "prettier",
-    -- args = { "--print-with", "100" },
-    -- filetypes = { "typescript", "typescriptreact" },
-  },
-  { exe = "markdownlint"},
-  { exe = "codespell"},
-  { exe = "shfmt"},
-  { exe = "rustfmt"},
-  { exe = "rubocop"},
-}
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+	{ exe = "black" },
+	{ exe = "stylua" },
+	{ exe = "prettier" },
+	{ exe = "markdownlint" },
+	{ exe = "codespell" },
+	{ exe = "shfmt" },
+	{ exe = "rustfmt" },
+	{ exe = "rubocop" },
+})

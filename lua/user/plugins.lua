@@ -4,6 +4,14 @@ M.setup = function()
 	local config = require("user.plugin-configs")
 	lvim.plugins = {
 		{
+			"windwp/nvim-ts-autotag",
+			config = function()
+				require("nvim-ts-autotag").setup({
+					filetypes = { "html", "eruby" },
+				})
+			end,
+		},
+		{
 			"editorconfig/editorconfig-vim",
 			config = function()
 				vim.cmd([[ let g:EditorConfig_exclude_patterns = ['fugitive://.*'] ]])
@@ -17,10 +25,6 @@ M.setup = function()
 		{
 			"vim-test/vim-test",
 			cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
-		},
-		{
-			"wlemuel/vim-tldr",
-			cmd = { "Tldr", "TldrUpdateDocs" },
 		},
 		{
 			"rhysd/devdocs.vim",
@@ -45,7 +49,7 @@ M.setup = function()
 		{
 			"phaazon/hop.nvim",
 			as = "hop",
-      keys = {"s"},
+			keys = { "s" },
 			config = function()
 				-- you can configure Hop the way you like here; see :h hop-config
 				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
@@ -67,36 +71,32 @@ M.setup = function()
 			end,
 		},
 		{
-			"simrat39/symbols-outline.nvim",
-			cmd = "SymbolsOutline",
-		},
-		{
 			"junegunn/vim-easy-align",
 			setup = function()
-				vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)",
-          {
-          noremap = false,
-          silent  = true
-          })
+				vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)", {
+					noremap = false,
+					silent = true,
+				})
 			end,
 		},
 		{
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			config = config.text_objects,
 		},
-		{
-			"machakann/vim-sandwich",
-			config = function()
-				vim.cmd("runtime macros/sandwich/keymap/surround.vim")
-			end,
-		},
-		{
-			"tpope/vim-dispatch",
-			cmd = { "Dispatch" },
-		},
+		-- {
+		-- 	"machakann/vim-sandwich",
+		-- 	config = function()
+		-- 		vim.cmd("runtime macros/sandwich/keymap/surround.vim")
+		-- 	end,
+		-- },
+		-- {
+		-- 	"tpope/vim-dispatch",
+		-- 	cmd = { "Dispatch" },
+		-- },
 		{
 			"tpope/vim-commentary",
 		},
+		{ "tpope/vim-surround" },
 		{
 			"tpope/vim-repeat",
 		},
@@ -140,15 +140,15 @@ M.setup = function()
 				"Extract",
 			},
 		},
-    {
-      "christoomey/vim-rfactory",
-      cmd = {
-        "Rfactory",
-        "RSfactory",
-        "RVfactory",
-        "RTfactory",
-      }
-    },
+		{
+			"christoomey/vim-rfactory",
+			cmd = {
+				"Rfactory",
+				"RSfactory",
+				"RVfactory",
+				"RTfactory",
+			},
+		},
 		{
 			"kevinhwang91/nvim-bqf",
 			event = { "BufRead", "BufNew" },
@@ -167,35 +167,19 @@ M.setup = function()
 			end,
 		},
 		{
-			"nvim-telescope/telescope-fzy-native.nvim",
-			run = "make",
-		},
-		{
 			"sindrets/diffview.nvim",
 			cmd = { "DiffviewOpen", "DiffViewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh" },
 			config = config.diffview,
 		},
 		{
-			"windwp/nvim-ts-autotag",
-			-- ft = { "html", "eruby", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" },
-			config = config.autotag,
-		},
-    {
-      "AndrewRadev/tagalong.vim"
-    },
-		{
-			"tweekmonster/startuptime.vim",
-			cmd = "StartupTime",
-		},
-		{
 			"mattn/emmet-vim",
 			ft = { "html", "css", "eruby", "javascript" },
 		},
-		{
-			"RishabhRD/nvim-cheat.sh",
-			cmd = { "Cheat", "CheatWithoutComments" },
-			requires = { "RishabhRD/popfix", opt = true },
-		},
+		-- {
+		-- 	"RishabhRD/nvim-cheat.sh",
+		-- 	cmd = { "Cheat", "CheatWithoutComments" },
+		-- 	requires = { "RishabhRD/popfix", opt = true },
+		-- },
 	}
 end
 
