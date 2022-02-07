@@ -89,10 +89,10 @@ M.setup = function()
 		-- 		vim.cmd("runtime macros/sandwich/keymap/surround.vim")
 		-- 	end,
 		-- },
-		-- {
-		-- 	"tpope/vim-dispatch",
-		-- 	cmd = { "Dispatch" },
-		-- },
+		{
+			"tpope/vim-dispatch",
+			cmd = { "Dispatch" },
+		},
 		{
 			"tpope/vim-commentary",
 		},
@@ -100,7 +100,7 @@ M.setup = function()
 		{
 			"tpope/vim-repeat",
 		},
-		{ "unblevable/quick-scope", event = { "BufEnter", "BufNewFile" } },
+		{ "unblevable/quick-scope"},
 		{
 			"tpope/vim-fugitive",
 			cmd = {
@@ -175,7 +175,7 @@ M.setup = function()
 			"mattn/emmet-vim",
 			ft = { "html", "css", "eruby", "javascript" },
 		},
-    {'ThePrimeagen/harpoon'},
+		{ "ThePrimeagen/harpoon" },
 		-- {
 		-- 	"RishabhRD/nvim-cheat.sh",
 		-- 	cmd = { "Cheat", "CheatWithoutComments" },
