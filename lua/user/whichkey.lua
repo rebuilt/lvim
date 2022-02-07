@@ -82,7 +82,7 @@ M.setup = function()
     m = {"<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark"},
     g = {"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Go"},
     c = {"<cmd>lua require('harpoon.mark').clear_all()<cr>", "Clear all"},
-    d = {"<cmd>lua require('harpoon.mark').clear_all()<cr>", "Clear all"},
+    d = {"<cmd>lua require('harpoon.mark').rm_file()<cr>", "Delete mark"},
   }
 
 	lvim.builtin.which_key.mappings["/"] = nil

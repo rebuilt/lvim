@@ -22,7 +22,7 @@ M.setup = function()
 	vim.api.nvim_set_keymap("n", "<F12>", ":set relativenumber!<CR>", { noremap = true, silent = true })
 
 	-- gb triggers Go-To-Buffer
-	vim.api.nvim_set_keymap("n", "gb", "<cmd>BufferPick<CR>", { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "gb", "<cmd>BufferLinePick<CR>", { noremap = true, silent = true })
 
 	-- Hitting escape also clears spelling and search highlights
 	vim.api.nvim_set_keymap(
@@ -71,10 +71,10 @@ M.setup = function()
 	lvim.keys.normal_mode["H"] = "H"
 
 	-- Navigate to next buffer
-	vim.api.nvim_set_keymap("n", "<A-l>", ":BufferNext<CR>", { noremap = true, silent = true })
-	vim.api.nvim_set_keymap("n", "<A-h>", ":BufferPrevious<CR>", { noremap = true, silent = true })
-	lvim.keys.normal_mode["<Right>"] = ":BufferPrevious<CR>"
-	lvim.keys.normal_mode["<Left>"] = ":BufferNext<CR>"
+	vim.api.nvim_set_keymap("n", "<A-l>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+	vim.api.nvim_set_keymap("n", "<A-h>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+	lvim.keys.normal_mode["<Right>"] = ":BufferLineCycleNext<CR>"
+	lvim.keys.normal_mode["<Left>"] = ":BufferLineCyclePrev<CR>"
 	lvim.keys.normal_mode["<Up>"] = ":lua require('harpoon.ui').nav_prev()<CR>"
 	lvim.keys.normal_mode["<Down>"] = ":lua require('harpoon.ui').nav_next()<CR>"
 
