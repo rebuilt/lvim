@@ -17,6 +17,7 @@ vim.opt.smartindent = false
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
+vim.opt.shiftround = true
 
 lvim.line_wrap_cursor_movement = false
 
@@ -66,7 +67,7 @@ local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup({
 	{ exe = "black" },
 	{ exe = "stylua" },
-	{ exe = "prettier" },
+	{ exe = "prettierd" },
 	{ exe = "markdownlint" },
 	{ exe = "codespell" },
 	{ exe = "shfmt" },
