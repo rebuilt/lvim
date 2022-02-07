@@ -140,24 +140,24 @@ M.setup = function()
 				"Extract",
 			},
 		},
-		{
-			"christoomey/vim-rfactory",
-			cmd = {
-				"Rfactory",
-				"RSfactory",
-				"RVfactory",
-				"RTfactory",
-			},
-		},
+		-- {
+		-- 	"christoomey/vim-rfactory",
+		-- 	cmd = {
+		-- 		"Rfactory",
+		-- 		"RSfactory",
+		-- 		"RVfactory",
+		-- 		"RTfactory",
+		-- 	},
+		-- },
 		{
 			"kevinhwang91/nvim-bqf",
 			event = { "BufRead", "BufNew" },
 			config = config.bqf,
 		},
-		{
-			"tpope/vim-bundler",
-			cmd = { "Bundler", "Bopen", "Bsplit", "Btabedit" },
-		},
+		-- {
+		-- 	"tpope/vim-bundler",
+		-- 	-- cmd = { "Bundler", "Bopen", "Bsplit", "Btabedit" },
+		-- },
 		{
 			"iamcco/markdown-preview.nvim",
 			ft = "markdown",
