@@ -4,17 +4,6 @@ M.setup = function()
 	-- ========================================
 	-- keymappings
 
-	-- change default lsp keybindings
-	-- vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-	-- vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
-	-- vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
-	-- vim.api.nvim_set_keymap(
-	-- 	"n",
-	-- 	"gz",
-	-- 	"<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ show_header = false, border = 'single' })<CR>",
-	-- 	{ noremap = true, silent = true }
-	-- )
-
 	-- Run macro bound to q with Q
 	vim.api.nvim_set_keymap("n", "Q", "@q", { noremap = true, silent = true })
 
@@ -34,15 +23,6 @@ M.setup = function()
 
 	-- gb triggers Go-To-Buffer
 	vim.api.nvim_set_keymap("n", "gb", "<cmd>BufferPick<CR>", { noremap = true, silent = true })
-
-	-- run a test
-	vim.api.nvim_set_keymap("n", "<F6>", ":!yarn test<CR>", { noremap = true, silent = true })
-
-	-- format with prettier
-	vim.api.nvim_set_keymap("n", "<F7>", ":!prettier -w %", { noremap = true, silent = true })
-
-	-- close a buffer
-	vim.api.nvim_set_keymap("n", "<S-x>", "<cmd>BufferClose!<CR>", { noremap = true, silent = true })
 
 	-- Hitting escape also clears spelling and search highlights
 	vim.api.nvim_set_keymap(
@@ -67,13 +47,13 @@ M.setup = function()
 	vim.api.nvim_set_keymap(
 		"n",
 		"k",
-		[[(v:count > 15 ? "m'" . v:count : "") . 'k']],
+		[[(v:count > 50 ? "m'" . v:count : "") . 'k']],
 		{ noremap = true, silent = true, expr = true }
 	)
 	vim.api.nvim_set_keymap(
 		"n",
 		"j",
-		[[(v:count > 15 ? "m'" . v:count : "") . 'j']],
+		[[(v:count > 50 ? "m'" . v:count : "") . 'j']],
 		{ noremap = true, silent = true, expr = true }
 	)
 
@@ -89,7 +69,6 @@ M.setup = function()
 	-- Reset the 'L' and 'H' navigation keys to default
 	lvim.keys.normal_mode["L"] = "L"
 	lvim.keys.normal_mode["H"] = "H"
-
 
 	-- Navigate to next buffer
 	vim.api.nvim_set_keymap("n", "<A-l>", ":BufferNext<CR>", { noremap = true, silent = true })
