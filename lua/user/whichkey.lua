@@ -3,6 +3,7 @@ lvim.leader = "space"
 M.setup = function()
 	lvim.builtin.which_key.mappings["a"] = { "<cmd>:e ~/.config/lvim/config.lua<cr>", "Settings file" }
 	lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", "Outline" }
+	lvim.builtin.which_key.mappings["m"] = { "<cmd>lua require('harpoon.mark').toggle_file()<cr>", "toggle mark" }
 	lvim.builtin.which_key.mappings["f"] = {
 		name = "Find",
 		-- b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
@@ -81,6 +82,7 @@ M.setup = function()
     m = {"<cmd>lua require('harpoon.mark').add_file()<cr>", "Mark"},
     g = {"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Go"},
     c = {"<cmd>lua require('harpoon.mark').clear_all()<cr>", "Clear all"},
+    d = {"<cmd>lua require('harpoon.mark').clear_all()<cr>", "Clear all"},
   }
 
 	lvim.builtin.which_key.mappings["/"] = nil
