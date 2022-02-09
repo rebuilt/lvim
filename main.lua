@@ -35,7 +35,7 @@ lvim.builtin.treesitter.playground.enable = true
 lvim.builtin.treesitter.textsubjects.enable = true
 lvim.builtin.treesitter.textsubjects.keymaps[";"] = "textsubjects-big"
 lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart"
-lvim.builtin.telescope.active = false
+-- lvim.builtin.telescope.active = false
 
 lvim.lsp.diagnostics.virtual_text = false
 

@@ -6,19 +6,19 @@ M.setup = function()
 	lvim.builtin.which_key.mappings["m"] = { "<cmd>lua require('harpoon.mark').toggle_file()<cr>", "toggle mark" }
 	lvim.builtin.which_key.mappings["f"] = {
 		name = "Find",
-		-- b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
-		-- c = { "<cmd>Telescope git_commits<cr>", "Commits" },
-		-- d = { "<cmd>Telescope dotfiles path=" .. os.getenv("HOME") .. "/.dotfiles<cr>", "Neovim config" },
-		-- f = { "<cmd>Telescope find_files<cr>", "File" },
-		-- g = { "<cmd>Telescope git_files<cr>", "Git files" },
-		-- j = { "<cmd>Telescope jumplist<cr>", "Jumplist" },
-		-- m = { "<cmd>Telescope git_status<cr>", "Modified Files" },
-		-- q = { "<cmd>Telescope quickfix<cr>", "quickfix" },
-		-- s = { "<cmd>Telescope gosource<cr>", "Go Source" },
-		-- t = { "<cmd>Telescope help_tags<cr>", "Tags" },
-		-- w = { "<cmd>Telescope live_grep<cr>", "Search word" },
-		f = { "<cmd>lua require('fzf-lua').files()<cr>", "Find files" },
-		w = { "<cmd>lua require('fzf-lua').live_grep()<cr>", "Search for word" },
+		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
+		c = { "<cmd>Telescope git_commits<cr>", "Commits" },
+		d = { "<cmd>Telescope dotfiles path=" .. os.getenv("HOME") .. "/.dotfiles<cr>", "Neovim config" },
+		f = { "<cmd>Telescope find_files<cr>", "File" },
+		g = { "<cmd>Telescope git_files<cr>", "Git files" },
+		j = { "<cmd>Telescope jumplist<cr>", "Jumplist" },
+		m = { "<cmd>Telescope git_status<cr>", "Modified Files" },
+		q = { "<cmd>Telescope quickfix<cr>", "quickfix" },
+		s = { "<cmd>Telescope gosource<cr>", "Go Source" },
+		t = { "<cmd>Telescope help_tags<cr>", "Tags" },
+		w = { "<cmd>Telescope live_grep<cr>", "Search word" },
+		-- f = { "<cmd>lua require('fzf-lua').files()<cr>", "Find files" },
+		-- w = { "<cmd>lua require('fzf-lua').live_grep()<cr>", "Search for word" },
 	}
 	lvim.builtin.which_key.mappings["t"] = {
 		name = "Test",
@@ -29,17 +29,17 @@ M.setup = function()
 		v = { "<cmd>TestVisit<cr>", "Test Visit" },
 	}
 
-	lvim.builtin.which_key.mappings["s"] = {
-		s = { "<cmd>lua require('fzf-lua').files()<cr>", "Find files" },
-		a = { "<cmd>lua require('fzf-lua').grep_last()<cr>", "Search again" },
-		c = { "<cmd>lua require('fzf-lua').grep_cword()<cr>", "Current word" },
-		C = { "<cmd>lua require('fzf-lua').grepcWORD()<cr>", "Current WORD" },
-		v = { "<cmd>lua require('fzf-lua').grep_visual()<cr>", "Visual selection" },
-		b = { "<cmd>lua require('fzf-lua').grep_curbuf()<cr>", "Current buffer" },
-		B = { "<cmd>lua require('fzf-lua').builtin()<cr>", "Builtin" },
-		r = { "<cmd>lua require('fzf-lua').registers()<cr>", "Registers" },
-		w = { "<cmd>Telescope live_grep<cr>", "Search word" },
-	}
+	-- lvim.builtin.which_key.mappings["s"] = {
+	-- 	s = { "<cmd>lua require('fzf-lua').files()<cr>", "Find files" },
+	-- 	a = { "<cmd>lua require('fzf-lua').grep_last()<cr>", "Search again" },
+	-- 	c = { "<cmd>lua require('fzf-lua').grep_cword()<cr>", "Current word" },
+	-- 	C = { "<cmd>lua require('fzf-lua').grepcWORD()<cr>", "Current WORD" },
+	-- 	v = { "<cmd>lua require('fzf-lua').grep_visual()<cr>", "Visual selection" },
+	-- 	b = { "<cmd>lua require('fzf-lua').grep_curbuf()<cr>", "Current buffer" },
+	-- 	B = { "<cmd>lua require('fzf-lua').builtin()<cr>", "Builtin" },
+	-- 	r = { "<cmd>lua require('fzf-lua').registers()<cr>", "Registers" },
+	-- 	w = { "<cmd>Telescope live_grep<cr>", "Search word" },
+	-- }
 
 	lvim.builtin.which_key.mappings["r"] = {
 		name = "rails",
@@ -86,9 +86,7 @@ M.setup = function()
   }
 
 	lvim.builtin.which_key.mappings["/"] = nil
-	-- lvim.builtin.which_key.mappings["w"] = nil
 	lvim.builtin.which_key.mappings["q"] = nil
-	-- lvim.builtin.which_key.mappings["h"] = nil
 end
 
 return M
