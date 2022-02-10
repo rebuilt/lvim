@@ -73,10 +73,10 @@ M.setup = function()
 	-- Navigate to next buffer
 	vim.api.nvim_set_keymap("n", "<A-l>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 	vim.api.nvim_set_keymap("n", "<A-h>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
-	lvim.keys.normal_mode["<Right>"] = ":BufferLineCycleNext<CR>"
-	lvim.keys.normal_mode["<Left>"] = ":BufferLineCyclePrev<CR>"
-	lvim.keys.normal_mode["<Up>"] = ":lua require('harpoon.ui').nav_prev()<CR>"
-	lvim.keys.normal_mode["<Down>"] = ":lua require('harpoon.ui').nav_next()<CR>"
+	lvim.keys.normal_mode["<A-Right>"] = ":BufferLineCycleNext<CR>"
+	lvim.keys.normal_mode["<A-Left>"] = ":BufferLineCyclePrev<CR>"
+	lvim.keys.normal_mode["<A-Up>"] = ":lua require('harpoon.ui').nav_prev()<CR>"
+	lvim.keys.normal_mode["<A-Down>"] = ":lua require('harpoon.ui').nav_next()<CR>"
 
 	-- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazydocker", "tl", "Lazydocker" }
 
