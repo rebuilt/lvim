@@ -22,6 +22,7 @@ M.setup = function()
 		{
 			"mg979/vim-visual-multi",
 		},
+		{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 		{
 			"vim-test/vim-test",
 			cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
@@ -100,7 +101,7 @@ M.setup = function()
 		{
 			"tpope/vim-repeat",
 		},
-		{ "unblevable/quick-scope"},
+		{ "unblevable/quick-scope" },
 		{
 			"tpope/vim-fugitive",
 			cmd = {
