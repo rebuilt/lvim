@@ -1,26 +1,17 @@
 local M = {}
 
 M.setup = function()
-	-- cargo install selene
-	-- lvim.lang.lua.linters = { { exe = "selene", }, }
-	lvim.lang.lua.formatters = { { exe = "stylua" } }
-	lvim.lang.css.formatters = { { exe = "prettier" } }
-	lvim.lang.html.formatters = { { exe = "prettier" } }
-	lvim.lang.javascript.formatters = { { exe = "prettier" } }
-	lvim.lang.json.formatters = { { exe = "prettier" } }
-	lvim.lang.lua.formatters = { { exe = "stylua" } }
-	-- linters = { { exe = "write_good" }, { exe = "markdownlint" }, { exe = "codespell" } },
-	lvim.lang.markdown = {
-		linters = { { exe = "codespell" } },
-		formatters = { { exe = "prettier" } },
-	}
-	lvim.lang.python.formatters = { { exe = "yapf" }, { exe = "isort" } }
-	lvim.lang.python.linters = { { exe = "flake8" } }
-	lvim.lang.rust.formatters = { { exe = "rustfmt" } }
-	lvim.lang.sh.formatters = { { exe = "shfmt" } }
-	lvim.lang.vim.linters = { { exe = "vint" } }
-	lvim.lang.vue.formatters = { { exe = "prettier" } }
-	lvim.lang.yaml.formatters = { { exe = "prettier" } }
+	local formatters = require("lvim.lsp.null-ls.formatters")
+	formatters.setup({
+		{ exe = "black" },
+		{ exe = "stylua" },
+		{ exe = "prettierd" },
+		{ exe = "markdownlint" },
+		{ exe = "codespell" },
+		{ exe = "shfmt" },
+		{ exe = "rustfmt" },
+		{ exe = "rubocop" },
+	})
 end
 
 return M

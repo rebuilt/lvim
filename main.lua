@@ -1,7 +1,7 @@
 -- General settings for neovim
 -- =========================================
 -- lvim.log.level = "debug"
-lvim.format_on_save = false
+lvim.format_on_save = true
 lvim.lsp.automatic_servers_installation = true
 
 vim.opt.timeoutlen = 1000
@@ -63,14 +63,8 @@ require("user.lsp").config()
 -- autocommands
 require("user.autocommands").setup()
 
-local formatters = require("lvim.lsp.null-ls.formatters")
-formatters.setup({
-	{ exe = "black" },
-	{ exe = "stylua" },
-	{ exe = "prettierd" },
-	{ exe = "markdownlint" },
-	{ exe = "codespell" },
-	{ exe = "shfmt" },
-	{ exe = "rustfmt" },
-	{ exe = "rubocop" },
-})
+-- formatters
+require("user.formatters").setup()
+
+-- Add signature help to cmp completion
+vim.list_extend(lvim.builtin.cmp.sources, { name = "nvim_lsp_signature_help" })
