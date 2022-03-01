@@ -9,7 +9,7 @@ M.setup = function()
 		b = { "<cmd>Telescope file_browser<cr>", "File Browser" },
 		c = { "<cmd>Telescope git_commits<cr>", "Commits" },
 		d = { "<cmd>Telescope dotfiles path=" .. os.getenv("HOME") .. "/.dotfiles<cr>", "Neovim config" },
-		-- f = { "<cmd>Telescope find_files<cr>", "File" },
+		f = { "<cmd>Telescope find_files<cr>", "File" },
 		g = { "<cmd>Telescope git_files<cr>", "Git files" },
 		j = { "<cmd>Telescope jumplist<cr>", "Jumplist" },
 		m = { "<cmd>Telescope git_status<cr>", "Modified Files" },
@@ -19,7 +19,7 @@ M.setup = function()
 		-- w = { "<cmd>lua require('telescope.builtin').live_grep{ debounce = 100}<cr>", "Search word" },
 		-- w = { "<cmd>lua require('telescope').extensions.fzf_writer.grep()<cr>", "Search word" },
 
-		f = { "<cmd>lua require('fzf-lua').files()<cr>", "Find files" },
+		-- f = { "<cmd>lua require('fzf-lua').files()<cr>", "Find files" },
 		w = { "<cmd>lua require('fzf-lua').live_grep()<cr>", "Search for word" },
 	}
 	lvim.builtin.which_key.mappings["t"] = {

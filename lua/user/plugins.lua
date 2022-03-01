@@ -21,11 +21,21 @@ M.setup = function()
 		},
 		{
 			"mg979/vim-visual-multi",
+			config = function()
+				vim.cmd([[
+                let g:VM_maps = {}
+                let g:VM_mouse_mappings = 1
+                let g:VM_default_mappings = 0
+                ]])
+			end,
 		},
 		{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 		{
 			"vim-test/vim-test",
 			cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
+			config = function()
+				vim.cmd("let test#strategy = 'dispatch'")
+			end,
 		},
 		{
 			"rhysd/devdocs.vim",
@@ -80,10 +90,10 @@ M.setup = function()
 				})
 			end,
 		},
-		{
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			config = config.text_objects,
-		},
+		-- {
+		-- 	"nvim-treesitter/nvim-treesitter-textobjects",
+		-- 	config = config.text_objects,
+		-- },
 		-- {
 		-- 	"machakann/vim-sandwich",
 		-- 	config = function()
