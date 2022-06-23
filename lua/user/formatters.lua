@@ -11,6 +11,7 @@ M.setup = function()
 		{ exe = "shfmt" },
 		{ exe = "rustfmt" },
 		{ exe = "rubocop" },
+		{ exe = "pg_format" },
 	})
 end
 
