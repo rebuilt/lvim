@@ -22,11 +22,10 @@ vim.opt.shiftround = true
 lvim.line_wrap_cursor_movement = false
 
 lvim.builtin.dap.active = false
-lvim.builtin.dashboard.active = false
+lvim.builtin.alpha.active = false
 lvim.builtin.comment.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.project.active = true
-lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = { "kotlin" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.nvimtree.setup.open_on_setup = false
@@ -61,10 +60,26 @@ require("user.lsp").config()
 -- lvim.colorscheme = "catppuccino"
 
 -- autocommands
-require("user.autocommands").setup()
+-- require("user.autocommands").setup()
 
 -- formatters
 require("user.formatters").setup()
 
 -- Add signature help to cmp completion
 vim.list_extend(lvim.builtin.cmp.sources, { name = "nvim_lsp_signature_help" })
+vim.list_extend(lvim.builtin.cmp.sources, { name = "copilot" })
+
+require("telescope").setup({
+	extensions = {
+		fzf = {
+			fuzzy = true,
+			override_generic_sorter = true,
+			override_file_sorter = true,
+			case_mode = "smart_case",
+		},
+	},
+})
+
+require("telescope").load_extension("fzf")
+vim.cmd("imap <silent><script><expr> <C-Space> copilot#Accept('<CR>') ")
+vim.cmd("let g:copilot_no_tab_map = v:true")

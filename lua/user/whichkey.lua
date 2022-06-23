@@ -16,7 +16,7 @@ M.setup = function()
 		q = { "<cmd>Telescope quickfix<cr>", "quickfix" },
 		s = { "<cmd>Telescope gosource<cr>", "Go Source" },
 		t = { "<cmd>Telescope help_tags<cr>", "Tags" },
-		-- w = { "<cmd>lua require('telescope.builtin').live_grep{ debounce = 100}<cr>", "Search word" },
+		-- w = { "<cmd>Telescope live_grep<cr>", "Search word" },
 		-- w = { "<cmd>lua require('telescope').extensions.fzf_writer.grep()<cr>", "Search word" },
 
 		-- f = { "<cmd>lua require('fzf-lua').files()<cr>", "Find files" },
