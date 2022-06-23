@@ -3,6 +3,14 @@ local M = {}
 M.setup = function()
 	local config = require("user.plugin-configs")
 	lvim.plugins = {
+		{ "hrsh7th/cmp-copilot" },
+		{
+			"github/copilot.vim",
+		},
+		{
+			"nvim-telescope/telescope-fzf-native.nvim",
+			run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+		},
 		{
 			"windwp/nvim-ts-autotag",
 			config = function()
@@ -50,10 +58,10 @@ M.setup = function()
 			config = function()
 				require("fzf-lua").setup({
 					default_previewer = "bat",
-					fzf_bin = "sk",
-					grep = {
-						cmd = "rg --vimgrep",
-					},
+					-- fzf_bin = "sk",
+					-- grep = {
+					-- 	cmd = "rg --vimgrep",
+					-- },
 				})
 			end,
 		},
