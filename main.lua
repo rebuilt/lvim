@@ -81,5 +81,6 @@ require("telescope").setup({
 })
 
 require("telescope").load_extension("fzf")
+lvim.builtin.cmp.mapping["<C-Space>"] = nil
 vim.cmd("imap <silent><script><expr> <C-Space> copilot#Accept('<CR>') ")
 vim.cmd("let g:copilot_no_tab_map = v:true")
