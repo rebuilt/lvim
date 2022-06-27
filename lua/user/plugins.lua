@@ -3,6 +3,7 @@ local M = {}
 M.setup = function()
 	local config = require("user.plugin-configs")
 	lvim.plugins = {
+		{ "duane9/nvim-rg" },
 		{ "hrsh7th/cmp-copilot" },
 		{
 			"github/copilot.vim",
