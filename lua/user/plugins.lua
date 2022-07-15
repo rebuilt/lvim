@@ -3,21 +3,43 @@ local M = {}
 M.setup = function()
 	local config = require("user.plugin-configs")
 	lvim.plugins = {
+		{ "lad/vim-reek" },
+		{ "nanotee/luv-vimdocs" },
+		{ "milisims/nvim-luaref" },
 		{ "duane9/nvim-rg" },
-		{ "hrsh7th/cmp-copilot" },
+		-- { "hrsh7th/cmp-copilot" },
+		-- {
+		-- 	"github/copilot.vim",
+		-- },
 		{
-			"github/copilot.vim",
+			"zbirenbaum/copilot.lua",
+			event = { "VimEnter" },
+			config = function()
+				vim.defer_fn(function()
+					require("copilot").setup({
+						plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+					})
+				end, 100)
+			end,
 		},
+
 		{
-			"nvim-telescope/telescope-fzf-native.nvim",
-			run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+			"zbirenbaum/copilot-cmp",
+			after = { "copilot.lua", "nvim-cmp" },
 		},
+		-- {
+		-- 	"nvim-telescope/telescope-fzf-native.nvim",
+		-- 	run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+		-- },
 		{
 			"windwp/nvim-ts-autotag",
+			-- config = function()
+			-- 	require("nvim-ts-autotag").setup({
+			-- 		filetypes = { "html", "eruby" },
+			-- 	})
+			-- end,
 			config = function()
-				require("nvim-ts-autotag").setup({
-					filetypes = { "html", "eruby" },
-				})
+				require("nvim-ts-autotag").setup()
 			end,
 		},
 		{
@@ -50,36 +72,37 @@ M.setup = function()
 			"rhysd/devdocs.vim",
 			cmd = { "DevDocs", "DevDocsAll" },
 		},
-		{
-			"ibhagwan/fzf-lua",
-			requires = {
-				"vijaymarupudi/nvim-fzf",
-				"kyazdani42/nvim-web-devicons",
-			},
-			config = function()
-				require("fzf-lua").setup({
-					default_previewer = "bat",
-					-- fzf_bin = "sk",
-					-- grep = {
-					-- 	cmd = "rg --vimgrep",
-					-- },
-				})
-			end,
-		},
+		-- {
+		-- 	"ibhagwan/fzf-lua",
+		-- 	requires = {
+		-- 		"vijaymarupudi/nvim-fzf",
+		-- 		"kyazdani42/nvim-web-devicons",
+		-- 	},
+		-- 	config = function()
+		-- 		require("fzf-lua").setup({
+		-- 			default_previewer = "bat",
+		-- 			-- fzf_bin = "sk",
+		-- 			-- grep = {
+		-- 			-- 	cmd = "rg --vimgrep",
+		-- 			-- },
+		-- 		})
+		-- 	end,
+		-- },
 		{
 			"phaazon/hop.nvim",
 			as = "hop",
-			keys = { "s" },
+			keys = { "s", "S" },
 			config = function()
 				-- you can configure Hop the way you like here; see :h hop-config
 				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
 				vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", {})
+				vim.api.nvim_set_keymap("n", "S", ":HopPattern<cr>", {})
 			end,
 		},
 		{
 			"norcalli/nvim-colorizer.lua",
 			config = function()
-				require("colorizer").setup({ "*" }, {
+				require("colorizer").setup({ "css", "scss", "html", "javascript", "eruby" }, {
 					RGB = true, -- #RGB hex codes
 					RRGGBB = true, -- #RRGGBB hex codes
 					RRGGBBAA = true, -- #RRGGBBAA hex codes
@@ -194,6 +217,22 @@ M.setup = function()
 		{
 			"mattn/emmet-vim",
 			ft = { "html", "css", "eruby", "javascript" },
+		},
+		{
+			"aca/emmet-ls",
+			ft = {
+				"html",
+				"typescriptreact",
+				"javascriptreact",
+				"css",
+				"sass",
+				"scss",
+				"less",
+			},
+		},
+		{
+			"jackieaskins/cmp-emmet",
+			run = "npm run release",
 		},
 		{ "ThePrimeagen/harpoon" },
 		-- {

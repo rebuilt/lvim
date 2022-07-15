@@ -15,12 +15,12 @@ M.setup = function()
 		m = { "<cmd>Telescope git_status<cr>", "Modified Files" },
 		q = { "<cmd>Telescope quickfix<cr>", "quickfix" },
 		s = { "<cmd>Telescope gosource<cr>", "Go Source" },
-		t = { "<cmd>Telescope help_tags<cr>", "Tags" },
-		-- w = { "<cmd>Telescope live_grep<cr>", "Search word" },
+		h = { "<cmd>Telescope help_tags<cr>", "Tags" },
+		w = { "<cmd>Telescope live_grep<cr>", "Search word" },
 		-- w = { "<cmd>lua require('telescope').extensions.fzf_writer.grep()<cr>", "Search word" },
 
 		-- f = { "<cmd>lua require('fzf-lua').files()<cr>", "Find files" },
-		w = { "<cmd>lua require('fzf-lua').live_grep()<cr>", "Search for word" },
+		-- w = { "<cmd>lua require('fzf-lua').live_grep()<cr>", "Search for word" },
 	}
 	lvim.builtin.which_key.mappings["t"] = {
 		name = "Test",
@@ -86,6 +86,14 @@ M.setup = function()
 		c = { "<cmd>lua require('harpoon.mark').clear_all()<cr>", "Clear all" },
 		d = { "<cmd>lua require('harpoon.mark').rm_file()<cr>", "Delete mark" },
 	}
+	lvim.builtin.which_key.mappings["r"] = {
+		name = "reek",
+		r = { "<cmd>ReekThis<cr>", "Run reek on this file" },
+		a = { "<cmd>ReekAll<cr>", "ReekAll" },
+	}
+
+	lvim.builtin.which_key.mappings["lo"] = { "<cmd>lua vim.diagnostic.disable()<cr>", "Turn diagnostics OFF" }
+	lvim.builtin.which_key.mappings["ln"] = { "<cmd>lua vim.diagnostic.enable()<cr>", "Turn diagnostics ON" }
 
 	lvim.builtin.which_key.mappings["/"] = nil
 	lvim.builtin.which_key.mappings["q"] = nil
