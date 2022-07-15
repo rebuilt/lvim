@@ -1,10 +1,10 @@
 local M = {}
 
 M.setup = function()
-	lvim.autocommands.custom_groups = {
+	lvim.autocommands = {
 		-- { "CursorHold", "*", "lua vim.lsp.diagnostic.show_line_diagnostics()" },
 		-- { "BufWritePre", "*", "lua require('user.tidy').tidy_up()" },
-    {"BufNewFile,BufRead", "*.html.erb", "set filetype=html"},
+		{ "BufNewFile,BufRead", "*", "echo 'hello'" },
 	}
 end
 
