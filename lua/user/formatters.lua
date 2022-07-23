@@ -1,42 +1,52 @@
 local M = {}
 
 M.setup = function()
-	-- local formatters = require("lvim.lsp.null-ls.formatters")
-	-- formatters.setup({
-	-- 	{ exe = "black" },
-	-- 	{ exe = "stylua" },
-	-- 	{ exe = "prettierd" },
-	-- 	{ exe = "markdownlint" },
-	-- 	{ exe = "codespell" },
-	-- 	{ exe = "shfmt" },
-	-- 	{ exe = "rustfmt" },
-	-- 	{ exe = "rubocop" },
-	-- 	{ exe = "erb_lint" },
-	-- 	{ exe = "pg_format" },
-	-- })
+  -- local null_ls = require("null-ls")
 
-	local null_ls = require("null-ls")
+  -- local sources = {
 
-	-- lvim.format_on_save = true
+  -- 	-- Formatters
+  -- null_ls.builtins.formatting.eslint_d,
+  -- null_ls.builtins.formatting.fixjson,
+  -- null_ls.builtins.formatting.erb_lint.with({
+  -- 	args = { "--format", "json", "--stdin", "$FILENAME" },
+  -- }),
+  -- null_ls.builtins.formatting.erb_lint,
+  -- null_ls.builtins.formatting.stylua,
+  -- null_ls.builtins.formatting.rubocop,
 
-	local sources = {
+  -- 	-- Linters
+  -- null_ls.builtins.diagnostics.eslint_d,
+  -- null_ls.builtins.diagnostics.rubocop,
+  -- null_ls.builtins.diagnostics.erb_lint,
+  -- null_ls.builtins.diagnostics.shellcheck,
+  -- null_ls.builtins.diagnostics.markdownlint,
+  -- null_ls.builtins.diagnostics.write_good,
+  -- }
 
-		-- 	-- Formatters
-		-- 	-- null_ls.builtins.formatting.eslint_d,
-		-- 	-- null_ls.builtins.formatting.fixjson,
-		-- 	-- null_ls.builtins.formatting.mix,
-    null_ls.builtins.formatting.stylua,
+  -- -- Enable the formatters and linters.
+  -- null_ls.register({ sources = sources })
 
-		-- 	-- Linters
-		-- 	-- null_ls.builtins.diagnostics.eslint_d,
-		null_ls.builtins.diagnostics.rubocop,
-		-- 	-- null_ls.builtins.diagnostics.shellcheck,
-		-- 	-- null_ls.builtins.diagnostics.markdownlint,
-		-- 	-- null_ls.builtins.diagnostics.write_good,
-	}
+  -- local formatters = require("lvim.lsp.null-ls.formatters")
+  -- formatters.setup({
+  --   { exe = "black" },
+  --   { exe = "stylua" },
+  --   { exe = "prettierd" },
+  --   { exe = "markdownlint" },
+  --   { exe = "codespell" },
+  --   { exe = "shfmt" },
+  --   { exe = "rustfmt" },
+  --   { exe = "pg_format" },
+  --   { exe = "eslint_d" },
+  --   { exe = "erb_lint" },
+  --   { exe = "rubocop" },
+  -- })
 
-	-- -- Enable the formatters and linters.
-	null_ls.register({ sources = sources })
+  local linters = require("lvim.lsp.null-ls.linters")
+  linters.setup({
+    { exe = "rubocop" },
+    { exe = "erb_lint" },
+  })
 end
 
 return M

@@ -1,4 +1,4 @@
--- General settings for neovim
+--require('dap-ruby').setup() General settings for neovim
 -- =========================================
 -- lvim.log.level = "debug"
 
@@ -6,7 +6,8 @@ lvim.format_on_save = true
 -- lvim.format_on_save.timeout = 0
 
 lvim.lsp.automatic_servers_installation = true
-
+vim.o.termguicolors = true
+lvim.colorscheme = "onedarker"
 vim.opt.timeoutlen = 1000
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -21,7 +22,7 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 vim.opt.shiftround = true
-vim.opt.guifont = "FiraCode Nerd Font:h12"
+vim.opt.guifont = "FiraCode Nerd Font:h13"
 vim.cmd("set clipboard+=unnamedplus")
 
 lvim.line_wrap_cursor_movement = false
@@ -60,9 +61,9 @@ require("user.whichkey").setup()
 require("user.callbacks").setup()
 
 -- additional lsp configs
--- require("user.lsp").config()
+require("user.lsp").config()
 
--- require("user.autocommands").setup()
+require("user.autocommands").setup()
 
 -- formatters
 require("user.formatters").setup()
@@ -70,15 +71,9 @@ require("user.formatters").setup()
 -- global functions
 require("user.functions")
 
--- Add signature help to cmp completion
-table.insert(lvim.builtin.cmp.sources, 1, { name = "nvim_lsp_signature_help" })
--- Add copilot to cmp completion
-table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
-lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+-- additional cmp sources
+require("user.cmp").setup()
 
--- npm install -g emmet-ls
-table.insert(lvim.builtin.cmp.sources, { name = "emmet" })
-lvim.builtin.cmp.formatting.source_names["emmet"] = "(Emmet)"
 
 -- require("telescope").setup({
 -- 	defaults = {
@@ -101,6 +96,30 @@ lvim.builtin.cmp.formatting.source_names["emmet"] = "(Emmet)"
 lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references<cr>", "Go to Definiton" }
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "solargraph" })
-require("lspconfig").solargraph.setup({})
-lvim.lsp.document_highlight = false
+require("lspconfig").solargraph.setup({
+  -- cmd = { "solargraph", "stdio" },
+  filetypes = { "ruby", "eruby" },
+  init_options = {
+    formatting = true,
+  },
+  settings = {
+    solargraph = {
+      diagnostics = true
+    }
+  }
+})
+
 lvim.builtin.dap.active = true
+-- ruby debugging support
+require("dapui").setup()
+require('dap-ruby').setup()
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end

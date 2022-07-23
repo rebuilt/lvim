@@ -1,246 +1,250 @@
 local M = {}
 
 M.setup = function()
-	local config = require("user.plugin-configs")
-	lvim.plugins = {
-		{ "lad/vim-reek" },
-		{ "nanotee/luv-vimdocs" },
-		{ "milisims/nvim-luaref" },
-		{ "duane9/nvim-rg" },
-		-- { "hrsh7th/cmp-copilot" },
-		-- {
-		-- 	"github/copilot.vim",
-		-- },
-		{
-			"zbirenbaum/copilot.lua",
-			event = { "VimEnter" },
-			config = function()
-				vim.defer_fn(function()
-					require("copilot").setup({
-						plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
-					})
-				end, 100)
-			end,
-		},
+  local config = require("user.plugin-configs")
+  lvim.plugins = {
+    { "rcarriga/nvim-dap-ui" },
+    { "suketa/nvim-dap-ruby" },
+    { "hrsh7th/cmp-emoji" },
+    -- { "folke/tokyonight.nvim" },
+    { "lad/vim-reek" },
+    { "nanotee/luv-vimdocs" },
+    { "milisims/nvim-luaref" },
+    { "duane9/nvim-rg" },
+    -- { "hrsh7th/cmp-copilot" },
+    -- {
+    -- 	"github/copilot.vim",
+    -- },
+    {
+      "zbirenbaum/copilot.lua",
+      event = { "VimEnter" },
+      config = function()
+        vim.defer_fn(function()
+          require("copilot").setup({
+            plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+          })
+        end, 100)
+      end,
+    },
 
-		{
-			"zbirenbaum/copilot-cmp",
-			after = { "copilot.lua", "nvim-cmp" },
-		},
-		-- {
-		-- 	"nvim-telescope/telescope-fzf-native.nvim",
-		-- 	run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-		-- },
-		{
-			"windwp/nvim-ts-autotag",
-			-- config = function()
-			-- 	require("nvim-ts-autotag").setup({
-			-- 		filetypes = { "html", "eruby" },
-			-- 	})
-			-- end,
-			config = function()
-				require("nvim-ts-autotag").setup()
-			end,
-		},
-		{
-			"editorconfig/editorconfig-vim",
-			config = function()
-				vim.cmd([[ let g:EditorConfig_exclude_patterns = ['fugitive://.*'] ]])
-				vim.cmd([[ let g:EditorConfig_exec_path = '/usr/bin/editorconfig' ]])
-				vim.cmd([[ let g:EditorConfig_core_mode = 'external_command' ]])
-			end,
-		},
-		{
-			"mg979/vim-visual-multi",
-			config = function()
-				vim.cmd([[
+    {
+      "zbirenbaum/copilot-cmp",
+      after = { "copilot.lua", "nvim-cmp" },
+    },
+    -- {
+    -- 	"nvim-telescope/telescope-fzf-native.nvim",
+    -- 	run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+    -- },
+    {
+      "windwp/nvim-ts-autotag",
+      -- config = function()
+      -- 	require("nvim-ts-autotag").setup({
+      -- 		filetypes = { "html", "eruby" },
+      -- 	})
+      -- end,
+      config = function()
+        require("nvim-ts-autotag").setup()
+      end,
+    },
+    {
+      "editorconfig/editorconfig-vim",
+      config = function()
+        vim.cmd([[ let g:EditorConfig_exclude_patterns = ['fugitive://.*'] ]])
+        vim.cmd([[ let g:EditorConfig_exec_path = '/usr/bin/editorconfig' ]])
+        vim.cmd([[ let g:EditorConfig_core_mode = 'external_command' ]])
+      end,
+    },
+    {
+      "mg979/vim-visual-multi",
+      config = function()
+        vim.cmd([[
                 let g:VM_maps = {}
                 let g:VM_mouse_mappings = 1
-                let g:VM_default_mappings = 0
                 ]])
-			end,
-		},
-		{ "hrsh7th/cmp-nvim-lsp-signature-help" },
-		{
-			"vim-test/vim-test",
-			cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
-			config = function()
-				vim.cmd("let test#strategy = 'dispatch'")
-			end,
-		},
-		{
-			"rhysd/devdocs.vim",
-			cmd = { "DevDocs", "DevDocsAll" },
-		},
-		-- {
-		-- 	"ibhagwan/fzf-lua",
-		-- 	requires = {
-		-- 		"vijaymarupudi/nvim-fzf",
-		-- 		"kyazdani42/nvim-web-devicons",
-		-- 	},
-		-- 	config = function()
-		-- 		require("fzf-lua").setup({
-		-- 			default_previewer = "bat",
-		-- 			-- fzf_bin = "sk",
-		-- 			-- grep = {
-		-- 			-- 	cmd = "rg --vimgrep",
-		-- 			-- },
-		-- 		})
-		-- 	end,
-		-- },
-		{
-			"phaazon/hop.nvim",
-			as = "hop",
-			keys = { "s", "S" },
-			config = function()
-				-- you can configure Hop the way you like here; see :h hop-config
-				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-				vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", {})
-				vim.api.nvim_set_keymap("n", "S", ":HopPattern<cr>", {})
-			end,
-		},
-		{
-			"norcalli/nvim-colorizer.lua",
-			config = function()
-				require("colorizer").setup({ "css", "scss", "html", "javascript", "eruby" }, {
-					RGB = true, -- #RGB hex codes
-					RRGGBB = true, -- #RRGGBB hex codes
-					RRGGBBAA = true, -- #RRGGBBAA hex codes
-					rgb_fn = true, -- CSS rgb() and rgba() functions
-					hsl_fn = true, -- CSS hsl() and hsla() functions
-					css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-					css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-				})
-			end,
-		},
-		{
-			"junegunn/vim-easy-align",
-			setup = function()
-				vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)", {
-					noremap = false,
-					silent = true,
-				})
-			end,
-		},
-		-- {
-		-- 	"nvim-treesitter/nvim-treesitter-textobjects",
-		-- 	config = config.text_objects,
-		-- },
-		-- {
-		-- 	"machakann/vim-sandwich",
-		-- 	config = function()
-		-- 		vim.cmd("runtime macros/sandwich/keymap/surround.vim")
-		-- 	end,
-		-- },
-		{
-			"tpope/vim-dispatch",
-			cmd = { "Dispatch" },
-		},
-		{
-			"tpope/vim-commentary",
-		},
-		{ "tpope/vim-surround" },
-		{
-			"tpope/vim-repeat",
-		},
-		{ "unblevable/quick-scope" },
-		{
-			"tpope/vim-fugitive",
-			cmd = {
-				"G",
-				"Git",
-				"Gdiffsplit",
-				"Gread",
-				"Gwrite",
-				"Ggrep",
-				"GMove",
-				"GDelete",
-				"GBrowse",
-				"GRemove",
-				"GRename",
-				"Glgrep",
-				"Gedit",
-			},
-		},
-		{
-			"tpope/vim-rails",
-			cmd = {
-				"Eview",
-				"Econtroller",
-				"Emodel",
-				"Smodel",
-				"Sview",
-				"Scontroller",
-				"Vmodel",
-				"Vview",
-				"Vcontroller",
-				"Tmodel",
-				"Tview",
-				"Tcontroller",
-				"Rails",
-				"Generate",
-				"Runner",
-				"Extract",
-			},
-		},
-		-- {
-		-- 	"christoomey/vim-rfactory",
-		-- 	cmd = {
-		-- 		"Rfactory",
-		-- 		"RSfactory",
-		-- 		"RVfactory",
-		-- 		"RTfactory",
-		-- 	},
-		-- },
-		{
-			"kevinhwang91/nvim-bqf",
-			event = { "BufRead", "BufNew" },
-			config = config.bqf,
-		},
-		-- {
-		-- 	"tpope/vim-bundler",
-		-- 	-- cmd = { "Bundler", "Bopen", "Bsplit", "Btabedit" },
-		-- },
-		{
-			"iamcco/markdown-preview.nvim",
-			ft = "markdown",
-			run = ":call mkdp#util#install()",
-			config = function()
-				vim.g.mkdp_auto_start = 1
-			end,
-		},
-		{
-			"sindrets/diffview.nvim",
-			cmd = { "DiffviewOpen", "DiffViewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh" },
-			config = config.diffview,
-		},
-		{
-			"mattn/emmet-vim",
-			ft = { "html", "css", "eruby", "javascript" },
-		},
-		{
-			"aca/emmet-ls",
-			ft = {
-				"html",
-				"typescriptreact",
-				"javascriptreact",
-				"css",
-				"sass",
-				"scss",
-				"less",
-			},
-		},
-		{
-			"jackieaskins/cmp-emmet",
-			run = "npm run release",
-		},
-		{ "ThePrimeagen/harpoon" },
-		-- {
-		-- 	"RishabhRD/nvim-cheat.sh",
-		-- 	cmd = { "Cheat", "CheatWithoutComments" },
-		-- 	requires = { "RishabhRD/popfix", opt = true },
-		-- },
-	}
+      end,
+    },
+    { "hrsh7th/cmp-nvim-lsp-signature-help" },
+    {
+      "vim-test/vim-test",
+      cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
+      config = function()
+        vim.cmd("let test#strategy = 'dispatch'")
+      end,
+    },
+    {
+      "rhysd/devdocs.vim",
+      cmd = { "DevDocs", "DevDocsAll" },
+    },
+    -- {
+    -- 	"ibhagwan/fzf-lua",
+    -- 	requires = {
+    -- 		"vijaymarupudi/nvim-fzf",
+    -- 		"kyazdani42/nvim-web-devicons",
+    -- 	},
+    -- 	config = function()
+    -- 		require("fzf-lua").setup({
+    -- 			default_previewer = "bat",
+    -- 			-- fzf_bin = "sk",
+    -- 			-- grep = {
+    -- 			-- 	cmd = "rg --vimgrep",
+    -- 			-- },
+    -- 		})
+    -- 	end,
+    -- },
+    {
+      "phaazon/hop.nvim",
+      as = "hop",
+      keys = { "s", "S" },
+      config = function()
+        -- you can configure Hop the way you like here; see :h hop-config
+        require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+        vim.api.nvim_set_keymap("n", "s", ":HopWord<cr>", {})
+        vim.api.nvim_set_keymap("n", "S", ":HopPattern<cr>", {})
+      end,
+    },
+    {
+      "norcalli/nvim-colorizer.lua",
+      config = function()
+        require("colorizer").setup({ "css", "scss", "html", "javascript", "eruby" }, {
+          RGB = true, -- #RGB hex codes
+          RRGGBB = true, -- #RRGGBB hex codes
+          RRGGBBAA = true, -- #RRGGBBAA hex codes
+          rgb_fn = true, -- CSS rgb() and rgba() functions
+          hsl_fn = true, -- CSS hsl() and hsla() functions
+          css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+          css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        })
+      end,
+    },
+    {
+      "junegunn/vim-easy-align",
+      setup = function()
+        vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)", {
+          noremap = false,
+          silent = true,
+        })
+      end,
+    },
+    -- {
+    -- 	"nvim-treesitter/nvim-treesitter-textobjects",
+    -- 	config = config.text_objects,
+    -- },
+    -- {
+    -- 	"machakann/vim-sandwich",
+    -- 	config = function()
+    -- 		vim.cmd("runtime macros/sandwich/keymap/surround.vim")
+    -- 	end,
+    -- },
+    {
+      "tpope/vim-dispatch",
+      cmd = { "Dispatch" },
+    },
+    {
+      "tpope/vim-commentary",
+    },
+    { "tpope/vim-surround" },
+    {
+      "tpope/vim-repeat",
+    },
+    { "unblevable/quick-scope" },
+    {
+      "tpope/vim-fugitive",
+      cmd = {
+        "G",
+        "Git",
+        "Gdiffsplit",
+        "Gread",
+        "Gwrite",
+        "Ggrep",
+        "GMove",
+        "GDelete",
+        "GBrowse",
+        "GRemove",
+        "GRename",
+        "Glgrep",
+        "Gedit",
+      },
+    },
+    {
+      "tpope/vim-rails",
+      cmd = {
+        "Eview",
+        "Econtroller",
+        "Emodel",
+        "Smodel",
+        "Sview",
+        "Scontroller",
+        "Vmodel",
+        "Vview",
+        "Vcontroller",
+        "Tmodel",
+        "Tview",
+        "Tcontroller",
+        "Rails",
+        "Generate",
+        "Runner",
+        "Extract",
+      },
+    },
+    -- {
+    -- 	"christoomey/vim-rfactory",
+    -- 	cmd = {
+    -- 		"Rfactory",
+    -- 		"RSfactory",
+    -- 		"RVfactory",
+    -- 		"RTfactory",
+    -- 	},
+    -- },
+    {
+      "kevinhwang91/nvim-bqf",
+      event = { "BufRead", "BufNew" },
+      config = config.bqf,
+    },
+    -- {
+    -- 	"tpope/vim-bundler",
+    -- 	-- cmd = { "Bundler", "Bopen", "Bsplit", "Btabedit" },
+    -- },
+    {
+      "iamcco/markdown-preview.nvim",
+      ft = "markdown",
+      run = ":call mkdp#util#install()",
+      config = function()
+        vim.g.mkdp_auto_start = 1
+      end,
+    },
+    {
+      "sindrets/diffview.nvim",
+      cmd = { "DiffviewOpen", "DiffViewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh" },
+      config = config.diffview,
+    },
+    {
+      "mattn/emmet-vim",
+      ft = { "html", "css", "eruby", "javascript" },
+    },
+    {
+      "aca/emmet-ls",
+      ft = {
+        "html",
+        "typescriptreact",
+        "javascriptreact",
+        "css",
+        "sass",
+        "scss",
+        "less",
+        "eruby",
+      },
+    },
+    {
+      "jackieaskins/cmp-emmet",
+      run = "npm run release",
+    },
+    { "ThePrimeagen/harpoon" },
+    {
+      "RishabhRD/nvim-cheat.sh",
+      cmd = { "Cheat", "CheatWithoutComments" },
+      requires = { "RishabhRD/popfix", opt = true },
+    },
+  }
 end
 
 return M
