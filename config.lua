@@ -4,12 +4,10 @@
 
 lvim.format_on_save = true
 -- lvim.format_on_save.timeout = 0
-
 lvim.lsp.automatic_servers_installation = true
 vim.o.termguicolors = true
 lvim.colorscheme = "onedarker"
 vim.opt.timeoutlen = 1000
-vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.hlsearch = true
 vim.opt.wrap = false
@@ -37,13 +35,13 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.nvimtree.setup.open_on_setup = false
 lvim.builtin.treesitter.highlight.additional_vim_regex_highlighting = false
 lvim.builtin.treesitter.playground.enable = true
-lvim.builtin.treesitter.textsubjects.enable = true
-lvim.builtin.treesitter.textsubjects.keymaps[";"] = "textsubjects-big"
-lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart"
+-- lvim.builtin.treesitter.textsubjects.enable = true
+-- lvim.builtin.treesitter.textsubjects.keymaps[";"] = "textsubjects-big"
+-- lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart"
 -- lvim.builtin.telescope.active = false
 lvim.lsp.document_highlight = true
 
-lvim.lsp.diagnostics.virtual_text = true
+-- lvim.lsp.diagnostics.virtual_text = true
 
 -- plugins
 -- =========================================
@@ -74,7 +72,6 @@ require("user.functions")
 -- additional cmp sources
 require("user.cmp").setup()
 
-
 -- require("telescope").setup({
 -- 	defaults = {
 -- 		file_ignore_patterns = { "data" },
@@ -96,30 +93,20 @@ require("user.cmp").setup()
 lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references<cr>", "Go to Definiton" }
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "solargraph" })
-require("lspconfig").solargraph.setup({
-  -- cmd = { "solargraph", "stdio" },
-  filetypes = { "ruby", "eruby" },
-  init_options = {
-    formatting = true,
-  },
-  settings = {
-    solargraph = {
-      diagnostics = true
-    }
-  }
-})
+require("lspconfig").solargraph.setup({})
 
-lvim.builtin.dap.active = true
--- ruby debugging support
-require("dapui").setup()
-require('dap-ruby').setup()
-local dap, dapui = require("dap"), require("dapui")
-dap.listeners.after.event_initialized["dapui_config"] = function()
-  dapui.open()
-end
-dap.listeners.before.event_terminated["dapui_config"] = function()
-  dapui.close()
-end
-dap.listeners.before.event_exited["dapui_config"] = function()
-  dapui.close()
-end
+-- require("lspconfig").solargraph.setup(
+--   {
+--     cmd = { "solargraph", "stdio" },
+--     settings = {
+--       solargraph = {
+--         diagnostics = true,
+--       },
+--     },
+--   }
+-- )
+
+
+require("user.dap").setup()
+-- Additional textobjects
+require("user.textobjects").setup()

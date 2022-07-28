@@ -1,7 +1,7 @@
 local M = {}
 
 M.setup = function()
-  local config = require("user.plugin-configs")
+  local configs = require("user.plugin-configs")
   lvim.plugins = {
     { "rcarriga/nvim-dap-ui" },
     { "suketa/nvim-dap-ruby" },
@@ -198,7 +198,7 @@ M.setup = function()
     {
       "kevinhwang91/nvim-bqf",
       event = { "BufRead", "BufNew" },
-      config = config.bqf,
+      config = configs.bqf,
     },
     -- {
     -- 	"tpope/vim-bundler",
@@ -215,7 +215,7 @@ M.setup = function()
     {
       "sindrets/diffview.nvim",
       cmd = { "DiffviewOpen", "DiffViewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewRefresh" },
-      config = config.diffview,
+      config = configs.diffview,
     },
     {
       "mattn/emmet-vim",
@@ -243,6 +243,24 @@ M.setup = function()
       "RishabhRD/nvim-cheat.sh",
       cmd = { "Cheat", "CheatWithoutComments" },
       requires = { "RishabhRD/popfix", opt = true },
+    },
+    {
+      "folke/trouble.nvim",
+      cmd = "TroubleToggle",
+    },
+    {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      config = function()
+        -- configs.text_objects()
+
+      end
+    },
+    {
+      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+      config = function()
+        require("lsp_lines").setup()
+        lvim.lsp.diagnostics.virtual_text = false
+      end,
     },
   }
 end
