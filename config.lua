@@ -1,10 +1,10 @@
---require('dap-ruby').setup() General settings for neovim
 -- =========================================
+-- lvim.colorscheme = "onedarker"
 -- lvim.log.level = "debug"
 
 lvim.format_on_save = true
--- lvim.format_on_save.timeout = 0
-lvim.lsp.automatic_servers_installation = true
+-- lvim.lsp.installer.setup.automatic_installation = true
+
 vim.o.termguicolors = true
 lvim.colorscheme = "onedarker"
 vim.opt.timeoutlen = 1000
@@ -20,12 +20,12 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 vim.opt.shiftround = true
-vim.opt.guifont = "FiraCode Nerd Font:h13"
-vim.cmd("set clipboard+=unnamedplus")
+vim.opt.guifont = "FiraCode Nerd Font:h12"
+
+lvim.transparent_window = true
 
 lvim.line_wrap_cursor_movement = false
 
-lvim.builtin.dap.active = false
 lvim.builtin.alpha.active = false
 lvim.builtin.comment.active = false
 lvim.builtin.terminal.active = true
@@ -41,7 +41,7 @@ lvim.builtin.treesitter.playground.enable = true
 -- lvim.builtin.telescope.active = false
 lvim.lsp.document_highlight = true
 
--- lvim.lsp.diagnostics.virtual_text = true
+lvim.lsp.diagnostics.virtual_text = true
 
 -- plugins
 -- =========================================
@@ -54,6 +54,7 @@ require("user.keybindings").setup()
 -- whichkey bindings
 -- =========================================
 require("user.whichkey").setup()
+
 
 -- callbacks
 require("user.callbacks").setup()
@@ -72,28 +73,36 @@ require("user.functions")
 -- additional cmp sources
 require("user.cmp").setup()
 
--- require("telescope").setup({
--- 	defaults = {
--- 		file_ignore_patterns = { "data" },
--- 	},
--- 	-- extensions = {
--- 	-- 	fzf = {
--- 	-- 		fuzzy = true,
--- 	-- 		override_generic_sorter = true,
--- 	-- 		override_file_sorter = true,
--- 	-- 		case_mode = "smart_case",
--- 	-- 	},
--- 	-- },
--- })
 
--- lvim.builtin.cmp.mapping["<C-Space>"] = nil
--- vim.cmd("imap <silent><script><expr> <C-Space> copilot#Accept('<CR>') ")
 -- vim.cmd("let g:copilot_no_tab_map = v:true")
--- lvim.keys.normal_mode['gr'] = ":Telescope lsp_references<CR>"
 lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references<cr>", "Go to Definiton" }
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "solargraph" })
 require("lspconfig").solargraph.setup({})
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "html" })
+require("lspconfig").html.setup({})
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "emmet_ls" })
+require("lvim.lsp.manager").setup("emmet_ls", {})
+
+-- local lspconfig = require('lspconfig')
+-- local configs = require('lspconfig/configs')
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+-- lspconfig.emmet_ls.setup({
+--   -- on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+--   init_options = {
+--     html = {
+--       options = {
+--         -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+--         ["bem.enabled"] = true,
+--       },
+--     },
+--   }
+-- })
 
 -- require("lspconfig").solargraph.setup(
 --   {
@@ -110,3 +119,34 @@ require("lspconfig").solargraph.setup({})
 require("user.dap").setup()
 -- Additional textobjects
 require("user.textobjects").setup()
+
+lvim.lsp.null_ls.setup = {
+  log = {
+    level = "info",
+  },
+}
+
+-- local cmp = require('cmp')
+-- lvim.builtin.cmp.mapping["<CR>"] = cmp.mapping.confirm({ select = true })
+
+-- lvim.builtin.cmp.mapping["<CR>"] = cmp.mapping.confirm {
+--   behavior = cmp.ConfirmBehavior.Replace,
+--   select = false,
+-- }
+-- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+-- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+
+lvim.builtin.treesitter.indent = {
+  disable = { " go", "ruby", "eruby" }
+}
+lvim.builtin.telescope.defaults.file_ignore_patterns = { ".git" }
+
+lvim.builtin.treesitter.highlight.disable = {}
+
+
+local cmp = require('cmp')
+
+lvim.builtin.cmp.mapping['<C-y>'] = cmp.mapping(function(fallback) fallback() end)
+vim.cmd [[
+command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
+]]

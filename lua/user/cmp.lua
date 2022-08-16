@@ -2,9 +2,9 @@ local M = {}
 
 M.setup = function()
   -- Add signature help to cmp completion
-  table.insert(lvim.builtin.cmp.sources, 1, { name = "nvim_lsp_signature_help" })
+  table.insert(lvim.builtin.cmp.sources, { name = "nvim_lsp_signature_help" })
   -- Add copilot to cmp completion
-  table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
+  table.insert(lvim.builtin.cmp.sources, { name = "copilot", group_index = 2 })
   lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
 
   -- npm install -g emmet-ls

@@ -1,5 +1,5 @@
 local M = {}
-lvim.leader = "space"
+-- lvim.leader = "space"
 M.setup = function()
   lvim.builtin.which_key.mappings["a"] = { "<cmd>:e ~/.config/lvim/config.lua<cr>", "Settings file" }
   lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", "Outline" }

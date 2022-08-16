@@ -3,7 +3,7 @@ local M = {}
 M.setup = function()
   lvim.builtin.treesitter.on_config_done = function()
     require 'nvim-treesitter.configs'.setup {
-      textobjects = {
+      extobjects = {
         swap = {
           enable = true,
           swap_next = {

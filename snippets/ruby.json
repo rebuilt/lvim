@@ -1,0 +1,16 @@
+{
+  "simple map declaration": {
+    "prefix": "map",
+    "body": "map { |$0|   } ",
+    "description": "map declaration"
+  },
+  "initializer": {
+    "prefix": "init",
+    "body": [
+      "initialize",
+      "\t${0}",
+      "end"
+    ],
+    "description": "define initializer"
+  }
+}

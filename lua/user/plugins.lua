@@ -6,18 +6,14 @@ M.setup = function()
     { "rcarriga/nvim-dap-ui" },
     { "suketa/nvim-dap-ruby" },
     { "hrsh7th/cmp-emoji" },
-    -- { "folke/tokyonight.nvim" },
     { "lad/vim-reek" },
     { "nanotee/luv-vimdocs" },
     { "milisims/nvim-luaref" },
     { "duane9/nvim-rg" },
-    -- { "hrsh7th/cmp-copilot" },
-    -- {
-    -- 	"github/copilot.vim",
-    -- },
     {
       "zbirenbaum/copilot.lua",
       event = { "VimEnter" },
+      module = "copilot_cmp",
       config = function()
         vim.defer_fn(function()
           require("copilot").setup({
@@ -31,17 +27,8 @@ M.setup = function()
       "zbirenbaum/copilot-cmp",
       after = { "copilot.lua", "nvim-cmp" },
     },
-    -- {
-    -- 	"nvim-telescope/telescope-fzf-native.nvim",
-    -- 	run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-    -- },
     {
       "windwp/nvim-ts-autotag",
-      -- config = function()
-      -- 	require("nvim-ts-autotag").setup({
-      -- 		filetypes = { "html", "eruby" },
-      -- 	})
-      -- end,
       config = function()
         require("nvim-ts-autotag").setup()
       end,
@@ -75,22 +62,6 @@ M.setup = function()
       "rhysd/devdocs.vim",
       cmd = { "DevDocs", "DevDocsAll" },
     },
-    -- {
-    -- 	"ibhagwan/fzf-lua",
-    -- 	requires = {
-    -- 		"vijaymarupudi/nvim-fzf",
-    -- 		"kyazdani42/nvim-web-devicons",
-    -- 	},
-    -- 	config = function()
-    -- 		require("fzf-lua").setup({
-    -- 			default_previewer = "bat",
-    -- 			-- fzf_bin = "sk",
-    -- 			-- grep = {
-    -- 			-- 	cmd = "rg --vimgrep",
-    -- 			-- },
-    -- 		})
-    -- 	end,
-    -- },
     {
       "phaazon/hop.nvim",
       as = "hop",
@@ -102,20 +73,20 @@ M.setup = function()
         vim.api.nvim_set_keymap("n", "S", ":HopPattern<cr>", {})
       end,
     },
-    {
-      "norcalli/nvim-colorizer.lua",
-      config = function()
-        require("colorizer").setup({ "css", "scss", "html", "javascript", "eruby" }, {
-          RGB = true, -- #RGB hex codes
-          RRGGBB = true, -- #RRGGBB hex codes
-          RRGGBBAA = true, -- #RRGGBBAA hex codes
-          rgb_fn = true, -- CSS rgb() and rgba() functions
-          hsl_fn = true, -- CSS hsl() and hsla() functions
-          css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-          css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-        })
-      end,
-    },
+    -- {
+    --   "norcalli/nvim-colorizer.lua",
+    --   config = function()
+    --     require("colorizer").setup({ "css", "scss", "html", "javascript", "eruby" }, {
+    --       RGB = true, -- #RGB hex codes
+    --       RRGGBB = true, -- #RRGGBB hex codes
+    --       RRGGBBAA = true, -- #RRGGBBAA hex codes
+    --       rgb_fn = true, -- CSS rgb() and rgba() functions
+    --       hsl_fn = true, -- CSS hsl() and hsla() functions
+    --       css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+    --       css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+    --     })
+    --   end,
+    -- },
     {
       "junegunn/vim-easy-align",
       setup = function()
@@ -125,10 +96,6 @@ M.setup = function()
         })
       end,
     },
-    -- {
-    -- 	"nvim-treesitter/nvim-treesitter-textobjects",
-    -- 	config = config.text_objects,
-    -- },
     -- {
     -- 	"machakann/vim-sandwich",
     -- 	config = function()
@@ -250,19 +217,42 @@ M.setup = function()
     },
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
-      config = function()
-        -- configs.text_objects()
-
-      end
     },
+    -- {
+    --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    --   config = function()
+    --     require("lsp_lines").setup()
+    --     lvim.lsp.diagnostics.virtual_text = false
+    --   end,
+    -- },
+    -- { "chrisbra/csv.vim" },
     {
-      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+      "nvim-treesitter/playground",
       config = function()
-        require("lsp_lines").setup()
-        lvim.lsp.diagnostics.virtual_text = false
+        require "nvim-treesitter.configs".setup {
+          playground = {
+            enable = true,
+            disable = {},
+            updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+            persist_queries = false, -- Whether the query persists across vim sessions
+            keybindings = {
+              toggle_query_editor = 'o',
+              toggle_hl_groups = 'i',
+              toggle_injected_languages = 't',
+              toggle_anonymous_nodes = 'a',
+              toggle_language_display = 'I',
+              focus_language = 'f',
+              unfocus_language = 'F',
+              update = 'R',
+              goto_node = '<cr>',
+              show_help = '?',
+            },
+          }
+        }
       end,
     },
   }
+
 end
 
 return M

@@ -90,8 +90,6 @@ M.autotag = function()
   })
 end
 
-M.text_objects = function()
-end
 
 M.catppuccino = function()
   local catppuccino = require("catppuccino")
