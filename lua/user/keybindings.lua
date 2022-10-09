@@ -61,14 +61,22 @@ M.setup = function()
   vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
 
   -- Yank and paste to clipboard
-  vim.api.nvim_set_keymap("n", "y", '"+y', { noremap = true, silent = true })
-  vim.api.nvim_set_keymap("n", "Y", '"+y$', { noremap = true, silent = true })
-  vim.api.nvim_set_keymap("n", "p", '"+p', { noremap = true, silent = true })
-  vim.api.nvim_set_keymap("n", "P", '"+P', { noremap = true, silent = true })
+  -- vim.api.nvim_set_keymap("n", "y", '"+y', { noremap = true, silent = true })
+  -- vim.api.nvim_set_keymap("n", "Y", '"+y$', { noremap = true, silent = true })
+  -- vim.api.nvim_set_keymap("n", "p", '"+p', { noremap = true, silent = true })
+  -- vim.api.nvim_set_keymap("n", "P", '"+P', { noremap = true, silent = true })
+
+
+  vim.api.nvim_set_keymap("n", "<Leader>p", '"_dP', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("v", "<Leader>y", '"+y', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", "<Leader>Y", '"+y$', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", "<Leader>d", '"_d', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("v", "<Leader>d", '"_d', { noremap = true, silent = true })
 
   -- Reset the 'L' and 'H' navigation keys to default
-  lvim.keys.normal_mode["L"] = "L"
-  lvim.keys.normal_mode["H"] = "H"
+  -- lvim.keys.normal_mode["L"] = "L"
+  -- lvim.keys.normal_mode["H"] = "H"
 
   -- Navigate to next buffer
   vim.api.nvim_set_keymap("n", "<A-l>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })

@@ -3,10 +3,9 @@
 -- lvim.log.level = "debug"
 
 lvim.format_on_save = true
--- lvim.lsp.installer.setup.automatic_installation = true
 
-vim.o.termguicolors = true
 lvim.colorscheme = "onedarker"
+-- vim.o.termguicolors = true
 vim.opt.timeoutlen = 1000
 vim.opt.relativenumber = true
 vim.opt.hlsearch = true
@@ -21,16 +20,22 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
 vim.opt.shiftround = true
 vim.opt.guifont = "FiraCode Nerd Font:h12"
+vim.opt.cmdheight = 1
+vim.opt.updatetime = 50
+
+lvim.transparent_window = true
 
 lvim.transparent_window = true
 
 lvim.line_wrap_cursor_movement = false
-
 lvim.builtin.alpha.active = false
+lvim.builtin.lir.active = false
 lvim.builtin.comment.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.project.active = true
+lvim.builtin.indentlines.active = false
 lvim.builtin.treesitter.ignore_install = { "kotlin" }
+lvim.builtin.treesitter.ensure_installed = { "ruby" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.nvimtree.setup.open_on_setup = false
 lvim.builtin.treesitter.highlight.additional_vim_regex_highlighting = false
@@ -38,7 +43,6 @@ lvim.builtin.treesitter.playground.enable = true
 -- lvim.builtin.treesitter.textsubjects.enable = true
 -- lvim.builtin.treesitter.textsubjects.keymaps[";"] = "textsubjects-big"
 -- lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart"
--- lvim.builtin.telescope.active = false
 lvim.lsp.document_highlight = true
 
 lvim.lsp.diagnostics.virtual_text = true
@@ -116,7 +120,7 @@ require("lvim.lsp.manager").setup("emmet_ls", {})
 -- )
 
 
-require("user.dap").setup()
+-- require("user.dap").setup()
 -- Additional textobjects
 require("user.textobjects").setup()
 
@@ -137,7 +141,7 @@ lvim.lsp.null_ls.setup = {
 -- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
 lvim.builtin.treesitter.indent = {
-  disable = { " go", "ruby", "eruby" }
+  disable = { "go", "ruby", "eruby" }
 }
 lvim.builtin.telescope.defaults.file_ignore_patterns = { ".git" }
 
@@ -146,7 +150,16 @@ lvim.builtin.treesitter.highlight.disable = {}
 
 local cmp = require('cmp')
 
-lvim.builtin.cmp.mapping['<C-y>'] = cmp.mapping(function(fallback) fallback() end)
+-- lvim.builtin.cmp.mapping['<C-y>'] = cmp.mapping(function(fallback) fallback() end)
 vim.cmd [[
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
 ]]
+
+-- require('hologram').setup {
+--   auto_display = true -- WIP automatic markdown image display, may be prone to breaking
+-- }
+require('image').setup {
+  min_padding = 5,
+  show_label = true,
+  render_using_dither = true,
+}

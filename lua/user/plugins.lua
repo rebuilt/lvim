@@ -3,30 +3,37 @@ local M = {}
 M.setup = function()
   local configs = require("user.plugin-configs")
   lvim.plugins = {
-    { "rcarriga/nvim-dap-ui" },
+    {
+      'samodostal/image.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim'
+      },
+    },
+    -- { "rcarriga/nvim-dap-ui" },
     { "suketa/nvim-dap-ruby" },
     { "hrsh7th/cmp-emoji" },
     { "lad/vim-reek" },
     { "nanotee/luv-vimdocs" },
     { "milisims/nvim-luaref" },
     { "duane9/nvim-rg" },
-    {
-      "zbirenbaum/copilot.lua",
-      event = { "VimEnter" },
-      module = "copilot_cmp",
-      config = function()
-        vim.defer_fn(function()
-          require("copilot").setup({
-            plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
-          })
-        end, 100)
-      end,
-    },
+    { "github/copilot.vim" },
+    -- {
+    --   "zbirenbaum/copilot.lua",
+    --   event = { "VimEnter" },
+    --   module = "copilot_cmp",
+    --   config = function()
+    --     vim.defer_fn(function()
+    --       require("copilot").setup({
+    --         plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+    --       })
+    --     end, 100)
+    --   end,
+    -- },
 
-    {
-      "zbirenbaum/copilot-cmp",
-      after = { "copilot.lua", "nvim-cmp" },
-    },
+    -- {
+    --   "zbirenbaum/copilot-cmp",
+    --   after = { "copilot.lua", "nvim-cmp" },
+    -- },
     {
       "windwp/nvim-ts-autotag",
       config = function()

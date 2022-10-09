@@ -12,5 +12,15 @@
       "end"
     ],
     "description": "define initializer"
+  },
+  "rspec": {
+    "prefix": "rspec",
+    "body": [
+      "require 'rails_helper'",
+      "RSpec.describe ${0}, type: :model do",
+      "${1}",
+      "end"
+    ],
+    "description": "rspec setup"
   }
 }
