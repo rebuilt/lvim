@@ -22,6 +22,7 @@ vim.opt.updatetime = 50
 lvim.transparent_window = true
 lvim.line_wrap_cursor_movement = false
 lvim.builtin.alpha.active = false
+lvim.builtin.notify.active = false
 lvim.builtin.lir.active = false
 lvim.builtin.comment.active = false
 lvim.builtin.terminal.active = true
