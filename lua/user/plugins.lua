@@ -17,6 +17,7 @@ M.setup = function()
     { "milisims/nvim-luaref" },
     { "duane9/nvim-rg" },
     { "github/copilot.vim" },
+    { "hrsh7th/cmp-copilot" },
     -- {
     --   "zbirenbaum/copilot.lua",
     --   event = { "VimEnter" },
