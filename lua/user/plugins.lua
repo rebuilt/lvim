@@ -5,7 +5,7 @@ M.setup = function()
   lvim.plugins = {
     {
       'samodostal/image.nvim',
-      requires = {
+      dependencies = {
         'nvim-lua/plenary.nvim'
       },
     },
@@ -72,7 +72,7 @@ M.setup = function()
     },
     {
       "phaazon/hop.nvim",
-      as = "hop",
+      name = "hop",
       keys = { "s", "S" },
       config = function()
         -- you can configure Hop the way you like here; see :h hop-config
@@ -97,7 +97,7 @@ M.setup = function()
     -- },
     {
       "junegunn/vim-easy-align",
-      setup = function()
+      init = function()
         vim.api.nvim_set_keymap("x", "ga", "<Plug>(EasyAlign)", {
           noremap = false,
           silent = true,
@@ -182,7 +182,7 @@ M.setup = function()
     {
       "iamcco/markdown-preview.nvim",
       ft = "markdown",
-      run = ":call mkdp#util#install()",
+      build = ":call mkdp#util#install()",
       config = function()
         vim.g.mkdp_auto_start = 1
       end,
@@ -211,13 +211,13 @@ M.setup = function()
     },
     {
       "jackieaskins/cmp-emmet",
-      run = "npm run release",
+      build = "npm run release",
     },
     { "ThePrimeagen/harpoon" },
     {
       "RishabhRD/nvim-cheat.sh",
       cmd = { "Cheat", "CheatWithoutComments" },
-      requires = { "RishabhRD/popfix", opt = true },
+      dependencies = { "RishabhRD/popfix", opt = true },
     },
     {
       "folke/trouble.nvim",
