@@ -62,3 +62,13 @@ require("user.functions")
 -- Can not be placed into the config method of the plugins.
 lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
 table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
+
+vim.cmd [[
+au FileType vimwiki setlocal shiftwidth=6 tabstop=6 noexpandtab
+]]
+
+vim.g.vimwiki_list = { { path = '~/vimwiki', syntax = 'markdown', ext = '.md',
+  -- custom_wiki2html = '$HOME/.local/share/lunarvim/site/pack/lazy/opt/vimwiki/autoload/vimwiki/customwiki2html.sh' } }
+  custom_wiki2html = 'vimwiki_markdown', html_filename_parameterization = 1 } }
+vim.g.vimwiki_ext2syntax = { ['.md'] = 'markdown', ['.markdown'] = 'markdown', ['.mdown'] = 'markdown' }
+vim.g.vimwiki_global_ext = 0

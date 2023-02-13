@@ -3,13 +3,18 @@ local M = {}
 M.setup = function()
   local configs = require("user.plugin-configs")
   lvim.plugins = {
+    { "tpope/vim-markdown" },
     {
       'samodostal/image.nvim',
       dependencies = {
         'nvim-lua/plenary.nvim'
       },
     },
+    { 'vimwiki/vimwiki' },
+    -- { 'chipsenkbeil/vimwiki-server.nvim',
+    --   version = 'v0.1.0-alpha.5' },
     -- { "rcarriga/nvim-dap-ui" },
+    -- { 'chipsenkbeil/vimwiki.nvim' },
     { "suketa/nvim-dap-ruby" },
     { "hrsh7th/cmp-emoji" },
     { "lad/vim-reek" },
