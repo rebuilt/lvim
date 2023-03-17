@@ -23,6 +23,7 @@ M.setup = function()
     { "duane9/nvim-rg" },
     { "github/copilot.vim" },
     { "hrsh7th/cmp-copilot" },
+    -- { "simrat39/rust-tools.nvim" },
     -- {
     --   "zbirenbaum/copilot.lua",
     --   event = { "VimEnter" },
