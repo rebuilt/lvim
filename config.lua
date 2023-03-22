@@ -55,6 +55,7 @@ require("user.whichkey").setup()
 
 -- callbacks
 require("user.callbacks").setup()
+require("user.formatters").setup()
 
 -- global functions
 require("user.functions")
