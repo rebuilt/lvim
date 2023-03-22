@@ -11,6 +11,8 @@ M.setup = function()
       },
     },
     { 'vimwiki/vimwiki' },
+    { "hrsh7th/cmp-nvim-lsp-signature-help" },
+    -- { "gelguy/wilder.nvim" },
     -- { 'chipsenkbeil/vimwiki-server.nvim',
     --   version = 'v0.1.0-alpha.5' },
     -- { "rcarriga/nvim-dap-ui" },

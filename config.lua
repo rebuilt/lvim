@@ -63,8 +63,10 @@ require("user.functions")
 require("user.textobjects").setup()
 
 -- Can not be placed into the config method of the plugins.
--- lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
--- table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
+-- lvim.builtin.cmp.formatting.source_names["nvim_lsp_signature_help"] = "(Signature)"
+-- lvim.builtin.cmp.on_config_done = function(cmp)
+table.insert(lvim.builtin.cmp.sources, { name = "nvim_lsp_signature_help" })
+-- end
 
 -- vim.g.copilot_no_tab_map = true
 -- vim.api.nvim_set_keymap("i", "<C-f>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
