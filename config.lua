@@ -75,3 +75,4 @@ table.insert(lvim.builtin.cmp.sources, { name = "nvim_lsp_signature_help" })
 --   vim.g.copilot_tab_fallback = ""
 
 require("lvim.lsp.manager").setup("emmet_ls")
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "standardrb" })
