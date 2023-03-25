@@ -11,6 +11,7 @@ M.setup = function()
       },
     },
     { 'vimwiki/vimwiki' },
+    { "cpea2506/relative-toggle.nvim" },
     { "hrsh7th/cmp-nvim-lsp-signature-help" },
     -- { "gelguy/wilder.nvim" },
     -- { 'chipsenkbeil/vimwiki-server.nvim',
