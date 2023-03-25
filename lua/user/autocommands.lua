@@ -6,7 +6,7 @@ M.setup = function()
     -- { "BufWritePre", { pattern = "*", command = "lua require('user.tidy').tidy_up()" } },
     { "BufEnter", { pattern = "*.erb", command = "set ft=eruby" } },
     -- { "BufWritePre", { pattern = "*.erb", command = "normal gg=G" } },
-    { "BufWritePost", { pattern = "*.erb", command = "!erblint -a %" } },
+    -- { "BufWritePost", { pattern = "*.erb", command = "!erblint -a %" } },
   }
 end
 
