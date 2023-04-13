@@ -40,7 +40,7 @@ lvim.builtin.treesitter.playground.enable = true
 -- lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart";
 lvim.lsp.document_highlight = true
 
-lvim.lsp.diagnostics.virtual_text = true
+lvim.lsp.diagnostics.virtual_text = false
 
 -- plugins
 -- =========================================
@@ -76,6 +76,6 @@ require("user.textobjects").setup()
 --   vim.g.copilot_tab_fallback = ""
 
 -- require("lvim.lsp.manager").setup("emmet_ls")
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "standardrb" })
-lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
-table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "standardrb" })
+-- lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+-- table.insert(lvim.builtin.cmp.sources, { name = "copilot" })

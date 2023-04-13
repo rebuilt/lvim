@@ -3,50 +3,27 @@ local M = {}
 M.setup = function()
   local configs = require("user.plugin-configs")
   lvim.plugins = {
-    { "tpope/vim-markdown" },
-    {
-      'samodostal/image.nvim',
-      dependencies = {
-        'nvim-lua/plenary.nvim'
-      },
-    },
-    { 'vimwiki/vimwiki' },
-    { "cpea2506/relative-toggle.nvim" },
-    { "hrsh7th/cmp-nvim-lsp-signature-help" },
+    -- { "github/copilot.vim" },
+    -- { "hrsh7th/cmp-copilot" },
+    -- { "tpope/vim-markdown" },
+    -- { 'vimwiki/vimwiki' },
+    -- { "cpea2506/relative-toggle.nvim" },
+    -- { "hrsh7th/cmp-nvim-lsp-signature-help" },
     -- { "gelguy/wilder.nvim" },
     -- { 'chipsenkbeil/vimwiki-server.nvim',
     --   version = 'v0.1.0-alpha.5' },
     -- { "rcarriga/nvim-dap-ui" },
     -- { 'chipsenkbeil/vimwiki.nvim' },
-    { "suketa/nvim-dap-ruby" },
-    { "hrsh7th/cmp-emoji" },
-    { "lad/vim-reek" },
-    { "nanotee/luv-vimdocs" },
-    { "milisims/nvim-luaref" },
-    { "duane9/nvim-rg" },
-    -- { "github/copilot.vim" },
-    {
-      "zbirenbaum/copilot.lua",
-      event = { "VimEnter" },
-      config = function()
-        vim.defer_fn(function()
-          require("copilot").setup {
-            plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
-          }
-        end, 100)
-      end,
-    },
-
-    {
-      "zbirenbaum/copilot-cmp",
-      after = { "copilot.lua", "nvim-cmp" },
-    },
-    -- { "hrsh7th/cmp-copilot" },
+    -- { "suketa/nvim-dap-ruby" },
+    -- { "hrsh7th/cmp-emoji" },
+    -- { "lad/vim-reek" },
+    -- { "nanotee/luv-vimdocs" },
+    -- { "milisims/nvim-luaref" },
+    -- { "duane9/nvim-rg" },
     -- { "simrat39/rust-tools.nvim" },
     -- {
     --   "zbirenbaum/copilot.lua",
     --   event = { "VimEnter" },
-    --   module = "copilot_cmp",
     --   config = function()
     --     vim.defer_fn(function()
     --       require("copilot").setup({
@@ -83,7 +60,7 @@ M.setup = function()
                 ]])
       end,
     },
-    { "hrsh7th/cmp-nvim-lsp-signature-help" },
+    -- { "hrsh7th/cmp-nvim-lsp-signature-help" },
     {
       "vim-test/vim-test",
       cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
@@ -234,16 +211,16 @@ M.setup = function()
         "eruby",
       },
     },
-    {
-      "jackieaskins/cmp-emmet",
-      build = "npm run release",
-    },
+    -- {
+    --   "jackieaskins/cmp-emmet",
+    -- build = "npm run release",
+    -- },
     { "ThePrimeagen/harpoon" },
-    {
-      "RishabhRD/nvim-cheat.sh",
-      cmd = { "Cheat", "CheatWithoutComments" },
-      dependencies = { "RishabhRD/popfix", opt = true },
-    },
+    -- {
+    --   "RishabhRD/nvim-cheat.sh",
+    --   cmd = { "Cheat", "CheatWithoutComments" },
+    --   dependencies = { "RishabhRD/popfix", opt = true },
+    -- },
     {
       "folke/trouble.nvim",
       cmd = "TroubleToggle",
