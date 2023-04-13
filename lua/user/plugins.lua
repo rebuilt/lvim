@@ -24,8 +24,24 @@ M.setup = function()
     { "nanotee/luv-vimdocs" },
     { "milisims/nvim-luaref" },
     { "duane9/nvim-rg" },
-    { "github/copilot.vim" },
-    { "hrsh7th/cmp-copilot" },
+    -- { "github/copilot.vim" },
+    {
+      "zbirenbaum/copilot.lua",
+      event = { "VimEnter" },
+      config = function()
+        vim.defer_fn(function()
+          require("copilot").setup {
+            plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+          }
+        end, 100)
+      end,
+    },
+
+    {
+      "zbirenbaum/copilot-cmp",
+      after = { "copilot.lua", "nvim-cmp" },
+    },
+    -- { "hrsh7th/cmp-copilot" },
     -- { "simrat39/rust-tools.nvim" },
     -- {
     --   "zbirenbaum/copilot.lua",
@@ -250,7 +266,7 @@ M.setup = function()
           playground = {
             enable = true,
             disable = {},
-            updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+            updatetime = 25,         -- Debounced time for highlighting nodes in the playground from source code
             persist_queries = false, -- Whether the query persists across vim sessions
             keybindings = {
               toggle_query_editor = 'o',
@@ -269,7 +285,6 @@ M.setup = function()
       end,
     },
   }
-
 end
 
 return M

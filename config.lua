@@ -1,6 +1,7 @@
 lvim.format_on_save = true
 
 lvim.colorscheme = "onedarker"
+lvim.lsp.installer.setup.automatic_installation = true
 -- vim.o.termguicolors = true
 vim.opt.timeoutlen = 1000
 vim.opt.relativenumber = true
@@ -65,7 +66,7 @@ require("user.textobjects").setup()
 -- Can not be placed into the config method of the plugins.
 -- lvim.builtin.cmp.formatting.source_names["nvim_lsp_signature_help"] = "(Signature)"
 -- lvim.builtin.cmp.on_config_done = function(cmp)
-table.insert(lvim.builtin.cmp.sources, { name = "nvim_lsp_signature_help" })
+-- table.insert(lvim.builtin.cmp.sources, { name = "nvim_lsp_signature_help" })
 -- end
 
 -- vim.g.copilot_no_tab_map = true
@@ -74,5 +75,7 @@ table.insert(lvim.builtin.cmp.sources, { name = "nvim_lsp_signature_help" })
 --   vim.g.copilot_assume_mapped = true
 --   vim.g.copilot_tab_fallback = ""
 
-require("lvim.lsp.manager").setup("emmet_ls")
-vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "standardrb" })
+-- require("lvim.lsp.manager").setup("emmet_ls")
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "standardrb" })
+lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
