@@ -77,5 +77,5 @@ require("user.textobjects").setup()
 
 -- require("lvim.lsp.manager").setup("emmet_ls")
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "standardrb" })
--- lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
--- table.insert(lvim.builtin.cmp.sources, { name = "copilot" })
+lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })

@@ -21,22 +21,24 @@ M.setup = function()
     -- { "milisims/nvim-luaref" },
     -- { "duane9/nvim-rg" },
     -- { "simrat39/rust-tools.nvim" },
-    -- {
-    --   "zbirenbaum/copilot.lua",
-    --   event = { "VimEnter" },
-    --   config = function()
-    --     vim.defer_fn(function()
-    --       require("copilot").setup({
-    --         plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
-    --       })
-    --     end, 100)
-    --   end,
-    -- },
+    {
+      "zbirenbaum/copilot.lua",
+      config = function()
+        -- vim.defer_fn(function()
+        require("copilot").setup({
+          plugin_manager_path = get_runtime_dir() .. "/site/pack/packer",
+        })
+        -- end, 100)
+      end,
+    },
 
-    -- {
-    --   "zbirenbaum/copilot-cmp",
-    --   after = { "copilot.lua", "nvim-cmp" },
-    -- },
+    {
+      "zbirenbaum/copilot-cmp",
+      after = { "copilot.lua", "nvim-cmp" },
+      config = function()
+        require("copilot_cmp").setup()
+      end
+    },
     {
       "windwp/nvim-ts-autotag",
       config = function()
