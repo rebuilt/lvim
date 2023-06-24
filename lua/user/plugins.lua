@@ -21,6 +21,19 @@ M.setup = function()
     -- { "milisims/nvim-luaref" },
     -- { "duane9/nvim-rg" },
     -- { "simrat39/rust-tools.nvim" },
+    { "vim-crystal/vim-crystal" },
+    {
+      "jackMort/ChatGPT.nvim",
+      event = "VeryLazy",
+      config = function()
+        require("chatgpt").setup()
+      end,
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim"
+      }
+    },
     {
       "zbirenbaum/copilot.lua",
       config = function()
