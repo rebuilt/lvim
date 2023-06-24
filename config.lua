@@ -1,7 +1,7 @@
 lvim.format_on_save = true
 
 lvim.colorscheme = "onedarker"
-lvim.lsp.installer.setup.automatic_installation = true
+-- lvim.lsp.installer.setup.automatic_installation = true
 -- vim.o.termguicolors = true
 vim.opt.timeoutlen = 1000
 vim.opt.relativenumber = true
