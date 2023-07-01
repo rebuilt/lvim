@@ -1,0 +1,4 @@
+vim.cmd [[
+syntax on
+]]
+
