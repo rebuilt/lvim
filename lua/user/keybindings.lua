@@ -18,6 +18,8 @@ M.setup = function()
   )
   vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
 
+  -- F11 toggles ChatGPT
+  vim.api.nvim_set_keymap("n", "<F11>", ":ChatGPT<CR>", { noremap = true, silent = true })
   -- F12 toggles relativenumber
   vim.api.nvim_set_keymap("n", "<F12>", ":set relativenumber!<CR>", { noremap = true, silent = true })
 
@@ -85,7 +87,6 @@ M.setup = function()
   lvim.keys.normal_mode["<A-Left>"] = ":BufferLineCyclePrev<CR>"
   lvim.keys.normal_mode["<A-Up>"] = ":lua require('harpoon.ui').nav_prev()<CR>"
   lvim.keys.normal_mode["<A-Down>"] = ":lua require('harpoon.ui').nav_next()<CR>"
-
 end
 
 return M
