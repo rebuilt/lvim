@@ -40,7 +40,7 @@ lvim.builtin.treesitter.playground.enable = true
 -- lvim.builtin.treesitter.textsubjects.keymaps["."] = "textsubjects-smart";
 lvim.lsp.document_highlight = true
 
-lvim.lsp.diagnostics.virtual_text = false
+vim.diagnostic.config({ virtual_text = false })
 
 -- plugins
 -- =========================================
